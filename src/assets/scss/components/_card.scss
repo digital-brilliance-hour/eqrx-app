@@ -1,0 +1,45 @@
+//
+// _card.scss
+//
+
+@layer components {
+
+    .card {
+        @apply bg-white dark:bg-gray-800 shadow rounded-md h-fit;
+
+        .card-header {
+            @apply py-3 px-6 border-b border-gray-200 dark:border-gray-700;
+        }
+    }    
+
+    .card-title {
+        @apply text-base font-semibold text-gray-500 dark:text-slate-400;
+    }
+}
+
+.fc-col-open {
+    .ri-arrow-down-s-line{
+        @apply rotate-180;
+    }
+    .ri-add-line {
+        @apply hidden;
+    }
+    .ri-subtract-line{
+        @apply block;
+    }
+    .read-more{
+        @apply hidden;
+    }
+}
+
+.fc-col-close {
+    .ri-add-line {
+        @apply block;
+    }
+    .ri-subtract-line{
+        @apply hidden;
+    }
+    .read-less{
+        @apply hidden;
+    }
+}

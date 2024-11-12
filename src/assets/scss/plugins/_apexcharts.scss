@@ -1,0 +1,154 @@
+//
+// apexcharts.scss
+//
+
+.apex-charts {
+    min-height: 10px !important;
+
+    text {
+        font-family: $body-font-family !important;
+    }
+
+    .apexcharts-canvas {
+        margin: 0 auto;
+    }
+}
+
+.apexcharts-tooltip-title,
+.apexcharts-tooltip-text {
+    font-family: $body-font-family !important;
+}
+
+.apexcharts-tooltip {
+
+    @apply shadow border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-900;
+
+    * {
+        font-family: $body-font-family !important;
+        @apply text-gray-800;
+    }
+
+    .apexcharts-tooltip-title {
+        @apply border-b border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-900;
+    }
+}
+
+.apexcharts-tooltip.apexcharts-theme-dark {
+    * {
+        @apply text-white;
+    }
+}
+
+.apexcharts-legend-series {
+    @apply font-semibold;
+}
+
+.apexcharts-gridline {
+    @apply pointer-events-none stroke-gray-200 dark:stroke-gray-700;
+}
+
+.apexcharts-legend-text {
+    color: $body-color !important;
+    font-family: $body-font-family !important;
+    font-size: 13px !important;
+    vertical-align: middle;
+}
+
+.apexcharts-legend-marker {
+    vertical-align: middle;
+    margin-right: 5px !important;
+}
+
+.apexcharts-pie-label {
+    @apply fill-white;
+}
+
+.apexcharts-title-text,
+.apexcharts-subtitle-text {
+    fill: $body-color;
+    font-family: $body-font-family !important;
+}
+
+.apexcharts-yaxis,
+.apexcharts-xaxis {
+    text {
+        font-family: $body-font-family !important;
+        fill: $body-color;
+    }
+}
+
+.apexcharts-yaxis-title {
+    font-weight: 500;
+}
+
+.apexcharts-annotation-rect {
+    @apply fill-gray-100 dark:fill-gray-900;
+}
+
+.apexcharts-xaxis-annotations,
+.apexcharts-yaxis-annotations {
+    rect {
+        stroke: none;
+    }
+}
+
+.apex-toolbar {
+    .btn-light.active {
+        @apply bg-primary border-primary shadow shadow-primary/50 text-white;
+    }
+}
+
+.apexcharts-xaxistooltip {
+    @apply bg-white shadow text-gray-700 border border-gray-200  dark:text-gray-200 dark:border-gray-700 dark:bg-gray-800;
+}
+
+.apexcharts-xaxistooltip-bottom:before {
+    @apply border-b-gray-200 dark:border-b-gray-700;
+}
+
+.apexcharts-xaxistooltip-text,
+.apexcharts-datalabels text {
+    font-family: $body-font-family !important;
+}
+
+.apexcharts-datalabel-value {
+    fill: $body-color;
+}
+
+.apexcharts-menu {
+    @apply bg-white text-center p-2 shadow border border-gray-200 dark:border-gray-700 dark:bg-gray-800;
+
+    .apexcharts-menu-item {
+        &:hover {
+            @apply bg-gray-100 dark:bg-gray-700 dark:text-gray-300;
+        }
+    }
+}
+
+
+.apexcharts-radar-series {
+    polygon {
+        @apply fill-transparent stroke-gray-200 dark:stroke-gray-700;
+    }
+
+    line {
+        @apply stroke-gray-200 dark:stroke-gray-700;
+    }
+}
+
+
+.apexcharts-track {
+    path {
+        @apply stroke-gray-200 dark:stroke-gray-700;
+    }
+}
+
+.apexcharts-marker {
+    stroke: $body-bg;
+}
+
+.apexcharts-grid {
+    rect {
+        fill: none;
+    }
+}

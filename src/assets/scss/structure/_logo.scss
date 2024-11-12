@@ -1,0 +1,56 @@
+//
+// _logo.scss
+//
+
+// Logo Box
+.logo-box {
+    height: $topbar-height;
+    color: $menu-item-color;
+    @apply sticky top-0 flex items-center justify-center transition-all duration-300 z-40;
+
+    .logo-sm {
+        display: none;
+    }
+
+    .logo-light {
+        display: none;
+    }
+
+    .logo-dark {
+        display: block;
+    }
+}
+
+// Sidenav
+html[data-mode="dark"],
+html[data-menu-color="brand"],
+html[data-menu-color="dark"] {
+    .app-menu {
+        .logo-box {
+            .logo-light {
+                display: block;
+            }
+
+            .logo-dark {
+                display: none;
+            }
+        }
+    }
+}
+
+// Topbar Logo
+html[data-mode="dark"],
+html[data-topbar-color="brand"],
+html[data-topbar-color="dark"] {
+    .app-header {
+        .logo-box {
+            .logo-light {
+                display: block;
+            }
+
+            .logo-dark {
+                display: none;
+            }
+        }
+    }
+}

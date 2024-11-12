@@ -1,0 +1,63 @@
+//
+// _topbar.scss
+//
+
+.app-header {
+    height: $topbar-height;
+    background: $topbar-bg;
+    @apply sticky top-0 shadow z-30;
+
+    .nav-link {
+        color: $topbar-item-color;
+        height: $topbar-height;
+        @apply transition-all ease-in-out;
+
+        &:hover {
+            color: $topbar-item-hover-color;
+        }
+
+        &:is(.open, .show, .active, :active, :focus) {
+            color: $topbar-item-active-color;
+        }
+    }
+
+    .logo-box {
+        @apply lg:hidden md:flex;
+
+        .logo-lg {
+            @apply md:block hidden;
+        }
+
+        .logo-sm {
+            @apply md:hidden block;
+        }
+    }
+
+    form {
+        color: $topbar-item-color;
+
+        input {
+      
+            &::placeholder{
+                color: $topbar-item-color;
+            }
+        }
+        
+    }
+}
+
+// Fullscreen exit icon
+.fullscreen-enable {
+    .ri-fullscreen-line::before {
+        content: "\ed9a";
+    }
+}
+
+// Full Size Sidenav (Hide Sidenav | Open Sidenav with Backdrop) 
+html[data-sidenav-view="mobile"] {
+    .app-header {
+        .logo-box {
+            @apply flex;
+        }
+    }
+}

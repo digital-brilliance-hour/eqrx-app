@@ -1,0 +1,79 @@
+//
+// _colorpicker.scss
+//
+
+.choices__inner {
+    @apply form-input align-middle px-1 pb-0.5 min-h-9;
+}
+
+.choices__input {
+    @apply m-0 form-input px-0 rounded-none;
+}
+
+.choices__list--multiple {
+    @apply inline;
+}
+
+.choices__list--multiple .choices__item {
+    @apply text-xs leading-none rounded m-1 mt-0 bg-primary border-primary text-white;
+}
+
+
+.choices__input--cloned {
+    @apply h-4 w-auto inline-flex ms-1;
+}
+
+.choices[data-type*=select-one] .choices__input {
+    @apply bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700;
+}
+.choices__list--dropdown {
+    @apply bg-white dark:bg-gray-800;
+    .choices__input {
+        @apply h-9 px-3 py-2;
+    }
+}
+
+.choices__heading,
+.is-open .choices__list--dropdown,
+.is-open .choices__list[aria-expanded],
+.is-focused .choices__inner,
+.is-open .choices__inner {
+    @apply border-gray-300 dark:border-gray-600;
+}
+
+.choices[data-type*=select-multiple] .choices__button,
+.choices[data-type*=text] .choices__button {
+    @apply border-white/75 ps-6;
+}
+
+.choices[data-type*=select-one] {
+    position: relative;
+}
+
+.choices[data-type*=select-one]::after {
+    content: "\ea4e";
+    font-family: remixicon;
+    @apply text-lg w-auto h-auto absolute end-2.5 top-1/2 -translate-y-1/2 pointer-events-none mt-0 transition-all border-none;
+}
+
+.choices[data-type*=select-one].is-open::after {
+    @apply mt-0 -rotate-180;
+}
+
+.choices[data-type*=select-one] .choices__inner {
+    @apply form-input;
+}
+
+.choices__list--single {
+    @apply p-0;
+}
+
+.choices.is-disabled .choices__inner,
+.choices.is-disabled .choices__input{
+    @apply bg-transparent opacity-75;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted,
+.choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+    @apply bg-gray-100 dark:bg-gray-700 dark:text-gray-300;
+}

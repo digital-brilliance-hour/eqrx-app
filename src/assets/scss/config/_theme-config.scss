@@ -1,0 +1,108 @@
+// 
+// _theme-config.scss (:root variable)
+// 
+
+// Font Family
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap');
+
+
+// ======= Real Time Customistion :root Variable ======= //
+:root {
+    --tw-body-font-family:           'Figtree', 'sans-serif';
+
+    --tw-body-bg:                    #f2f2f7;
+    --tw-body-color:                 #6c757d;   
+
+    &:is([data-mode="dark"]) {
+        --tw-body-bg:                 #2d333c;
+        --tw-body-color:              #aab8c5;
+    }
+}
+
+:root {
+    --tw-sidenav-width:             240px;
+    --tw-sidenav-width-md:          160px;
+    --tw-sidenav-width-sm:           70px;
+    --tw-sidenav-sm-height:        1500px;
+
+    --tw-topbar-height:              70px;
+
+    --tw-horizontal-menu-height:    55px;
+
+    --tw-menu-item-padding-x:         10px;
+    --tw-menu-item-gap:               5px;
+
+    --tw-menu-link-padding-x:        10px;
+    --tw-menu-link-padding-y:        10px;
+
+    --tw-menu-link-item-gap:         10px;
+
+    --tw-menu-item-icon-size:        20px;
+    --tw-menu-item-font-size:        16px;
+}
+
+
+// ===================================================== //
+// ==================== Main Menu ====================== //
+// ===================================================== //
+
+// Light Menu
+html[data-menu-color="light"] {
+    --tw-menu-bg:                               white;
+    --tw-menu-item-color:                       theme(colors.gray.600);
+    --tw-menu-item-active-color:                theme(colors.primary);
+    --tw-menu-item-hover-color:                 theme(colors.primary);
+}
+
+// Dark Menu
+html[data-menu-color="dark"] {
+    --tw-menu-bg:                               #212529;
+    --tw-menu-item-color:                       theme(colors.gray.400);
+    --tw-menu-item-active-color:                theme(colors.white);
+    --tw-menu-item-hover-color:                 theme(colors.white);
+}
+
+html[data-mode="dark"][data-menu-color="dark"],
+html[data-mode="dark"][data-menu-color="light"] {
+    --tw-menu-bg:                               #313a46;
+    --tw-menu-item-color:                       theme(colors.gray.400);
+    --tw-menu-item-active-color:                theme(colors.white);
+    --tw-menu-item-hover-color:                 theme(colors.white);
+}
+
+// Brand Menu
+html[data-menu-color="brand"] {
+    --tw-menu-bg:                             theme(backgroundColor.primary);
+    --tw-menu-item-color:                     theme(colors.gray.300);
+    --tw-menu-item-active-color:              theme(colors.white);
+    --tw-menu-item-hover-color:               theme(colors.white);
+}
+
+// ==================================================== //
+// ==================== Topbar ======================== //
+// ==================================================== //
+
+// Light Topbar
+html[data-topbar-color="light"] {
+    --tw-topbar-bg:                           white;
+    --tw-topbar-item-color:                   theme(colors.gray.600);
+    --tw-topbar-item-active-color:            theme(colors.primary);
+    --tw-topbar-item-hover-color:             theme(colors.primary);
+}
+
+// Dark Topbar
+html[data-topbar-color="dark"],
+html[data-mode="dark"][data-topbar-color="light"] {
+    --tw-topbar-bg:                           theme(backgroundColor.gray.800);
+    --tw-topbar-item-color:                   rgb(131, 145, 162);
+    --tw-topbar-item-active-color:            rgb(188, 206, 228);
+    --tw-topbar-item-hover-color:             rgb(188, 206, 228);
+}
+
+// Brand Topbar
+html[data-topbar-color="brand"] {
+    --tw-topbar-bg:                           linear-gradient(135deg, #6379c3 0%, #3e60d5 60%);
+    --tw-topbar-item-color:                   theme(colors.gray.300);
+    --tw-topbar-item-active-color:            theme(colors.white);
+    --tw-topbar-item-hover-color:             theme(colors.white);
+}

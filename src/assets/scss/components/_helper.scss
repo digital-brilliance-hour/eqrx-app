@@ -1,0 +1,73 @@
+//
+// _helper.scss
+//
+
+
+// Custom Css Scroll
+.custom-scroll {
+    &::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+
+    &::-webkit-scrollbar:vertical {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar:horizontal {
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        @apply rounded-lg bg-slate-300/50 dark:bg-slate-500/50;
+    }
+
+    &::-webkit-scrollbar-track {
+        @apply bg-transparent rounded-lg;
+    }
+
+    &::-webkit-scrollbar-corner {
+        @apply bg-transparent;
+    }
+}
+
+// Form Validation
+.text-help {
+    @apply text-danger text-xs mt-1.5;
+}
+
+
+// Icon demo
+.icons-list-demo {
+    i {
+        text-align: center;
+        vertical-align: middle;
+        font-size: 28px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        border-radius: 3px;
+        display: inline-block;
+        transition: all .2s;
+    }
+
+    svg {
+        display: inline-flex;
+
+    }
+
+    span {
+        display: inline-flex;
+        user-select: all;
+        @apply ms-4;
+    }
+}
+
+// Kanban Board
+.kanban-board {
+    @apply relative;
+
+    &:before {
+        content: "No Tasks";
+        @apply overflow-hidden absolute flex items-center justify-center start-1/2 -translate-x-1/2 h-24 text-center font-semibold -z-10;
+    }
+}
