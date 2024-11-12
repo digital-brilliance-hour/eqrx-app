@@ -48,9 +48,30 @@
   <script type="module" src="/src/index.tsx"></script>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <script>
-    document.querySelector('#root')?.addEventListener('DOMNodeInserted', () => {
-      document.querySelector('#splash-screen')?.classList.add('remove');
-    })
+    // Target the parent element where the mutation will occur (e.g., document.body)
+    const targetNode = document.body;
+
+    // Create a new MutationObserver instance
+    const observer = new MutationObserver((mutationsList) => {
+      for (let mutation of mutationsList) {
+        if (mutation.type === 'childList') {
+          // Check if the target element (with a specific ID) has been added
+          if (document.querySelector('#root')) {
+            // If the element with the ID 'elementToWatch' is found, add the class to another element
+            const elementToModify = document.querySelector('#splash-screen');
+            if (elementToModify) {
+              elementToModify?.classList.add('remove');
+            }
+
+            // Stop observing once the target element is found and processed
+            observer.disconnect();
+          }
+        }
+      }
+    });
+
+    // Set the observer to monitor child elements being added to the target node
+    observer.observe(targetNode, { childList: true, subtree: true });
   </script>
 </body>
 
