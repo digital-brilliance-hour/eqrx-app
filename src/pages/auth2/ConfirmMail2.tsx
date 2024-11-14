@@ -7,7 +7,7 @@ import mail from '@/assets/images/svg/mail_sent.svg'
 const BottomLink = () => {
 	return (
 		<footer className="text-center justify-center h-14 -mb-12">
-			<p className="text-muted">{new Date().getFullYear()} © Attex - Coderthemes.com</p>
+			<p className="text-muted">{new Date().getFullYear()} © EQRX</p>
 		</footer>
 	)
 }

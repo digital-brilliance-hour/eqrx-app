@@ -9,11 +9,11 @@ interface PageTitleProps {
 }
 
 const PageBreadcrumb = ({ subName, title, addedChild }: PageTitleProps) => {
-	const breadcrumbItems = ['Attex', subName, title]
+	const breadcrumbItems = ['EQRX', subName, title]
 	return (
 		<>
 			<Helmet>
-				<title>{title} | Attex - Responsive Tailwind CSS 3 Admin Dashboard</title>
+				<title>{title} | EQRX</title>
 			</Helmet>
 			{subName && (
 				<div className="flex justify-between items-center mb-6">

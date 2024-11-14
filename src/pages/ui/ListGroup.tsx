@@ -386,8 +386,8 @@ const NumberedListGroup = () => {
 							<div className="flex flex-wrap gap-x-2">
 								<span>1.</span>
 								<div>
-									<h6 className="font-semibold">Attex Admin</h6>
-									<p>Attex Admin</p>
+									<h6 className="font-semibold">EQRX Admin</h6>
+									<p>EQRX Admin</p>
 								</div>
 							</div>
 							<span className="inline-flex items-center gap-1.5 px-1 rounded-full text-xs font-normal bg-primary text-white">865</span>
@@ -397,8 +397,8 @@ const NumberedListGroup = () => {
 							<div className="flex flex-wrap gap-x-2">
 								<span>2.</span>
 								<div>
-									<h6 className="font-semibold">Attex React Admin</h6>
-									<p>Attex React Admin</p>
+									<h6 className="font-semibold">EQRX React Admin</h6>
+									<p>EQRX React Admin</p>
 								</div>
 							</div>
 							<span className="inline-flex items-center gap-1.5 px-1 rounded-full text-xs font-normal bg-primary text-white">140</span>

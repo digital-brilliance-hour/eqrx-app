@@ -57,7 +57,7 @@ const Error500 = () => {
 				</div>
 
 				<footer className="absolute bottom-0 inset-x-0">
-					<p className="font-medium text-center p-6">{new Date().getFullYear()} © Attex - Coderthemes.com</p>
+					<p className="font-medium text-center p-6">{new Date().getFullYear()} © EQRX</p>
 				</footer>
 			</AuthContainer>
 		</>
