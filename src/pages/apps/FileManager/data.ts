@@ -31,7 +31,7 @@ interface RecentFileTypes {
 const quickAccessFiles: QuickAccessFileTypes[] = [
 	{
 		icon: 'ri-file-zip-line',
-		name: 'Attex-sketch.zip',
+		name: 'EQRX-sketch.zip',
 		size: '2.3 MB',
 	},
 	{
@@ -62,7 +62,7 @@ const quickAccessFiles: QuickAccessFileTypes[] = [
 	},
 	{
 		icon: 'ri-folder-5-line',
-		name: 'Attex Integrations',
+		name: 'EQRX Integrations',
 		size: '874 MB',
 	},
 ]
@@ -94,7 +94,7 @@ const recentFiles: RecentFileTypes[] = [
 		],
 	},
 	{
-		name: 'Attex-sketch-design.zip',
+		name: 'EQRX-sketch-design.zip',
 		modifiedDate: 'Feb 13, 2023',
 		modifiedBy: 'Coderthemes',
 		size: '521 MB',

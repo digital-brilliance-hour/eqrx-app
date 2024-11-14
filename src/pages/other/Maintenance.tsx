@@ -73,7 +73,7 @@ const Maintenance = () => {
 							</div>
 						</div>
 						<footer className="inline-flex items-center justify-center absolute start-0 end-0 bottom-0 font-medium bg-transparent h-14">
-							<span className="">{new Date().getFullYear()} © Attex - Coderthemes.com</span>
+							<span className="">{new Date().getFullYear()} © EQRX</span>
 						</footer>
 					</div>
 				</div>

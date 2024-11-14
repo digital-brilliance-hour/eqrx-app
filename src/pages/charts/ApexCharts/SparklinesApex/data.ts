@@ -36,7 +36,7 @@ export const spark1Opts: ApexOptions = {
 	},
 	series: [
 		{
-			name: 'Attex Sales ',
+			name: 'EQRX Sales ',
 			data: randomizeArray(sparklineData),
 		},
 	],
@@ -77,7 +77,7 @@ export const spark2Opts: ApexOptions = {
 	},
 	series: [
 		{
-			name: 'Attex Expenses ',
+			name: 'EQRX Expenses ',
 			data: randomizeArray(sparklineData),
 		},
 	],
