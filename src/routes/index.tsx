@@ -24,6 +24,7 @@ const ConfirmMail2 = React.lazy(() => import('../pages/auth2/ConfirmMail2'))
 
 // dashboard
 const Ecommerce = React.lazy(() => import('../pages/dashboard/ecommerce/'))
+const Report = React.lazy(() => import('../pages/dashboard/report/'))
 const Analytics = React.lazy(() => import('../pages/dashboard/Analytics/'))
 
 // apps
@@ -147,7 +148,13 @@ const dashboardRoutes: RoutesProps = {
 		{
 			path: '/',
 			name: 'Root',
-			element: <Navigate to="/ecommerce" />,
+			element: <Navigate to="/report" />,
+			route: PrivateRoute,
+		},
+		{
+			path: '/report',
+			name: 'Report',
+			element: <Report />,
 			route: PrivateRoute,
 		},
 		{
