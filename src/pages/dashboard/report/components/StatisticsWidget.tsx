@@ -51,6 +51,7 @@ const StatisticsWidget = ({ variant, cardTitle, title, stats, change, dataSince,
 					</div>
 					<div className="shrink grow">
 						<i className={`text-[${colors[0]}] text-6xl ri-chat-smile-3-fill`} style={{color: `${colors[0]}`}}></i>
+						<ReactApexCharts className={`${classname} hidden`} options={apexOpts} series={chartSeries} type="donut" width={95} height={95} />
 					</div>
 				</div>
 				<div className="flex justify-between">
