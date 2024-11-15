@@ -30,6 +30,12 @@ const MENU_ITEMS: MenuItemTypes[] = [
 		},
 		children: [
 			{
+				key: 'dashboard-report',
+				label: 'Report',
+				url: '/report',
+				parentKey: 'dashboard',
+			},
+			{
 				key: 'dashboard-analytics',
 				label: 'Analytics',
 				url: '/analytics',
