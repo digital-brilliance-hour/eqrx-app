@@ -58,7 +58,7 @@ const StatisticsWidget = ({ variant, cardTitle, title, stats, change, dataSince,
 					<div className="grow overflow-hidden">
 						<p className="text-gray-400 truncate">
 							<span className={`${variant} rounded-md text-xs px-1.5 py-0.5 text-white me-1`}>
-								<i className="ri-arrow-up-line"></i> {change}  <i className="ri-chat-smile-3-fill"></i>
+								<i className="ri-arrow-up-line"></i> {change} <i className="ri-chat-smile-3-fill"></i>
 							</span>
 							&nbsp;
 							<span>{dataSince}</span>
