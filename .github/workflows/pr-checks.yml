@@ -1,0 +1,29 @@
+name: Pull Request Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20 # Adjust Node.js version as needed
+
+      # Install dependencies
+      - name: Install dependencies
+        run: yarn
+
+      # Run build
+      - name: Run build
+        run: yarn build
