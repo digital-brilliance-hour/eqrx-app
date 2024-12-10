@@ -145,7 +145,7 @@ const ResponsiveTable = () => {
 
 const ResponsiveTable2 = () => {
 	return (
-		<div className="xl:col-span-2">
+		<div className="xl:col-span-3">
 			<div className="card">
 				<div className="p-6">
 					<h3 className="card-title mb-4">Top 5 Referrals</h3>
@@ -282,8 +282,8 @@ const Report = () => {
 			<div className="grid lg:grid-cols-5 gap-6 mb-6">
 				<ResponsiveTable />
 				<ResponsiveTable2 />
-				<TotalSalesChart />
 			</div>
+			<Statistics />
 
 			<div className="grid lg:grid-cols-4 gap-6 mb-6">
 				<RevenueChart />
@@ -298,6 +298,7 @@ const Report = () => {
 				<div className="xl:col-span-7 col-span-12">
 					<RevenueByLocation />
 				</div>
+				<TotalSalesChart />
 			</div>
 		</>
 	)

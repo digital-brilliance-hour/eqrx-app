@@ -13,14 +13,14 @@ const RevenueChart = () => {
 	const apexOpts: ApexOptions = {
 		series: [
 			{
-				name: 'Revenue',
+				name: 'Black Offenses',
 				type: 'column',
-				data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160],
+				data: [440, 505, 375, 200, 150, 160],
 			},
 			{
-				name: 'Sales',
-				type: 'line',
-				data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16],
+				name: 'White Offenses',
+				type: 'column',
+				data: [10, 20, 5, 0, 30, 20],
 			},
 		],
 		chart: {
@@ -37,14 +37,7 @@ const RevenueChart = () => {
 			},
 		},
 		colors: ['#3e60d5', '#47ad77'],
-		dataLabels: {
-			enabled: true,
-			enabledOnSeries: [1],
-		},
-		labels: ['01 Jan 2001', '02 Jan 2001', '03 Jan 2001', '04 Jan 2001', '05 Jan 2001', '06 Jan 2001', '07 Jan 2001', '08 Jan 2001', '09 Jan 2001', '10 Jan 2001', '11 Jan 2001', '12 Jan 2001'],
-		xaxis: {
-			type: 'datetime',
-		},
+		labels: ['2014', '2015', '2016', '2017', '2018', '2019'],
 		legend: {
 			offsetY: 7,
 		},
@@ -69,13 +62,7 @@ const RevenueChart = () => {
 		yaxis: [
 			{
 				title: {
-					text: 'Net Revenue',
-				},
-			},
-			{
-				opposite: true,
-				title: {
-					text: 'Number of Sales',
+					text: 'Juvenile Offenses',
 				},
 			},
 		],
@@ -83,14 +70,14 @@ const RevenueChart = () => {
 
 	const series = [
 		{
-			name: 'Revenue',
-			type: 'column',
-			data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160],
+			name: 'Black Offenses',
+			type: 'line',
+			data: [440, 505, 375, 200, 150, 160],
 		},
 		{
-			name: 'Sales',
+			name: 'White Offenses',
 			type: 'line',
-			data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16],
+			data: [10, 20, 5, 0, 30, 20],
 		},
 	]
 
@@ -98,7 +85,7 @@ const RevenueChart = () => {
 		<div className="lg:col-span-2">
 			<div className="card">
 				<div className="flex card-header justify-between items-center">
-					<h4 className="card-title">Revenue</h4>
+					<h4 className="card-title">Juvenile Offenses</h4>
 					<PopoverLayout placement="bottom-end" togglerClass="text-gray-600 dark:text-gray-400" toggler={<PopoverToggle />}>
 						<div className="min-w-40 z-50 transition-all duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-md py-1">
 							<Link className="flex items-center py-1.5 px-5 text-sm text-gray-500 hover:bg-slate-100 hover:text-slate-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" to="#">
@@ -123,7 +110,7 @@ const RevenueChart = () => {
 								<i className="ri-donut-chart-fill"></i> Current Week
 							</p>
 							<h3 className="text-2xl font-normal mb-6">
-								<span>$1705.54</span>
+								<span>15</span>
 							</h3>
 						</div>
 						<div className="w-1/2 lg:w-1/4">
@@ -132,25 +119,27 @@ const RevenueChart = () => {
 							</p>
 							<h3 className="text-2xl font-normal mb-6">
 								<span>
-									$6,523.25 <i className="ri-corner-right-up-fill text-success"></i>
+									20 <i className="ri-corner-right-down-line text-success"></i>
 								</span>
 							</h3>
 						</div>
 						<div className="w-1/2 lg:w-1/4">
 							<p className="text-gray-400 mt-6 mb-4">
-								<i className="ri-donut-chart-fill"></i> Conversation
+								<i className="ri-donut-chart-fill"></i> Referral
 							</p>
 							<h3 className="text-2xl font-normal mb-6">
-								<span>8.27%</span>
+								<span>
+									16.20% <i className="ri-corner-right-up-line text-success"></i>
+								</span>
 							</h3>
 						</div>
 						<div className="w-1/2 lg:w-1/4">
 							<p className="text-gray-400 mt-6 mb-4">
-								<i className="ri-donut-chart-fill"></i> Customers
+								<i className="ri-donut-chart-fill"></i> First Charge
 							</p>
 							<h3 className="text-2xl font-normal mb-6">
 								<span>
-									69k <i className="ri-corner-right-down-line text-danger"></i>
+									10 <i className="ri-corner-right-up-line text-danger"></i>
 								</span>
 							</h3>
 						</div>
