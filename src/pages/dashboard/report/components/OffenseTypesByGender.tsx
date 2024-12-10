@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom'
-import ReactApexCharts from 'react-apexcharts'
 import { ApexOptions } from 'apexcharts'
+import ReactApexCharts from 'react-apexcharts'
 
 // components
 import { PopoverLayout } from '../../../../components/HeadlessUI'
 
-const TotalSalesChart = () => {
+const RevenueChart = () => {
 
 	const apexOpts: ApexOptions = {
         chart: {
-            height: 240,
+            height: 380,
             type: 'bar',
             stacked: true,
             stackType: '100%',
@@ -28,18 +28,26 @@ const TotalSalesChart = () => {
         },
         series: [
             {
-                name: 'SRO',
-                data: [44],
+                name: 'Black Male',
+                data: [44, 55, 41, 37, 22, 55],
             },
             {
-                name: 'Other',
-                data: [503],
+                name: 'Black Female',
+                data: [53, 32, 33, 52, 13, 32],
+            },
+            {
+                name: 'White Male',
+                data: [12, 17, 11, 9, 15, 17],
+            },
+            {
+                name: 'White Female',
+                data: [9, 7, 5, 8, 6, 7],
             },
         ],
         xaxis: {
-            categories: ['Total'],
+            categories: ['2014', '2015', '2016', '2017', '2018', '2019'],
         },
-        colors: ['#6c757d', '#ffbc00'],
+        colors: ['#6c757d', '#ffbc00', '#e3eaef', '#39afd1'],
         tooltip: {
             y: {
                 formatter: function (val) {
@@ -68,13 +76,21 @@ const TotalSalesChart = () => {
         },
     }
 
+	const series = [
+		{
+			name: 'Juvenile Offenses',
+			type: 'line',
+			data: [440, 505, 375, 200, 150, 160],
+		},
+	]
+
 	return (
-		<div className="col-lg-4">
-			<div className="card">
+		<div className="lg:col-span-2">
+            <div className="card">
 					<div className="p-6">
-						<h4 className="card-title mb-4">Contacts by Officer Type</h4>
+						<h4 className="card-title mb-4">Contacts by Gender</h4>
 						<div dir="ltr">
-							<ReactApexCharts className="apex-charts" options={apexOpts} height={240} series={apexOpts.series} type="bar" />
+							<ReactApexCharts className="apex-charts" options={apexOpts} height={380} series={apexOpts.series} type="bar" />
 						</div>
 					</div>
 				</div>
@@ -82,4 +98,4 @@ const TotalSalesChart = () => {
 	)
 }
 
-export default TotalSalesChart
+export default RevenueChart

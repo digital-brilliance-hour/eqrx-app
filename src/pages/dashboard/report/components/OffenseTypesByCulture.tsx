@@ -1,15 +1,18 @@
 import { Link } from 'react-router-dom'
-import ReactApexCharts from 'react-apexcharts'
 import { ApexOptions } from 'apexcharts'
+import ReactApexCharts from 'react-apexcharts'
 
 // components
 import { PopoverLayout } from '../../../../components/HeadlessUI'
 
-const TotalSalesChart = () => {
+const RevenueChart = () => {
+	const PopoverToggle = () => {
+		return <i className="ri-more-2-fill text-xl" />
+	}
 
 	const apexOpts: ApexOptions = {
         chart: {
-            height: 240,
+            height: 380,
             type: 'bar',
             stacked: true,
             stackType: '100%',
@@ -28,18 +31,30 @@ const TotalSalesChart = () => {
         },
         series: [
             {
-                name: 'SRO',
-                data: [44],
+                name: 'Black',
+                data: [44, 55, 41, 37, 22],
             },
             {
-                name: 'Other',
-                data: [503],
+                name: 'Latino',
+                data: [53, 32, 33, 52, 13],
+            },
+            {
+                name: 'White',
+                data: [12, 17, 11, 9, 15],
+            },
+            {
+                name: 'Asian',
+                data: [9, 7, 5, 8, 6],
+            },
+            {
+                name: 'Native American',
+                data: [25, 12, 19, 32, 25],
             },
         ],
         xaxis: {
-            categories: ['Total'],
+            categories: ['Burglary', 'Escape from Custody', 'Drug Violation', 'Aggrevated Assault', 'Disorderly Conduct'],
         },
-        colors: ['#6c757d', '#ffbc00'],
+        colors: ['#ffbc00', '#39afd1', '#6c757d', '#e3eaef', '#3e60d5'],
         tooltip: {
             y: {
                 formatter: function (val) {
@@ -68,13 +83,21 @@ const TotalSalesChart = () => {
         },
     }
 
+	const series = [
+		{
+			name: 'Juvenile Offenses',
+			type: 'line',
+			data: [440, 505, 375, 200, 150, 160],
+		},
+	]
+
 	return (
-		<div className="col-lg-4">
-			<div className="card">
+		<div className="lg:col-span-2">
+            <div className="card">
 					<div className="p-6">
-						<h4 className="card-title mb-4">Contacts by Officer Type</h4>
+						<h4 className="card-title mb-4">Top 5 1st Charge Types by Culture</h4>
 						<div dir="ltr">
-							<ReactApexCharts className="apex-charts" options={apexOpts} height={240} series={apexOpts.series} type="bar" />
+							<ReactApexCharts className="apex-charts" options={apexOpts} height={380} series={apexOpts.series} type="bar" />
 						</div>
 					</div>
 				</div>
@@ -82,4 +105,4 @@ const TotalSalesChart = () => {
 	)
 }
 
-export default TotalSalesChart
+export default RevenueChart
