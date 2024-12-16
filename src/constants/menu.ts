@@ -53,6 +53,18 @@ const MENU_ITEMS: MenuItemTypes[] = [
 				url: '/ecommerce',
 				parentKey: 'dashboard',
 			},
+			{
+				key: 'dashboard-publicorder',
+				label: 'Public Order',
+				url: '/publicorder',
+				parentKey: 'dashboard',
+			},
+			{
+				key: 'dashboard-main',
+				label: 'Command Center',
+				url: '/main',
+				parentKey: 'dashboard',
+			},
 		],
 	},
 	{

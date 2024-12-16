@@ -25,8 +25,10 @@ const ConfirmMail2 = React.lazy(() => import('../pages/auth2/ConfirmMail2'))
 // dashboard
 const Ecommerce = React.lazy(() => import('../pages/dashboard/ecommerce/'))
 const Report = React.lazy(() => import('../pages/dashboard/report/'))
+const PublicOrder = React.lazy(() => import('../pages/dashboard/publicorder/'))
 const Analytics = React.lazy(() => import('../pages/dashboard/Analytics/'))
 const Dmc = React.lazy(() => import('../pages/dashboard/dmc/'))
+const Main = React.lazy(() => import('../pages/dashboard/main/'))
 
 // apps
 const CalendarApp = React.lazy(() => import('../pages/apps/Calendar/'))
@@ -174,6 +176,18 @@ const dashboardRoutes: RoutesProps = {
 			path: '/analytics',
 			name: 'Analytics',
 			element: <Analytics />,
+			route: PrivateRoute,
+		},
+		{
+			path: '/publicorder',
+			name: 'Public Order',
+			element: <PublicOrder />,
+			route: PrivateRoute,
+		},
+		{
+			path: '/main',
+			name: 'Command Center',
+			element: <Main />,
 			route: PrivateRoute,
 		},
 	],
