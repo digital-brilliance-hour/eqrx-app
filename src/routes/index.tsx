@@ -28,6 +28,9 @@ const Report = React.lazy(() => import('../pages/dashboard/report/'))
 const PublicOrder = React.lazy(() => import('../pages/dashboard/publicorder/'))
 const Analytics = React.lazy(() => import('../pages/dashboard/Analytics/'))
 const Main = React.lazy(() => import('../pages/dashboard/main/'))
+const ViolentCrimes = React.lazy(() => import('../pages/dashboard/violentcrimes/'))
+const PropertyCrimes = React.lazy(() => import('../pages/dashboard/propertycrimes/'))
+
 
 // apps
 const CalendarApp = React.lazy(() => import('../pages/apps/Calendar/'))
@@ -177,10 +180,23 @@ const dashboardRoutes: RoutesProps = {
 			element: <PublicOrder />,
 			route: PrivateRoute,
 		},
+		
 		{
 			path: '/main',
 			name: 'Command Center',
 			element: <Main />,
+			route: PrivateRoute,
+		},
+		{
+			path: '/violentcrimes',
+			name: 'Violent Crimes',
+			element: <ViolentCrimes />,
+			route: PrivateRoute,
+		},
+		{
+			path: '/propertycrimes',
+			name: 'Property Crimes',
+			element: <PropertyCrimes />,
 			route: PrivateRoute,
 		},
 	],
