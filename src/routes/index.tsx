@@ -27,6 +27,7 @@ const Ecommerce = React.lazy(() => import('../pages/dashboard/ecommerce/'))
 const Report = React.lazy(() => import('../pages/dashboard/report/'))
 const PublicOrder = React.lazy(() => import('../pages/dashboard/publicorder/'))
 const Analytics = React.lazy(() => import('../pages/dashboard/Analytics/'))
+const Dmc = React.lazy(() => import('../pages/dashboard/dmc/'))
 const Main = React.lazy(() => import('../pages/dashboard/main/'))
 
 // apps
@@ -157,6 +158,12 @@ const dashboardRoutes: RoutesProps = {
 			path: '/report',
 			name: 'Report',
 			element: <Report />,
+			route: PrivateRoute,
+		},
+		{
+			path: '/dmc',
+			name: 'Red/DMC',
+			element: <Dmc />,
 			route: PrivateRoute,
 		},
 		{

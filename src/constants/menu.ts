@@ -36,6 +36,12 @@ const MENU_ITEMS: MenuItemTypes[] = [
 				parentKey: 'dashboard',
 			},
 			{
+				key: 'dashboard-dmc',
+				label: 'Red/DMC',
+				url: '/dmc',
+				parentKey: 'dashboard',
+			},
+			{
 				key: 'dashboard-analytics',
 				label: 'Analytics',
 				url: '/analytics',
