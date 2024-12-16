@@ -65,6 +65,18 @@ const MENU_ITEMS: MenuItemTypes[] = [
 				url: '/main',
 				parentKey: 'dashboard',
 			},
+			{
+				key: 'dashboard-propertycrimes',
+				label: 'Property Crimes',
+				url: '/propertycrimes',
+				parentKey: 'dashboard',
+			},
+			{
+				key: 'dashboard-violentcrimes',
+				label: 'Violent Crimes',
+				url: '/violentcrimes',
+				parentKey: 'dashboard',
+			},
 		],
 	},
 	{
