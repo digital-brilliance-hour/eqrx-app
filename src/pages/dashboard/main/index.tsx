@@ -5,6 +5,7 @@ import Select from 'react-select'
 // components
 import Statistics from './components/Statistics'
 import RevenueChart from './components/RevenueChart'
+import { PopoverLayout } from '../../../components/HeadlessUI'
 import TotalSalesChart from './components/TotalSalesChart'
 import TopSellingProducts from './components/TopSellingProducts'
 import RevenueByLocation from './components/RevenueByLocation'
@@ -15,6 +16,8 @@ import { PageBreadcrumb } from '../../../components'
 import ReactApexChart from 'react-apexcharts'
 import { ApexOptions } from 'apexcharts'
 import StatisticsWidget from '../../dashboard/report/components/StatisticsWidget'
+import ReactApexCharts from 'react-apexcharts'
+import { Link } from 'react-router-dom'
 
 // dummy data
 import { products } from './data'
@@ -408,22 +411,276 @@ export const customDataLabelBarOpts: ApexOptions = {
 	},
 }
 
-const GeographicOverview = () => {
-	return (
-		<>
-		<div className="xl:col-span-3">
-			<div className="card">
-					<div className="p-6">
-						<h4 className="card-title">Trespassing hotspots</h4>
-						<div dir="ltr">
-							<ReactApexChart className="apex-charts" options={colorRangeHeatmapOpts} height={380} series={colorRangeHeatmapOpts.series} type="heatmap" />
-						</div>
-					</div>
-			</div>
-		</div>
-		</>
-	)
+const apexOpts: ApexOptions = {
+	series: [
+		{
+			name: 'Black Offenses',
+			type: 'line',
+			data: [440, 505, 375, 200, 150, 160],
+		},
+		{
+			name: 'White Offenses',
+			type: 'line',
+			data: [10, 20, 5, 0, 30, 20],
+		},
+	],
+	chart: {
+		height: 374,
+		type: 'line',
+		offsetY: 10,
+	},
+	stroke: {
+		width: [2, 3],
+	},
+	plotOptions: {
+		bar: {
+			columnWidth: '50%',
+		},
+	},
+	colors: ['#3e60d5', '#47ad77'],
+	labels: ['2014', '2015', '2016', '2017', '2018', '2019'],
+	legend: {
+		offsetY: 7,
+	},
+	grid: {
+		padding: {
+			bottom: 20,
+		},
+	},
+	fill: {
+		type: 'gradient',
+		gradient: {
+			shade: 'light',
+			type: 'horizontal',
+			shadeIntensity: 0.25,
+			gradientToColors: undefined,
+			inverseColors: true,
+			opacityFrom: 0.75,
+			opacityTo: 0.75,
+			stops: [0, 0, 0],
+		},
+	},
+	yaxis: [
+		{
+			title: {
+				text: 'Response Time (in seconds)',
+			},
+		},
+	],
 }
+
+const PopoverToggle = () => {
+	return <i className="ri-more-2-fill text-xl" />
+}
+
+export const customDataLabelBarOpts2: ApexOptions = {
+	chart: {
+		height: 450,
+		type: 'bar',
+	},
+	plotOptions: {
+		bar: {
+			barHeight: '100%',
+			distributed: true,
+			horizontal: true,
+			dataLabels: {
+				position: 'bottom',
+			},
+		},
+	},
+	colors: ['#3e60d5', '#47ad77', '#fa5c7c', '#6c757d', '#39afd1', '#2b908f', '#ffbc00', '#90ee7e', '#f48024', '#212730'],
+	dataLabels: {
+		enabled: true,
+		textAnchor: 'start',
+		style: {
+			colors: ['#fff'],
+		},
+		formatter: function (val, opt) {
+			return opt.w.globals.labels[opt.dataPointIndex] + ':  ' + val
+		},
+		offsetX: 0,
+		dropShadow: {
+			enabled: false,
+		},
+	},
+	series: [
+		{
+			data: [400, 430, 448, 470, 540],
+		},
+	],
+	stroke: {
+		width: 0,
+		colors: ['#fff'],
+	},
+	xaxis: {
+		categories: ['Burglary', 'Escape from Custody', 'Drug Violation', 'Aggrevated Assault', 'Disorderly Conduct'],
+	},
+	yaxis: {
+		labels: {
+			show: false,
+		},
+	},
+	grid: {
+		borderColor: '#f1f3fa',
+	},
+
+	tooltip: {
+		theme: 'dark',
+		x: {
+			show: false,
+		},
+		y: {
+			title: {
+				formatter: function () {
+					return ''
+				},
+			},
+		},
+	},
+}
+
+const colors1 = ['#3e60d5', '#6c757d', '#47ad77', '#fa5c7c', '#e3eaef']
+
+export const simplePieOpts: ApexOptions = {
+	chart: {
+		height: 320,
+		type: 'pie',
+	},
+	series: [44, 55, 41, 17, 15],
+	labels: ['Total Officers', 'Sro Officers', 'Bomb Squad', 'Admin', 'Traffic'],
+	colors: colors1,
+	legend: {
+		show: true,
+		position: 'bottom',
+		horizontalAlign: 'center',
+		// verticalAlign: "middle",
+		floating: false,
+		fontSize: '14px',
+		offsetX: 0,
+		offsetY: 7,
+	},
+	responsive: [
+		{
+			breakpoint: 600,
+			options: {
+				chart: {
+					height: 240,
+				},
+				legend: {
+					show: false,
+				},
+			},
+		},
+	],
+}
+
+const stackedColumnOpts: ApexOptions = {
+	chart: {
+		height: 380,
+		type: 'bar',
+		stacked: true,
+		toolbar: {
+			show: false,
+		},
+	},
+	plotOptions: {
+		bar: {
+			horizontal: false,
+			columnWidth: '50%',
+		},
+	},
+	series: [
+		{
+			name: 'Burglary',
+			data: [44, 55, 41, 67, 22, 43, 21, 49],
+		},
+		{
+			name: 'Escape from Custody',
+			data: [13, 23, 20, 8, 13, 27, 33, 12],
+		},
+		{
+			name: 'Drug Violation',
+			data: [11, 17, 15, 15, 21, 14, 15, 13],
+		},
+		{
+			name: 'Aggrevated Assault',
+			data: [13, 23, 20, 8, 13, 27, 33, 12],
+		},
+		{
+			name: 'Disorderly Conduct',
+			data: [11, 17, 15, 15, 21, 14, 15, 13],
+		},
+	],
+	xaxis: {
+		categories: ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018'],
+	},
+	colors: ['#3e60d5', '#6c757d', '#e3eaef', '#fa5c7c', '#47ad77'],
+	fill: {
+		opacity: 1,
+	},
+	legend: {
+		offsetY: 7,
+	},
+	grid: {
+		row: {
+			colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
+			opacity: 0.2,
+		},
+		borderColor: '#f1f3fa',
+		padding: {
+			bottom: 5,
+		},
+	},
+}
+
+// code for the page begins
+
+// const GeographicOverview = () => {
+// 	return (
+// 		<>
+// 		<div className="xl:col-span-3">
+// 			<div className="card">
+// 					<div className="p-6">
+// 						<h4 className="card-title">Trespassing hotspots</h4>
+// 						<div dir="ltr">
+// 							<ReactApexChart className="apex-charts" options={colorRangeHeatmapOpts} height={380} series={colorRangeHeatmapOpts.series} type="heatmap" />
+// 						</div>
+// 					</div>
+// 			</div>
+// 		</div>
+// 		<div className="xl:col-span-3">
+// 			<div className="card">
+// 					<div className="p-6">
+// 						<h4 className="card-title">Trespassing hotspots</h4>
+// 						<div dir="ltr">
+// 							<ReactApexChart className="apex-charts" options={colorRangeHeatmapOpts} height={380} series={colorRangeHeatmapOpts.series} type="heatmap" />
+// 						</div>
+// 					</div>
+// 			</div>
+// 		</div>
+// 		<div className="xl:col-span-3">
+// 			<div className="card">
+// 					<div className="p-6">
+// 						<h4 className="card-title">Trespassing hotspots</h4>
+// 						<div dir="ltr">
+// 							<ReactApexChart className="apex-charts" options={colorRangeHeatmapOpts} height={380} series={colorRangeHeatmapOpts.series} type="heatmap" />
+// 						</div>
+// 					</div>
+// 			</div>
+// 		</div>
+// 		<div className="xl:col-span-3">
+// 			<div className="card">
+// 					<div className="p-6">
+// 						<h4 className="card-title">Trespassing hotspots</h4>
+// 						<div dir="ltr">
+// 							<ReactApexChart className="apex-charts" options={colorRangeHeatmapOpts} height={380} series={colorRangeHeatmapOpts.series} type="heatmap" />
+// 						</div>
+// 					</div>
+// 			</div>
+// 		</div>
+// 		</>
+// 	)
+// }
 
 const TotalContactsDisplay = () => {
 	return (
@@ -451,50 +708,90 @@ const TotalContactsDisplay = () => {
 	)
 }
 
+// these need to be guage charts or progress
 const SystemPerformanceMetrics = () => {
 	return (
 		<>
-		<div className="xl:col-span-3">
+		{/* Phase 2 */}
+		{/* <div className="xl:col-span-6">
 			<div className="card">
 				<div className="p-6">
-					<h4 className="card-title">Case resolution rates</h4>
-					<div dir="ltr">
-						<ReactApexChart className="apex-charts" options={dashedLineChartOpts} height={380} series={dashedLineChartOpts.series} type="line" />
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div className="xl:col-span-3">
-			<div className="card">
-				<div className="p-6">
-					<h4 className="card-title">Average response times</h4>
+					<h4 className="card-title"> referral program success rate</h4>
 					<div dir="ltr">
 						<ReactApexChart className="apex-charts" options={dashedLineChartOpts} height={380} series={dashedLineChartOpts2.series} type="line" />
 					</div>
 				</div>
 			</div>
-		</div>
-		
+		</div> */}
+
 		<div className="xl:col-span-3">
-			<div className="card">
-				<div className="p-6">
-					<h4 className="card-title">Intervention program success rates</h4>
-					<div dir="ltr">
-						<ReactApexChart className="apex-charts" options={dashedLineChartOpts} height={380} series={dashedLineChartOpts2.series} type="line" />
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div className="xl:col-span-6 gap-6">
-			<div className="col-span-6 gap-6 mb-6">
 				<div className="card">
 					<div className="p-6">
-						<h4 className="card-title mb-4">Resource utilization levels</h4>
+						<h4 className="card-title">Case resolution rates</h4>
 						<div dir="ltr">
-							<ReactApexChart className="apex-charts" options={customDataLabelBarOpts} height={450} series={customDataLabelBarOpts.series} type="bar" />
+						<ReactApexChart className="apex-charts" options={stackedColumnOpts} height={380} series={stackedColumnOpts.series} type="bar" />
 						</div>
+					</div>
+				</div>
+			</div>
+
+		<div className="xl:col-span-3 gap-6">
+			<div className="card">
+					<div className="p-6">
+						<h4 className="card-title mb-4">Resource utilization</h4>
+						<div dir="ltr">
+							<ReactApexChart className="apex-charts" options={simplePieOpts} height={320} series={simplePieOpts.series} type="pie" />
+						</div>
+					</div>
+				</div>
+		</div>
+		
+		<div className="lg:col-span-6">
+			<div className="card">
+				<div className="flex card-header justify-between items-center">
+					<h4 className="card-title">Average response times</h4>
+					<PopoverLayout placement="bottom-end" togglerClass="text-gray-600 dark:text-gray-400" toggler={<PopoverToggle />}>
+						<div className="min-w-40 z-50 transition-all duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-md py-1">
+							<Link className="flex items-center py-1.5 px-5 text-sm text-gray-500 hover:bg-slate-100 hover:text-slate-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" to="#">
+								Sales Report
+							</Link>
+							<Link className="flex items-center py-1.5 px-5 text-sm text-gray-500 hover:bg-slate-100 hover:text-slate-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" to="#">
+								Export Report
+							</Link>
+							<Link className="flex items-center py-1.5 px-5 text-sm text-gray-500 hover:bg-slate-100 hover:text-slate-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" to="#">
+								Profit
+							</Link>
+							<Link className="flex items-center py-1.5 px-5 text-sm text-gray-500 hover:bg-slate-100 hover:text-slate-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" to="#">
+								Action
+							</Link>
+						</div>
+					</PopoverLayout>
+				</div>
+				<div className="bg-light/40 border-b border-gray-100 dark:bg-light/5 dark:border-b-gray-700">
+					<div className="flex flex-wrap justify-around items-center text-center">
+						<div className="w-1/2 lg:w-1/4">
+							<p className="text-gray-400 mt-6 mb-4">
+								<i className="ri-donut-chart-fill"></i> Current Week
+							</p>
+							<h3 className="text-2xl font-normal mb-6">
+								<span>15</span>
+							</h3>
+						</div>
+						<div className="w-1/2 lg:w-1/4">
+							<p className="text-gray-400 mt-6 mb-4">
+								<i className="ri-donut-chart-fill"></i> Previous Week
+							</p>
+							<h3 className="text-2xl font-normal mb-6">
+								<span>
+									20 <i className="ri-corner-right-down-line text-danger"></i>
+								</span>
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div className="p-6">
+					<div dir="ltr">
+						<ReactApexCharts options={apexOpts} series={apexOpts.series} type="line" height={380} className="apex-charts mt-3" />
 					</div>
 				</div>
 			</div>
@@ -509,15 +806,9 @@ const Main = () => {
 			<PageBreadcrumb title="Dashboard" subName="Menu" />
 			<div className="grid lg:grid-cols-6 gap-6 mb-6">
 				<TotalContactsDisplay />
-				<GeographicOverview />
 				<SystemPerformanceMetrics />
+				{/* <GeographicOverview /> */}
 			</div>
-			{/* <div className="grid lg:grid-cols-6 gap-6 mb-6">
-				<ResponseAnalysis />
-			</div>
-			<div className="grid lg:grid-cols-6 gap-6 mb-6">
-				<PatternRecognition />
-			</div> */}
 		</>
 	)
 }
