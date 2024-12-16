@@ -49,9 +49,7 @@ const RevenueChart = () => {
             y: {
                 formatter: function (value, opts) {
                     const sum = opts.series.reduce((a:any, b:any) => a + b[opts.dataPointIndex], 0);
-                    console.log(opts);
                     const percent = (value / sum) * 100;
-                    console.log(sum);
                     return percent.toFixed(0) + '%'
                 },
             },
