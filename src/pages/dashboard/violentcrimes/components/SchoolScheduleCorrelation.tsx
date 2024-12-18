@@ -15,12 +15,12 @@ const RevenueChart = () => {
 			{
 				name: 'During Break',
 				type: 'column',
-				data: [440, 505, 375, 200, 150, 160],
+				data: [440, 505, 375, 200, 300, 412, 351, 51, 260, 81, 45, 321],
 			},
 			{
 				name: 'During School',
 				type: 'column',
-				data: [10, 20, 5, 0, 30, 20],
+				data: [10, 20, 5, 12 ,30, 41, 35, 51, 60, 31, 70, 60,],
 			},
 		],
 		chart: {
@@ -37,7 +37,7 @@ const RevenueChart = () => {
 			},
 		},
 		colors: ['#3e60d5', '#47ad77'],
-		labels: ['Q1', 'Q3', 'Q3', 'Q4', '2018', '2019'],
+		labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Sept.', 'Oct.', 'Nov.', 'Dec.'],
 		legend: {
 			offsetY: 7,
 		},
@@ -72,12 +72,12 @@ const RevenueChart = () => {
 		{
 			name: 'During Break',
 			type: 'line',
-			data: [440, 505, 375, 200,],
+			data: [440, 505, 375, 200, 300, 412, 351, 51, 260, 31, 45, 321],
 		},
 		{
 			name: 'During School',
 			type: 'line',
-			data: [10, 20, 5, 0, ],
+			data: [10, 20, 5, 12 ,30, 41, 35, 51, 60, 31, 70, 60,],
 		},
 	]
 
