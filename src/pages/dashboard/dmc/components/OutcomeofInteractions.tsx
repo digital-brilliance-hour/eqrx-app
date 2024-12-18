@@ -43,11 +43,23 @@ const RevenueChart = () => {
                 name: 'White',
                 data: [53, 32, 33, 52, 13],
             },
+            {
+                name: 'Asian',
+                data: [0, 0, 0, 0, 0],
+            },
+            {
+                name: 'Latino',
+                data: [0, 0, 0, 0, 0],
+            },
+            {
+                name: 'Native American',
+                data: [0, 0, 0, 0, 0],
+            },
         ],
         xaxis: {
             categories: ['No Action Taken', 'Warning/Counseling', 'Referral to Programs', 'Court Referral', 'Arrest'],
         },
-        colors: ['#39afd1', '#6c757d'],
+        colors: ['#39afd1', '#6c757d', '#ffbc00', '#e3eaef', '#3e60d5'],
         tooltip: {
             y: {
                 formatter: function (value, opts) {

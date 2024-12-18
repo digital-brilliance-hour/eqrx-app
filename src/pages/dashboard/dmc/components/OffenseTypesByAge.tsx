@@ -43,11 +43,23 @@ const RevenueChart = () => {
                 name: 'White',
                 data: [53, 32, 33, 52, 13],
             },
+            {
+                name: 'Asian',
+                data: [0, 0, 0, 0, 0],
+            },
+            {
+                name: 'Latino',
+                data: [0, 0, 0, 0, 0],
+            },
+            {
+                name: 'Native American',
+                data: [0, 0, 0, 0, 0],
+            },
         ],
         xaxis: {
             categories: ['Young Child (4-7)', 'Child (8-10)', 'Pre-Teen (11-13)', 'Teen (14-16)', 'Young Adult (16-19)'],
         },
-        colors: ['#39afd1', '#6c757d'],
+        colors: ['#39afd1', '#6c757d', '#ffbc00', '#e3eaef', '#3e60d5'],
         tooltip: {
             y: {
                 formatter: function (value, opts) {

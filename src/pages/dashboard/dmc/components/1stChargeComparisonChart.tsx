@@ -31,7 +31,7 @@ const FirstChargeComparisonChart = () => {
             width: 2,
             colors: ['transparent'],
         },
-        colors: ['#3e60d5', '#47ad77', '#fa5c7c'],
+        colors: ['#3e60d5', '#47ad77', '#fa5c7c', '#ffbc00', '#e3eaef', '#3e60d5'],
         series: [
             {
                 name: 'Black',
@@ -40,6 +40,18 @@ const FirstChargeComparisonChart = () => {
             {
                 name: 'White',
                 data: [76, 85, 101, 98, 87],
+            },
+            {
+                name: 'Asian',
+                data: [0, 0, 0, 0, 0],
+            },
+            {
+                name: 'Latino',
+                data: [0, 0, 0, 0, 0],
+            },
+            {
+                name: 'Native American',
+                data: [0, 0, 0, 0, 0],
             },
         ],
         xaxis: {
