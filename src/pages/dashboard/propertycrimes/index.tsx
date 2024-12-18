@@ -330,14 +330,14 @@ const Report = () => {
 			<PageBreadcrumb title="Property CrimesDashboard" subName="Menu" />
 			<div className="grid lg:grid-cols-4 gap-6 mb-6">
 				<AverageResponse />
+				<ShopliftingTrends />
 			</div>
 			<div className="grid lg:grid-cols-4 gap-6 mb-6">
 				<ItemsRecovered />
-				<OffenseTypesByGender />
+				<ValueRecovered/>
 			</div>
 			<div className="grid lg:grid-cols-4 gap-6 mb-6">
-				<ShopliftingTrends />
-				<ValueRecovered/>
+				
 			</div>
 
 		</>

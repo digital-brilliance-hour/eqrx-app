@@ -34,7 +34,7 @@ const RevenueChart = () => {
 		series: [
 			{
 				name: 'Incedents',
-				data: [30, 41, 35, 51],
+				data: [30, 41, 35, 51, 60, 31, 70, 60, 30, 34, 45, 50],
 			},
 		],
 		title: {
@@ -50,7 +50,7 @@ const RevenueChart = () => {
 		},
 		labels: series.monthDataSeries1.dates,
 		xaxis: {
-			categories: ['Q1', 'Q2', 'Q3', 'Q4'],
+			categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
 		},
 		responsive: [
 			{
