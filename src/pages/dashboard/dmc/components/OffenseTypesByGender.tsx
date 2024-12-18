@@ -40,6 +40,18 @@ const RevenueChart = () => {
                 name: 'White',
                 data: [12, 17, 11, 9, 10],
             },
+            {
+                name: 'Asian',
+                data: [0, 0, 0, 0, 0],
+            },
+            {
+                name: 'Latino',
+                data: [0, 0, 0, 0, 0],
+            },
+            {
+                name: 'Native American',
+                data: [0, 0, 0, 0, 0],
+            },
         ],
         xaxis: {
             categories: ['No Action Taken', 'Warning/Counseling', 'Referral to Programs', 'Court Referral', 'Arrest'],

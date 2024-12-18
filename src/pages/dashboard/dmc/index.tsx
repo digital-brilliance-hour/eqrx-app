@@ -170,9 +170,10 @@ const ResponsiveTable2 = () => {
 		<div className="xl:col-span-3">
 			<div className="card">
 				<div className="flex card-header justify-between items-center">
-					<h4 className="card-title">Officer Type Highlights</h4>
+					<h4 className="card-title hidden">Officer Type Highlights</h4>
+					<h4 className="card-title">Top 5 Contact Rates</h4>
 				</div>
-				<div className="bg-light/40 border-b border-gray-100 dark:bg-light/5 dark:border-b-gray-700">
+				<div className="bg-light/40 border-b border-gray-100 dark:bg-light/5 dark:border-b-gray-700 hidden">
 					<div className="flex flex-wrap justify-around items-center text-center">
 						<div className="w-1/2 lg:w-1/4">
 							<p className="text-gray-400 mt-6 mb-4">
@@ -215,7 +216,7 @@ const ResponsiveTable2 = () => {
 					</div>
 				</div>
 				<div className="p-6">
-					<h3 className="card-title mb-4">Top 5 Contact Rates</h3>
+					<h3 className="card-title mb-4 hidden">Top 5 Contact Rates</h3>
 
 					<div className="overflow-x-auto">
 						<div className="min-w-full inline-block align-middle">
