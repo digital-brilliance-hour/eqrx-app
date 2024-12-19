@@ -20,6 +20,8 @@ import StatisticsWidget from '../../dashboard/report/components/StatisticsWidget
 import { products } from './data'
 import { options } from './option-data'
 
+const colors1 = ['#3e60d5', '#6c757d', '#47ad77', '#fa5c7c', '#e3eaef']
+
 const dashedLineChartOpts: ApexOptions = {
 	chart: {
 		height: 380,
@@ -200,48 +202,50 @@ const disorderlyconduct: ApexOptions = {
 		zoom: {
 			enabled: false,
 		},
+		toolbar: {
+			show: false,
+		},
 	},
 	dataLabels: {
-		enabled: false,
+		enabled: true,
 	},
 	stroke: {
-		width: [3, 5, 3],
-		curve: 'straight',
-		dashArray: [0, 8, 5],
+		width: [3, 3, 3],
+		curve: 'smooth',
 	},
 	series: [
 		{
 			name: 'Age',
-			data: [45, 52, 38, 24, 33, 26, 21, 20, 6, 8 , 36, 44],
+			data: [45, 52, 38, 24],
 		},
 		{
-			name: 'Male',
-			data: [23, 19, 14, 48, 43, 9, 12, 48, 13, 5, 7, 64],
+			name: 'Male Cases',
+			data: [23, 19, 14, 48],
 		},
 		{
-			name: 'Female',
-			data: [65, 14, 28, 31, 75, 84, 59, 4, 62, 30, 27, 11],
+			name: 'Female Cases',
+			data: [65, 14, 28, 31],
 		},
-		{
-			name: 'Asian',
-			data: [21, 38, 28, 26, 2, 20, 49, 27, 40, 6, 24, 30],
-		},
-		{
-			name: 'Native American',
-			data: [29, 9, 34, 45, 13, 27, 24, 43, 3, 15, 46, 34],
-		},
-		{
-			name: 'Latino',
-			data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51],
-		},
-		{
-			name: 'White',
-			data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51, 48, 26],
-		},
-		{
-			name: 'Black',
-			data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56, 36, 13],
-		},
+		// {
+		// 	name: 'Asian',
+		// 	data: [21, 38, 28, 26, 2, 20, 49, 27, 40, 6, 24, 30],
+		// },
+		// {
+		// 	name: 'Native American',
+		// 	data: [29, 9, 34, 45, 13, 27, 24, 43, 3, 15, 46, 34],
+		// },
+		// {
+		// 	name: 'Latino',
+		// 	data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51],
+		// },
+		// {
+		// 	name: 'White',
+		// 	data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51, 48, 26],
+		// },
+		// {
+		// 	name: 'Black',
+		// 	data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56, 36, 13],
+		// },
 	],
 
 	markers: {
@@ -249,9 +253,9 @@ const disorderlyconduct: ApexOptions = {
 		// style: 'hollow', // full, hollow, inverted
 	},
 	xaxis: {
-		categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+		categories: ['Quarter 1', 'Quarter 2', 'Quarter 3', 'Quarter 4'],
 	},
-	colors: ['#ffbc00','#3e60d5','#fa5c7c','#6c757d', '#2b908f', '#47ad77', '#39afd1', '#212730'],
+	colors: ['#6c757d','#3e60d5','#fa5c7c','#6c757d', '#2b908f', '#47ad77', '#39afd1', '#212730'],
 	tooltip: {
 		y: {
 			title: {
@@ -507,7 +511,7 @@ export const parentnotificationrates: ApexOptions = {
 		},
 	],
 	title: {
-		text: 'Average High & Low Temperature',
+		text: '',
 		align: 'left',
 	},
 	grid: {
@@ -958,7 +962,7 @@ const resolutionmethodsused: ApexOptions = {
 		padding: {
 			top: 0,
 			right: -2,
-			bottom: -35,
+			bottom: 0,
 			left: 10,
 		},
 	},
@@ -966,7 +970,7 @@ const resolutionmethodsused: ApexOptions = {
 		labels: {
 			rotate: -45,
 		},
-		categories: ['Handled Within The Department', 'Referred to Juvenile Authorities', 'Social Services', 'Referred to Another Police/Jurisdiction', 'None'],
+		categories: ['Released', ' Juv Authorities', 'Social Services', 'Another Jurisdiction', 'None'],
 	},
 	yaxis: {
 		title: {
@@ -1149,10 +1153,197 @@ const averageresponsetimes: ApexOptions = {
 	},
 }
 
+
+export const simplePieOpts: ApexOptions = {
+	chart: {
+		height: 320,
+		type: 'pie',
+	},
+	series: [44, 55, 41, 17, 15],
+	labels: ['Series 1', 'Series 2', 'Series 3', 'Series 4', 'Series 5'],
+	colors: colors1,
+	legend: {
+		show: true,
+		position: 'bottom',
+		horizontalAlign: 'center',
+		// verticalAlign: "middle",
+		floating: false,
+		fontSize: '14px',
+		offsetX: 0,
+		offsetY: 7,
+	},
+	responsive: [
+		{
+			breakpoint: 600,
+			options: {
+				chart: {
+					height: 240,
+				},
+				legend: {
+					show: false,
+				},
+			},
+		},
+	],
+}
+
+export const groupBarOpts: ApexOptions = {
+	chart: {
+		height: 380,
+		type: 'bar',
+		toolbar: {
+			show: false,
+		},
+	},
+	plotOptions: {
+		bar: {
+			horizontal: true,
+			dataLabels: {
+				position: 'top',
+			},
+		},
+	},
+	dataLabels: {
+		enabled: true,
+		offsetX: -6,
+		style: {
+			fontSize: '12px',
+			colors: ['#fff'],
+		},
+	},
+	colors: ['#ffbc00','#3e60d5','#fa5c7c','#6c757d', '#2b908f'],
+	stroke: {
+		show: true,
+		width: 1,
+		colors: ['#fff'],
+	},
+	series: [
+		{
+			name: 'White',
+			data: [44, 55, 41, 64, 22, 43, 21],
+		},
+		{
+			name: 'Black',
+			data: [53, 32, 33, 52, 13, 44, 32],
+		},
+		{
+			name: 'Asian',
+			data: [44, 55, 41, 64, 22, 43, 21],
+		},
+		{
+			name: 'Native American',
+			data: [53, 32, 33, 52, 13, 44, 32],
+		},
+		{
+			name: 'Latino',
+			data: [53, 32, 33, 52, 13, 44, 32],
+		},
+	],
+	xaxis: {
+		categories: [2001, 2002, 2003, 2004, 2005, 2006, 2007],
+	},
+	legend: {
+		offsetY: 5,
+	},
+	// states: {
+	//     hover: {
+	//         filter: 'none'
+	//     }
+	// },
+	grid: {
+		borderColor: '#f1f3fa',
+		padding: {
+			bottom: 5,
+		},
+	},
+}
+
+
+const series = {
+	monthDataSeries1: {
+		prices: [8107.85, 8128.0, 8122.9, 8165.5, 8340.7, 8423.7, 8423.5, 8514.3, 8481.85, 8487.7, 8506.9, 8626.2, 8668.95, 8602.3, 8607.55, 8512.9, 8496.25, 8600.65, 8881.1, 9340.85],
+		dates: ['13 Nov 2017', '14 Nov 2017', '15 Nov 2017', '16 Nov 2017', '17 Nov 2017', '20 Nov 2017', '21 Nov 2017', '22 Nov 2017', '23 Nov 2017', '24 Nov 2017', '27 Nov 2017', '28 Nov 2017', '29 Nov 2017', '30 Nov 2017', '01 Dec 2017', '04 Dec 2017', '05 Dec 2017', '06 Dec 2017', '07 Dec 2017', '08 Dec 2017'],
+	},
+	monthDataSeries2: {
+		prices: [8423.7, 8423.5, 8514.3, 8481.85, 8487.7, 8506.9, 8626.2, 8668.95, 8602.3, 8607.55, 8512.9, 8496.25, 8600.65, 8881.1, 9040.85, 8340.7, 8165.5, 8122.9, 8107.85, 8128.0],
+		dates: ['13 Nov 2017', '14 Nov 2017', '15 Nov 2017', '16 Nov 2017', '17 Nov 2017', '20 Nov 2017', '21 Nov 2017', '22 Nov 2017', '23 Nov 2017', '24 Nov 2017', '27 Nov 2017', '28 Nov 2017', '29 Nov 2017', '30 Nov 2017', '01 Dec 2017', '04 Dec 2017', '05 Dec 2017', '06 Dec 2017', '07 Dec 2017', '08 Dec 2017'],
+	},
+	monthDataSeries3: {
+		prices: [7114.25, 7126.6, 7116.95, 7203.7, 7233.75, 7451.0, 7381.15, 7348.95, 7347.75, 7311.25, 7266.4, 7253.25, 7215.45, 7266.35, 7315.25, 7237.2, 7191.4, 7238.95, 7222.6, 7217.9, 7359.3, 7371.55, 7371.15, 7469.2, 7429.25, 7434.65, 7451.1, 7475.25, 7566.25, 7556.8, 7525.55, 7555.45, 7560.9, 7490.7, 7527.6, 7551.9, 7514.85, 7577.95, 7592.3, 7621.95, 7707.95, 7859.1, 7815.7, 7739.0, 7778.7, 7839.45, 7756.45, 7669.2, 7580.45, 7452.85, 7617.25, 7701.6, 7606.8, 7620.05, 7513.85, 7498.45, 7575.45, 7601.95, 7589.1, 7525.85, 7569.5, 7702.5, 7812.7, 7803.75, 7816.3, 7851.15, 7912.2, 7972.8, 8145.0, 8161.1, 8121.05, 8071.25, 8088.2, 8154.45, 8148.3, 8122.05, 8132.65, 8074.55, 7952.8, 7885.55, 7733.9, 7897.15, 7973.15, 7888.5, 7842.8, 7838.4, 7909.85, 7892.75, 7897.75, 7820.05, 7904.4, 7872.2, 7847.5, 7849.55, 7789.6, 7736.35, 7819.4, 7875.35, 7871.8, 8076.5, 8114.8, 8193.55, 8217.1, 8235.05, 8215.3, 8216.4, 8301.55, 8235.25, 8229.75, 8201.95, 8164.95, 8107.85, 8128.0, 8122.9, 8165.5, 8340.7, 8423.7, 8423.5, 8514.3, 8481.85, 8487.7, 8506.9, 8626.2],
+		dates: ['02 Jun 2017', '05 Jun 2017', '06 Jun 2017', '07 Jun 2017', '08 Jun 2017', '09 Jun 2017', '12 Jun 2017', '13 Jun 2017', '14 Jun 2017', '15 Jun 2017', '16 Jun 2017', '19 Jun 2017', '20 Jun 2017', '21 Jun 2017', '22 Jun 2017', '23 Jun 2017', '27 Jun 2017', '28 Jun 2017', '29 Jun 2017', '30 Jun 2017', '03 Jul 2017', '04 Jul 2017', '05 Jul 2017', '06 Jul 2017', '07 Jul 2017', '10 Jul 2017', '11 Jul 2017', '12 Jul 2017', '13 Jul 2017', '14 Jul 2017', '17 Jul 2017', '18 Jul 2017', '19 Jul 2017', '20 Jul 2017', '21 Jul 2017', '24 Jul 2017', '25 Jul 2017', '26 Jul 2017', '27 Jul 2017', '28 Jul 2017', '31 Jul 2017', '01 Aug 2017', '02 Aug 2017', '03 Aug 2017', '04 Aug 2017', '07 Aug 2017', '08 Aug 2017', '09 Aug 2017', '10 Aug 2017', '11 Aug 2017', '14 Aug 2017', '16 Aug 2017', '17 Aug 2017', '18 Aug 2017', '21 Aug 2017', '22 Aug 2017', '23 Aug 2017', '24 Aug 2017', '28 Aug 2017', '29 Aug 2017', '30 Aug 2017', '31 Aug 2017', '01 Sep 2017', '04 Sep 2017', '05 Sep 2017', '06 Sep 2017', '07 Sep 2017', '08 Sep 2017', '11 Sep 2017', '12 Sep 2017', '13 Sep 2017', '14 Sep 2017', '15 Sep 2017', '18 Sep 2017', '19 Sep 2017', '20 Sep 2017', '21 Sep 2017', '22 Sep 2017', '25 Sep 2017', '26 Sep 2017', '27 Sep 2017', '28 Sep 2017', '29 Sep 2017', '03 Oct 2017', '04 Oct 2017', '05 Oct 2017', '06 Oct 2017', '09 Oct 2017', '10 Oct 2017', '11 Oct 2017', '12 Oct 2017', '13 Oct 2017', '16 Oct 2017', '17 Oct 2017', '18 Oct 2017', '19 Oct 2017', '23 Oct 2017', '24 Oct 2017', '25 Oct 2017', '26 Oct 2017', '27 Oct 2017', '30 Oct 2017', '31 Oct 2017', '01 Nov 2017', '02 Nov 2017', '03 Nov 2017', '06 Nov 2017', '07 Nov 2017', '08 Nov 2017', '09 Nov 2017', '10 Nov 2017', '13 Nov 2017', '14 Nov 2017', '15 Nov 2017', '16 Nov 2017', '17 Nov 2017', '20 Nov 2017', '21 Nov 2017', '22 Nov 2017', '23 Nov 2017', '24 Nov 2017', '27 Nov 2017', '28 Nov 2017'],
+	},
+}
+
+const trespassingcases: ApexOptions = {
+	chart: {
+		height: 380,
+		type: 'line',
+		zoom: {
+			enabled: false,
+		},
+	},
+	dataLabels: {
+		enabled: false,
+	},
+	colors: ['#ffbc00'],
+	stroke: {
+		width: [4],
+		curve: 'straight',
+	},
+	series: [
+		{
+			name: 'Cases',
+			data: [30, 41, 35, 51, 49, 62, 69, 91, 126],
+		},
+	],
+	title: {
+		text: 'Trespassing Reported',
+		align: 'center',
+	},
+	grid: {
+		row: {
+			colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
+			opacity: 0.2,
+		},
+		borderColor: '#f1f3fa',
+	},
+	
+	labels: series.monthDataSeries1.dates,
+	xaxis: {
+		categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+	},
+	responsive: [
+		{
+			breakpoint: 600,
+			options: {
+				chart: {
+					toolbar: {
+						show: false,
+					},
+				},
+				legend: {
+					show: false,
+				},
+			},
+		},
+	],
+}
+
 const BehavioralIncidents = () => {
 	return (
 		<>
 		<div className="xl:col-span-3">
+			<div className="card">
+				<div className="p-6">
+					<h4 className="card-title mb-4">Annual Trespassing</h4>
+					<div dir="ltr">
+						<ReactApexChart className="apex-charts" options={groupBarOpts} height={800} series={groupBarOpts.series} type="bar" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div className="xl:col-span-3 hidden">
 			<div className="card">
 					<div className="p-6">
 						<h4 className="card-title">Trespassing hotspots</h4>
@@ -1165,13 +1356,13 @@ const BehavioralIncidents = () => {
 
 		<div className="xl:col-span-3">
 			<div className="card">
-						<div className="p-6">
-							<h4 className="card-title">Trespassing hotspots</h4>
-							<div dir="ltr">
-								<ReactApexChart className="apex-charts" options={fullStackedColumnOpts} height={380} series={fullStackedColumnOpts.series} type="bar" />
-							</div>
+					<div className="p-6">
+						<h4 className="card-title">Trespassing Cases</h4>
+						<div dir="ltr">
+							<ReactApexChart className="apex-charts" options={trespassingcases} height={380} series={trespassingcases.series} type="line" />
 						</div>
-			</div>
+					</div>
+				</div>
 		</div>
 		
 		<div className="xl:col-span-6 gap-6">
@@ -1230,7 +1421,7 @@ const ResponseAnalysis = () => {
 			</div>
 		</div> */}
 
-			<div className="xl:col-span-3">
+			<div className="xl:col-span-3 hidden">
 				<div className="card">
 					<div className="p-6">
 						<h4 className="card-title">Average response times</h4>
@@ -1244,7 +1435,7 @@ const ResponseAnalysis = () => {
 			<div className="xl:col-span-3">
 				<div className="card">
 					<div className="p-6">
-						<h4 className="card-title"> Resolution methods used</h4>
+						<h4 className="card-title">Disposition Referral</h4>
 						<div dir="ltr">
 							<ReactApexChart className="apex-charts" options={resolutionmethodsused} height={380} series={resolutionmethodsused.series} type="bar" />
 						</div>
