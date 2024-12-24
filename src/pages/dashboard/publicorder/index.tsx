@@ -1153,7 +1153,6 @@ const averageresponsetimes: ApexOptions = {
 	},
 }
 
-
 export const simplePieOpts: ApexOptions = {
 	chart: {
 		height: 320,
@@ -1495,15 +1494,15 @@ const PatternRecognition = () => {
 		</div>
 		*/}
 		<div className="xl:col-span-3">
-				<div className="card">
-					<div className="p-6">
-						<h4 className="card-title">Repeat incident tracking</h4>
-						<div dir="ltr">
-						<ReactApexChart className="apex-charts" options={repeatincidenttracking} height={380} series={repeatincidenttracking.series} type="bar" />
-						</div>
+			<div className="card">
+				<div className="p-6">
+					<h4 className="card-title">Repeat incident tracking</h4>
+					<div dir="ltr">
+					<ReactApexChart className="apex-charts" options={repeatincidenttracking} height={380} series={repeatincidenttracking.series} type="bar" />
 					</div>
 				</div>
 			</div>
+		</div>
 		</>
 	)
 }
