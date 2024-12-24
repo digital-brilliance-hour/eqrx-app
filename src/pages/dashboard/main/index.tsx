@@ -1,17 +1,17 @@
-//import { useState } from 'react'
+import { useState } from 'react'
 import Select from 'react-select'
-//import { MaskedInput } from 'rsuite'
+import { MaskedInput } from 'rsuite'
 
 // components
-// import Statistics from './components/Statistics'
-// import RevenueChart from './components/RevenueChart'
+import Statistics from './components/Statistics'
+import RevenueChart from './components/RevenueChart'
+import TotalSalesChart from './components/TotalSalesChart'
+import TopSellingProducts from './components/TopSellingProducts'
+import RevenueByLocation from './components/RevenueByLocation'
+import OffenseTypesByAge from './components/OffenseTypesByAge'
+import OffenseTypesByCulture from './components/OffenseTypesByCulture'
+import OffenseTypesByGender from './components/OffenseTypesByGender'
 import { PopoverLayout } from '../../../components/HeadlessUI'
-// import TotalSalesChart from './components/TotalSalesChart'
-// import TopSellingProducts from './components/TopSellingProducts'
-// import RevenueByLocation from './components/RevenueByLocation'
-// import OffenseTypesByAge from './components/OffenseTypesByAge'
-// import OffenseTypesByCulture from './components/OffenseTypesByCulture'
-// import OffenseTypesByGender from './components/OffenseTypesByGender'
 import { PageBreadcrumb } from '../../../components'
 import ReactApexChart from 'react-apexcharts'
 import { ApexOptions } from 'apexcharts'
@@ -21,8 +21,8 @@ import { Link } from 'react-router-dom'
 import { Tab } from '@headlessui/react'
 
 // dummy data
-// import { products } from './data'
-// import { options } from './option-data'
+import { products } from './data'
+import { options } from './option-data'
 
 const dashedLineChartOpts: ApexOptions = {
 	chart: {
