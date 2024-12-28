@@ -19,12 +19,15 @@ import { products } from './data'
 import { options } from './option-data'
 import ViolentIncidents from './components/ViolentIncidents'
 import ReactApexChart from 'react-apexcharts'
-import BreakdownByType from './components/BreakdownByType'
+import { Part1Types } from './components/BreakdownByType'
 import SchoolVsCommunity from './components/SchoolVsCommunity'
 import { simplePieOpts } from '@/pages/charts/ApexCharts/PieApex/data'
 import FirstVsRepeat from './components/FirstVsRepeat'
 import ItemsRecovered3 from './components/MonthlyComparisons'
 import SchoolScheduleCorrelation from './components/SchoolScheduleCorrelation'
+//import Parts from './components/parts'
+import TotalCrimes from './components/TotalCrime1'
+import Parts from './components/Parts'
 
 const FormSelect = () => {
 	return (
@@ -309,7 +312,7 @@ const Monthly = () => {
 							<h4 className="card-title">Monthly Comparisons
 							</h4>
 							<div dir="ltr">
-								<ReactApexChart className="apex-charts" options={ItemsRecovered3} height={380} series={ItemsRecovered3.series} type="bar" />
+								<ReactApexChart className="apex-charts" options={ItemsRecovered3} height={540} series={ItemsRecovered3.series} type="bar" />
 							</div>
 						</div>
 					</div>
@@ -325,12 +328,14 @@ const Report = () => {
 			<div className="grid lg:grid-cols-5 gap-6 mb-6">
 				<ViolentIncidents />
 			</div>
+			<div className="grid lg:grid-cols-5 gap-6 mb-6">
+				<Parts/>
+			</div>
 			<div className="grid lg:grid-cols-4 gap-6 mb-6">
-				<BreakdownByType />
 				<Monthly />
+				<SchoolScheduleCorrelation/>
 				<SchoolVsCommunity />
 				<FirstVsRepeat />
-				<SchoolScheduleCorrelation/>
 			</div>
 
 		</>
