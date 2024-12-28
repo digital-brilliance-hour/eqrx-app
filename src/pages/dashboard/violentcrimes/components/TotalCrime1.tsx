@@ -12,7 +12,7 @@ const TotalCrimes = () => {
             height: 240,
             type: 'bar',
             stacked: true,
-            stackType: 'val',
+            stackType: undefined,
             toolbar: {
                 show: false,
             },
