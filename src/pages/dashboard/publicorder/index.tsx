@@ -15,6 +15,8 @@ import { PageBreadcrumb } from '../../../components'
 import ReactApexChart from 'react-apexcharts'
 import { ApexOptions } from 'apexcharts'
 import StatisticsWidget from '../../dashboard/report/components/StatisticsWidget'
+import { BasicGoogleMap } from '../../ui/maps/GoogleMaps/data'
+import { GoogleApiWrapper } from 'google-maps-react'
 
 // dummy data
 import { products } from './data'
@@ -1043,64 +1045,64 @@ const stackedColumnOpts: ApexOptions = {
 	},
 }
 
-const repeatincidenttracking: ApexOptions = {
-	chart: {
-		height: 380,
-		type: 'bar',
-		stacked: true,
-		toolbar: {
-			show: false,
-		},
-	},
-	plotOptions: {
-		bar: {
-			horizontal: false,
-			columnWidth: '50%',
-		},
-	},
-	series: [
-		{
-			name: 'Asian',
-			data: [21, 38, 28, 26, 22, 20, 49, 27, 40, 26, 24, 30],
-		},
-		{
-			name: 'Native American',
-			data: [29, 9, 34, 45, 13, 27, 24, 43, 3, 15, 46, 34],
-		},
-		{
-			name: 'Latino',
-			data: [35, 41, 62, 42, 16, 38, 29, 37, 36, 51, 38, 29],
-		},
-		{
-			name: 'White',
-			data: [35, 41, 62, 42, 19, 18, 29, 37, 36, 51, 48, 26],
-		},
-		{
-			name: 'Black',
-			data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56, 36, 53],
-		},
-	],
-	xaxis: {
-		categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-	},
-	colors: ['#ffbc00','#3e60d5','#fa5c7c','#6c757d', '#2b908f', '#47ad77', '#39afd1', '#212730'],
-	fill: {
-		opacity: 1,
-	},
-	legend: {
-		offsetY: 7,
-	},
-	grid: {
-		row: {
-			colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
-			opacity: 0.2,
-		},
-		borderColor: '#f1f3fa',
-		padding: {
-			bottom: 5,
-		},
-	},
-}
+// const repeatincidenttracking: ApexOptions = {
+// 	chart: {
+// 		height: 380,
+// 		type: 'bar',
+// 		stacked: true,
+// 		toolbar: {
+// 			show: false,
+// 		},
+// 	},
+// 	plotOptions: {
+// 		bar: {
+// 			horizontal: false,
+// 			columnWidth: '50%',
+// 		},
+// 	},
+// 	series: [
+// 		{
+// 			name: 'Asian',
+// 			data: [21, 38, 28, 26, 22, 20, 49, 27, 40, 26, 24, 30],
+// 		},
+// 		{
+// 			name: 'Asian, Native American, Latino, White, Black',
+// 			data: [29, 9, 34, 45, 13, 27, 24, 43, 3, 15, 46, 34],
+// 		},
+// 		{
+// 			name: 'Latino',
+// 			data: [35, 41, 62, 42, 16, 38, 29, 37, 36, 51, 38, 29],
+// 		},
+// 		{
+// 			name: 'White',
+// 			data: [35, 41, 62, 42, 19, 18, 29, 37, 36, 51, 48, 26],
+// 		},
+// 		{
+// 			name: 'Black',
+// 			data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56, 36, 53],
+// 		},
+// 	],
+// 	xaxis: {
+// 		categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+// 	},
+// 	colors: ['#ffbc00','#3e60d5','#fa5c7c','#6c757d', '#2b908f', '#47ad77', '#39afd1', '#212730'],
+// 	fill: {
+// 		opacity: 1,
+// 	},
+// 	legend: {
+// 		offsetY: 7,
+// 	},
+// 	grid: {
+// 		row: {
+// 			colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
+// 			opacity: 0.2,
+// 		},
+// 		borderColor: '#f1f3fa',
+// 		padding: {
+// 			bottom: 5,
+// 		},
+// 	},
+// }
 
 const averageresponsetimes: ApexOptions = {
 	chart: {
@@ -1151,6 +1153,39 @@ const averageresponsetimes: ApexOptions = {
 			bottom: 5,
 		},
 	},
+}
+
+export const repeatincidenttracking: ApexOptions = {
+	chart: {
+		height: 320,
+		type: 'pie',
+	},
+	series: [44, 55, 41, 17, 15],
+	labels: ['Asian', 'Native American', 'Latino', 'White', 'Black'],
+	colors: colors1,
+	legend: {
+		show: true,
+		position: 'bottom',
+		horizontalAlign: 'center',
+		// verticalAlign: "middle",
+		floating: false,
+		fontSize: '14px',
+		offsetX: 0,
+		offsetY: 7,
+	},
+	responsive: [
+		{
+			breakpoint: 600,
+			options: {
+				chart: {
+					height: 240,
+				},
+				legend: {
+					show: false,
+				},
+			},
+		},
+	],
 }
 
 export const simplePieOpts: ApexOptions = {
@@ -1206,8 +1241,8 @@ export const groupBarOpts: ApexOptions = {
 		enabled: true,
 		offsetX: -6,
 		style: {
-			fontSize: '12px',
-			colors: ['#fff'],
+			fontSize: '0px',
+			colors: ['#000000'],
 		},
 	},
 	colors: ['#ffbc00','#3e60d5','#fa5c7c','#6c757d', '#2b908f'],
@@ -1328,15 +1363,20 @@ const trespassingcases: ApexOptions = {
 	],
 }
 
-const BehavioralIncidents = () => {
+
+interface MapContainerProps {
+	google: any
+}
+
+const BehavioralIncidents = ({ google }: MapContainerProps) => {
 	return (
 		<>
-		<div className="xl:col-span-3">
+		<div className="xl:col-span-6">
 			<div className="card">
 				<div className="p-6">
 					<h4 className="card-title mb-4">Annual Trespassing</h4>
 					<div dir="ltr">
-						<ReactApexChart className="apex-charts" options={groupBarOpts} height={800} series={groupBarOpts.series} type="bar" />
+						<ReactApexChart className="apex-charts" options={groupBarOpts} height={650} series={groupBarOpts.series} type="bar" />
 					</div>
 				</div>
 			</div>
@@ -1352,13 +1392,17 @@ const BehavioralIncidents = () => {
 					</div>
 			</div>
 		</div>
+		
+		<div className="xl:col-span-3">
+		<BasicGoogleMap google={google} />
+		</div>
 
 		<div className="xl:col-span-3">
 			<div className="card">
 					<div className="p-6">
 						<h4 className="card-title">Trespassing Cases</h4>
 						<div dir="ltr">
-							<ReactApexChart className="apex-charts" options={trespassingcases} height={380} series={trespassingcases.series} type="line" />
+							<ReactApexChart className="apex-charts" options={trespassingcases} height={337} series={trespassingcases.series} type="line" />
 						</div>
 					</div>
 				</div>
@@ -1469,9 +1513,18 @@ const PatternRecognition = () => {
 					</div>
 				</div>
 			</div>
-		</div> 
+		</div>  */}
 		
-		<div className="xl:col-span-3">
+		<div className="card xl:col-span-3">
+			<div className="p-6">
+				<h4 className="card-title mb-4">Repeat incident tracking</h4>
+				<div dir="ltr">
+					<ReactApexChart className="apex-charts" options={repeatincidenttracking} height={363} series={repeatincidenttracking.series} type="pie" />
+				</div>
+			</div>
+		</div>
+
+		<div className="xl:col-span-6">
 			<div className="card">
 				<div className="p-6">
 					<h4 className="card-title">Location clustering</h4>
@@ -1482,7 +1535,7 @@ const PatternRecognition = () => {
 			</div>
 		</div>
 		
-		<div className="xl:col-span-3">
+		{/* <div className="xl:col-span-3">
 			<div className="card">
 				<div className="p-6">
 					<h4 className="card-title">Group involvement</h4>
@@ -1491,9 +1544,9 @@ const PatternRecognition = () => {
 					</div>
 				</div>
 			</div>
-		</div>
-		*/}
-		<div className="xl:col-span-3">
+		</div> */}
+
+		<div className="xl:col-span-3 hidden">
 			<div className="card">
 				<div className="p-6">
 					<h4 className="card-title">Repeat incident tracking</h4>
@@ -1503,16 +1556,18 @@ const PatternRecognition = () => {
 				</div>
 			</div>
 		</div>
+		
 		</>
 	)
 }
 
-const PublicOrder = () => {
+const PublicOrder = ({ google }: MapContainerProps) => {
 	return (
 		<>
-			<PageBreadcrumb title="Dashboard" subName="Menu" />
+			{/* <PageBreadcrumb title="Dashboard" subName="Menu" /> */}
+			<header className="text-slate-900 dark:text-slate-200 text-lg font-medium mb-6">Public Order Dashboard</header>
 			<div className="grid lg:grid-cols-6 gap-6 mb-6">
-				<BehavioralIncidents />
+				<BehavioralIncidents google={google} />
 				<ResponseAnalysis />
 				<PatternRecognition />
 			</div>
@@ -1526,4 +1581,6 @@ const PublicOrder = () => {
 	)
 }
 
-export default PublicOrder
+export default GoogleApiWrapper({
+	apiKey: 'AIzaSyDsucrEdmswqYrw0f6ej3bf4M4suDeRgNA',
+})(PublicOrder)

@@ -327,7 +327,8 @@ return(
 const Report = () => {
 	return (
 		<>
-			<PageBreadcrumb title="Property CrimesDashboard" subName="Menu" />
+			{/* <PageBreadcrumb title="Property Crimes Dashboard" subName="Menu" /> */}
+			<header className="text-slate-900 dark:text-slate-200 text-lg font-medium mb-6">Property Crimes Dashboard</header>
 			<div className="grid lg:grid-cols-4 gap-6 mb-6">
 				<AverageResponse />
 				<ShopliftingTrends />
