@@ -19,6 +19,9 @@ import StatisticsWidget from '../../dashboard/report/components/StatisticsWidget
 import ReactApexCharts from 'react-apexcharts'
 import { Link } from 'react-router-dom'
 import { Tab } from '@headlessui/react'
+import PublicOrder from '../../dashboard/publicorder/index'
+import ViolentCrimes from '../../dashboard/violentcrimes/index'
+import PropertyCrimes from '../../dashboard/propertycrimes/index'
 
 // dummy data
 import { products } from './data'
@@ -1742,6 +1745,10 @@ const TVI: ApexOptions = {
 	],
 }
 
+interface MapContainerProps {
+	google: any
+}
+
 // code for the page begins
 
 // const GeographicOverview = () => {
@@ -1794,25 +1801,23 @@ const TVI: ApexOptions = {
 const TotalContactsDisplay = () => {
 	return (
 		<>
-		<div className="xl:col-span-6">
-			
-			<div className="gap-5 mb-6 flex">
-				<div className="col-span-3">
+		<div className="grid 2xl:grid-cols-5 lg:grid-cols-6 md:grid-cols-2 gap-6 mb-6">
+		
+				<div className="2xl:col-span-1 lg:col-span-2">
 					<StatisticsWidget variant={'bg-success'} cardTitle={"Today's total juvenile contacts"} title={'Number of customers'} change={'2,541'} stats={'54,214'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
 				</div>
 
-				<div className="col-span-3">
+				<div className="2xl:col-span-1 lg:col-span-2">
 					<StatisticsWidget variant={'bg-danger'} cardTitle={"This week's total (with comparison to last week)"} title={'Number of Orders'} change={'1.08%'} stats={'7,543'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
 				</div>  
-				<div className="col-span-3">
+				<div className="2xl:col-span-1 lg:col-span-2">
 					<StatisticsWidget variant={'bg-success'} cardTitle={"This month's total (with comparison to last month)"} title={'Number of customers'} change={'2,541'} stats={'54,214'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
 				</div>
 
-				<div className="col-span-3">
+				<div className="2xl:col-span-1 lg:col-span-2">
 					<StatisticsWidget variant={'bg-danger'} cardTitle={"Year-to-date total (with comparison to last year)"} title={'Number of Orders'} change={'1.08%'} stats={'7,543'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
 				</div> 
 			</div>
-		</div>
 		</>
 	)
 }
@@ -1922,7 +1927,7 @@ const SystemPerformanceMetrics = () => {
 				<Tab.Panels className="mt-3">
 					
 					{/* first tab */}
-					<Tab.Panel id="fill-and-justify-1" aria-labelledby="fill-and-justify-item-1">
+					{/* <Tab.Panel id="fill-and-justify-1" aria-labelledby="fill-and-justify-item-1">
 						
 						<div className="xl:col-span-3">
 							<div className="card">
@@ -2037,10 +2042,10 @@ const SystemPerformanceMetrics = () => {
 							</div>
 						</div>
 
-					</Tab.Panel>
+					</Tab.Panel> */}
 
 					{/* second tab */}
-					<Tab.Panel id="fill-and-justify-2" aria-labelledby="fill-and-justify-item-2">
+					{/* <Tab.Panel id="fill-and-justify-2" aria-labelledby="fill-and-justify-item-2">
 						<div className="border rounded mt-3 mb-6 dark:border-gray-600">
 							<div className="xl:col-span-6">
 								<div className="xl:col-span-3">
@@ -2170,10 +2175,10 @@ const SystemPerformanceMetrics = () => {
 								</div>
 							</div>
 						</div>
-					</Tab.Panel>
+					</Tab.Panel> */}
 
 					{/* third tab */}
-					<Tab.Panel id="fill-and-justify-3" aria-labelledby="fill-and-justify-item-3">
+					{/* <Tab.Panel id="fill-and-justify-3" aria-labelledby="fill-and-justify-item-3">
 						<div className="xl:col-span-3">
 							<div className="card">
 								<div className="p-6">
@@ -2217,6 +2222,18 @@ const SystemPerformanceMetrics = () => {
 								</div>
 							</div>
                			</div>
+					</Tab.Panel> */}
+
+					<Tab.Panel id="fill-and-justify-1" aria-labelledby="fill-and-justify-item-1">
+						 <PublicOrder />
+					</Tab.Panel>
+
+					<Tab.Panel id="fill-and-justify-1" aria-labelledby="fill-and-justify-item-1">
+						<ViolentCrimes />
+					</Tab.Panel>
+
+					<Tab.Panel id="fill-and-justify-1" aria-labelledby="fill-and-justify-item-1">
+						<PropertyCrimes />
 					</Tab.Panel>
 				</Tab.Panels>
 			</Tab.Group>
@@ -2230,8 +2247,8 @@ const Main = () => {
 	return (
 		<>
 			<PageBreadcrumb title="Command Center" subName="Menu" />
+			<TotalContactsDisplay />
 			<div className="grid lg:grid-cols-6 gap-6 mb-6">
-				<TotalContactsDisplay />
 				<SystemPerformanceMetrics />
 				{/* <GeographicOverview /> */}
 			</div>
