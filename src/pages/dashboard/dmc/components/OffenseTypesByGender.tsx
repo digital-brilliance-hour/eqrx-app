@@ -15,6 +15,25 @@ const RevenueChart = () => {
             toolbar: {
                 show: false,
             },
+            events: {
+                dataPointSelection: (event:any, chartContext:any, config) => { 
+                    console.log(event);
+                    console.log(chartContext);
+                    console.log(config);
+                },
+                legendClick: function(chartContext, seriesIndex, opts) {
+                    // ...
+                    console.log(chartContext);
+                    console.log(seriesIndex);
+                    console.log(opts);
+                },
+                xAxisLabelClick: function(chartContext, seriesIndex, opts) {
+                    // ...
+                    console.log(chartContext);
+                    console.log(seriesIndex);
+                    console.log(opts);
+                },
+            },
         },
         plotOptions: {
             bar: {
@@ -84,6 +103,15 @@ const RevenueChart = () => {
             padding: {
                 top: 0,
             },
+        },
+        annotations: {
+            xaxis: [{
+                label: {
+                    click: function() {
+                        console.log("here");
+                    }
+                }
+            }]
         },
     }
 
