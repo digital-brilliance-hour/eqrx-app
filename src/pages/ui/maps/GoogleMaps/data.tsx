@@ -40,22 +40,22 @@ const gradient = [
   ];
 
   const positions = [
-    { lat: 37.782551, lng: -122.445368 },
-    { lat: 37.782745, lng: -122.444586 },
-    { lat: 37.782842, lng: -122.443688 },
-    { lat: 37.782919, lng: -122.442815 },
-    { lat: 37.782992, lng: -122.442112 },
-    { lat: 37.7831, lng: -122.441461 },
-    { lat: 37.783206, lng: -122.440829 },
-    { lat: 37.783273, lng: -122.440324 },
-    { lat: 37.783316, lng: -122.440023 },
-    { lat: 37.783357, lng: -122.439794 },
-    { lat: 37.783371, lng: -122.439687 },
-    { lat: 37.783368, lng: -122.439666 },
-    { lat: 37.783383, lng: -122.439594 },
-    { lat: 37.783508, lng: -122.439525 },
-    { lat: 37.783842, lng: -122.439591 },
-    { lat: 37.784147, lng: -122.439668 }
+	{ lat: 35.262551, lng: -77.582368 },
+	{ lat: 35.262745, lng: -77.581586 },
+	{ lat: 35.262842, lng: -77.580688 },
+	{ lat: 35.262919, lng: -77.579815 },
+	{ lat: 35.262992, lng: -77.579112 },
+	{ lat: 35.2631, lng: -77.578461 },
+	{ lat: 35.263206, lng: -77.577829 },
+	{ lat: 35.263273, lng: -77.577324 },
+	{ lat: 35.263316, lng: -77.577023 },
+	{ lat: 35.263357, lng: -77.576794 },
+	{ lat: 35.263371, lng: -77.576687 },
+	{ lat: 35.263368, lng: -77.576666 },
+	{ lat: 35.263383, lng: -77.576594 },
+	{ lat: 35.263508, lng: -77.576525 },
+	{ lat: 35.263842, lng: -77.576591 },
+	{ lat: 35.264147, lng: -77.576668 },
   ];
 
 
@@ -70,7 +70,7 @@ const gradient = [
 					<div id="gmaps-basic" className="gmaps" style={{ position: 'relative', overflow: 'hidden' }}>
 						<Map
 							google={google}
-							initialCenter={{ lat: 37.782, lng: -122.435 }}
+							initialCenter={{ lat: 35.2621, lng: -77.5818 }}
 							zoomControlOptions={{
 								position: google.maps.ControlPosition.LEFT_TOP,
 							}}>
@@ -93,12 +93,12 @@ const BasicHeatMap = ({ google }: MapContainerProps) => {
 					<div id="gmaps-basic" className="gmaps" style={{ position: 'relative', overflow: 'hidden' }}>
 						<Map
 							google={google}
-							initialCenter={{ lat: 37.774546, lng: -122.433523 }}
+							initialCenter={{ lat: 35.2621, lng: -77.5818 }}
 							zoomControlOptions={{
 								position: google.maps.ControlPosition.LEFT_TOP,
 							}}>
 							<HeatMap
-								mapCenter={{ lat: 37.774546, lng: -122.433523 }}
+								mapCenter={{ lat: 35.2621, lng: -77.5818 }}
 								gradient={gradient}
 								google={google}
 								map={Map}
@@ -157,15 +157,15 @@ const MapWithMarkers = ({ google }: MapContainerProps) => {
 						<Map
 							google={google}
 							zoom={18}
-							initialCenter={{ lat: 21.569874, lng: 71.5893798 }}
+							initialCenter={{ lat: 35.262084, lng: -77.581635 }}
 							style={{ width: '100%', height: '100%', position: 'relative' }}
 							zoomControlOptions={{
 								position: google.maps.ControlPosition.LEFT_TOP,
 							}}
 						>
-							<Marker title={'This is sweet home.'} name={'Home sweet home!'} position={{ lat: 21.569874, lng: 71.5893798 }} onClick={onBasicMarkerClick}></Marker>
+							<Marker title={'This is sweet home.'} name={'Home sweet home!'} position={{ lat: 35.262084, lng: -77.581635 }} onClick={onBasicMarkerClick}></Marker>
 
-							<Marker name="Current location" title={'Marker with InfoWindow'} position={{ lat: 21.56969, lng: 71.5893798 }} onClick={onMarkerClick}></Marker>
+							<Marker name="Current location" title={'Marker with InfoWindow'} position={{ lat: 35.261843, lng: -77.582264 }}  onClick={onMarkerClick}></Marker>
 							<InfoWindow marker={activeMarker} onClose={onInfoWindowClose} visible={showingInfoWindow}>
 								<div>
 									<p>{selectedPlace.name}</p>
