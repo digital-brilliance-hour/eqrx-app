@@ -86,7 +86,7 @@ const BasicHeatMap = ({ google }: MapContainerProps) => {
 	return (
 		<div className="card">
 			<div className="card-header">
-				<h4 className="card-title">Basic Heat Map</h4>
+				<h4 className="card-title">Trespassing Hotspots</h4>
 			</div>
 			<div className="p-6">
 				<div className="mb-3">
