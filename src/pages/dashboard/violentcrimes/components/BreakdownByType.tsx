@@ -20,27 +20,59 @@ const Part1Types = () => {
         },
         plotOptions: {
             bar: {
+                barHeight: '100%',
+                distributed: true,
                 horizontal: true,
+                dataLabels: {
+                    position: 'bottom',
+                },
             },
         },
         dataLabels: {
-            enabled: false,
+            enabled: true,
+            textAnchor: 'start',
+            style: {
+                colors: ['#fff'],
+            },
+            formatter: function (val, opt) {
+                return opt.w.globals.labels[opt.dataPointIndex] + ':  ' + val
+            },
+            offsetX: 0,
+            dropShadow: {
+                enabled: false,
+            },
         },
         series: [
             {
                 data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380],
             },
         ],
-        colors: ['#39afd1'],
+        colors: ['#3e60d5', '#47ad77', '#fa5c7c', '#6c757d', '#39afd1', '#2b908f', '#ffbc00', '#90ee7e', '#f48024', '#212730', '#39afd1'],
         xaxis: {
             categories: [
                 "Aggravated assault", "Arson", "Burglary", "Criminal homicide", "Murder", "Manslaughter By Negligence", "Manslaughter", "Human Trafficking", "Rape", "Robbery"],
+                labels: {
+                    show: false,
+                },
         },
-        // states: {
-        //     // hover: {
-        //     //     // filter: 'none'
-        //     // }
-        // },
+        yaxis: {
+            labels: {
+                show: false,
+            },
+        },
+        tooltip: {
+            theme: 'dark',
+            x: {
+                show: true,
+            },
+            y: {
+                title: {
+                    formatter: function () {
+                        return ''
+                    },
+                },
+            },
+        },
         grid: {
             borderColor: '#f1f3fa',
         },
