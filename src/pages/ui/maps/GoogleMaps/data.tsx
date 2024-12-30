@@ -1,7 +1,7 @@
 import { Marker } from 'google-maps-react'
 import { Polyline } from 'google-maps-react'
 import { InfoWindow } from 'google-maps-react'
-import { Map } from 'google-maps-react'
+import { Map , GoogleMapReact } from 'google-maps-react'
 import { useRef, useState } from 'react'
 import HeatMap from 'google-maps-react'
 
@@ -105,6 +105,16 @@ const BasicHeatMap = ({ google }: MapContainerProps) => {
 								radius={20}
 							/>
 						</Map>
+						{/* <GoogleMapReact
+							bootstrapURLKeys={{
+								key: ["AIzaSyBsHtI7Ed8ZeQ-yvYIMw9VKORe5WdPo5yg"],
+								libraries:['visualization']
+							}}
+							zoom={google.maps.ControlPosition.LEFT_TOP}
+							center={{ lat: 37.782, lng: -122.435 }}
+							heatmap={positions}
+							>
+						</GoogleMapReact> */}
 					</div>
 				</div>
 			</div>
