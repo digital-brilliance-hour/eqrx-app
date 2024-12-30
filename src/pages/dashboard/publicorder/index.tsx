@@ -1588,4 +1588,5 @@ const PublicOrder = ({ google }: MapContainerProps) => {
 
 export default GoogleApiWrapper({
 	apiKey: 'AIzaSyBsHtI7Ed8ZeQ-yvYIMw9VKORe5WdPo5yg',
+	libraries: ['visualization'],
 })(PublicOrder)

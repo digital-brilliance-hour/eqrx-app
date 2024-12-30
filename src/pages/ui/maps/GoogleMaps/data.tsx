@@ -1,9 +1,8 @@
 import { Marker } from 'google-maps-react'
 import { Polyline } from 'google-maps-react'
 import { InfoWindow } from 'google-maps-react'
-import { Map , GoogleMapReact } from 'google-maps-react'
+import { Map , GoogleMapReact, HeatMap } from 'google-maps-react'
 import { useRef, useState } from 'react'
-import HeatMap from 'google-maps-react'
 
 interface MapContainerProps {
 	google: any
@@ -94,12 +93,15 @@ const BasicHeatMap = ({ google }: MapContainerProps) => {
 					<div id="gmaps-basic" className="gmaps" style={{ position: 'relative', overflow: 'hidden' }}>
 						<Map
 							google={google}
-							initialCenter={{ lat: 37.782, lng: -122.435 }}
+							initialCenter={{ lat: 37.774546, lng: -122.433523 }}
 							zoomControlOptions={{
 								position: google.maps.ControlPosition.LEFT_TOP,
 							}}>
 							<HeatMap
+								mapCenter={{ lat: 37.774546, lng: -122.433523 }}
 								gradient={gradient}
+								google={google}
+								map={Map}
 								opacity={0.3}
 								positions={positions}
 								radius={20}
