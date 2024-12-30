@@ -1,7 +1,7 @@
 import { Marker } from 'google-maps-react'
 import { Polyline } from 'google-maps-react'
 import { InfoWindow } from 'google-maps-react'
-import { Map } from 'google-maps-react'
+import { Map , GoogleMapReact, HeatMap } from 'google-maps-react'
 import { useRef, useState } from 'react'
 
 interface MapContainerProps {
@@ -14,7 +14,52 @@ const polyline = [
 	{ lat: 37.789352, lng: -122.415346 },
 ]
 
-const BasicGoogleMap = ({ google }: MapContainerProps) => {
+
+// const heatmapdata = {
+// 	mapData:{
+// 		lat: [37.782, 37.782, 37.782, 37.782, 37.782, 37.782, 37.782, 37.785, 37.785, 37.785, 37.785, 37.785, 37.785, 37.785],
+// 		lng: [-122.447, -122.445, -122.443, -122.441, -122.439, -122.437,-122.435, -122.447, -122.445, -122.443, -122.441, -122.439, -122.437, -122.435]
+// 	}
+// }
+
+const gradient = [
+    'rgba(0, 255, 255, 0)',
+    'rgba(0, 255, 255, 1)',
+    'rgba(0, 191, 255, 1)',
+    'rgba(0, 127, 255, 1)',
+    'rgba(0, 63, 255, 1)',
+    'rgba(0, 0, 255, 1)',
+    'rgba(0, 0, 223, 1)',
+    'rgba(0, 0, 191, 1)',
+    'rgba(0, 0, 159, 1)',
+    'rgba(0, 0, 127, 1)',
+    'rgba(63, 0, 91, 1)',
+    'rgba(127, 0, 63, 1)',
+    'rgba(191, 0, 31, 1)',
+    'rgba(255, 0, 0, 1)'
+  ];
+
+  const positions = [
+    { lat: 37.782551, lng: -122.445368 },
+    { lat: 37.782745, lng: -122.444586 },
+    { lat: 37.782842, lng: -122.443688 },
+    { lat: 37.782919, lng: -122.442815 },
+    { lat: 37.782992, lng: -122.442112 },
+    { lat: 37.7831, lng: -122.441461 },
+    { lat: 37.783206, lng: -122.440829 },
+    { lat: 37.783273, lng: -122.440324 },
+    { lat: 37.783316, lng: -122.440023 },
+    { lat: 37.783357, lng: -122.439794 },
+    { lat: 37.783371, lng: -122.439687 },
+    { lat: 37.783368, lng: -122.439666 },
+    { lat: 37.783383, lng: -122.439594 },
+    { lat: 37.783508, lng: -122.439525 },
+    { lat: 37.783842, lng: -122.439591 },
+    { lat: 37.784147, lng: -122.439668 }
+  ];
+
+
+  const BasicGoogleMap = ({ google }: MapContainerProps) => {
 	return (
 		<div className="card">
 			<div className="card-header">
@@ -25,11 +70,53 @@ const BasicGoogleMap = ({ google }: MapContainerProps) => {
 					<div id="gmaps-basic" className="gmaps" style={{ position: 'relative', overflow: 'hidden' }}>
 						<Map
 							google={google}
-							initialCenter={{ lat: -12.043333, lng: -77.028333 }}
+							initialCenter={{ lat: 37.782, lng: -122.435 }}
 							zoomControlOptions={{
 								position: google.maps.ControlPosition.LEFT_TOP,
+							}}>
+						</Map>
+					</div>
+				</div>
+			</div>
+		</div>
+	)
+}
+
+const BasicHeatMap = ({ google }: MapContainerProps) => {
+	return (
+		<div className="card">
+			<div className="card-header">
+				<h4 className="card-title">Basic Heat Map</h4>
+			</div>
+			<div className="p-6">
+				<div className="mb-3">
+					<div id="gmaps-basic" className="gmaps" style={{ position: 'relative', overflow: 'hidden' }}>
+						<Map
+							google={google}
+							initialCenter={{ lat: 37.774546, lng: -122.433523 }}
+							zoomControlOptions={{
+								position: google.maps.ControlPosition.LEFT_TOP,
+							}}>
+							<HeatMap
+								mapCenter={{ lat: 37.774546, lng: -122.433523 }}
+								gradient={gradient}
+								google={google}
+								map={Map}
+								opacity={0.3}
+								positions={positions}
+								radius={20}
+							/>
+						</Map>
+						{/* <GoogleMapReact
+							bootstrapURLKeys={{
+								key: ["AIzaSyBsHtI7Ed8ZeQ-yvYIMw9VKORe5WdPo5yg"],
+								libraries:['visualization']
 							}}
-						></Map>
+							zoom={google.maps.ControlPosition.LEFT_TOP}
+							center={{ lat: 37.782, lng: -122.435 }}
+							heatmap={positions}
+							>
+						</GoogleMapReact> */}
 					</div>
 				</div>
 			</div>
@@ -399,4 +486,4 @@ const DarkStyledMap = ({ google }: MapContainerProps) => {
 	)
 }
 
-export { BasicGoogleMap, DarkStyledMap, MapWithMarkers, StreetViewMap, PolyLineMap, LightStyledMap }
+export { BasicGoogleMap, DarkStyledMap, MapWithMarkers, StreetViewMap, PolyLineMap, LightStyledMap, BasicHeatMap }

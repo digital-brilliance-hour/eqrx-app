@@ -15,7 +15,7 @@ import { PageBreadcrumb } from '../../../components'
 import ReactApexChart from 'react-apexcharts'
 import { ApexOptions } from 'apexcharts'
 import StatisticsWidget from '../../dashboard/report/components/StatisticsWidget'
-import { BasicGoogleMap } from '../../ui/maps/GoogleMaps/data'
+import { BasicHeatMap } from '../../ui/maps/GoogleMaps/data'
 import { GoogleApiWrapper } from 'google-maps-react'
 
 // dummy data
@@ -1292,7 +1292,6 @@ export const groupBarOpts: ApexOptions = {
 	},
 }
 
-
 const series = {
 	monthDataSeries1: {
 		prices: [8107.85, 8128.0, 8122.9, 8165.5, 8340.7, 8423.7, 8423.5, 8514.3, 8481.85, 8487.7, 8506.9, 8626.2, 8668.95, 8602.3, 8607.55, 8512.9, 8496.25, 8600.65, 8881.1, 9340.85],
@@ -1363,9 +1362,15 @@ const trespassingcases: ApexOptions = {
 	],
 }
 
-
 interface MapContainerProps {
 	google: any
+}
+
+const heatmapdata = {
+	mapData:{
+		lat: [37.782, 37.782, 37.782, 37.782, 37.782, 37.782, 37.782, 37.785, 37.785, 37.785, 37.785, 37.785, 37.785, 37.785],
+		lng: [-122.447, -122.445, -122.443, -122.441, -122.439, -122.437,-122.435, -122.447, -122.445, -122.443, -122.441, -122.439, -122.437, -122.435]
+	}
 }
 
 const BehavioralIncidents = ({ google }: MapContainerProps) => {
@@ -1394,7 +1399,7 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 		</div>
 		
 		<div className="xl:col-span-3">
-		<BasicGoogleMap google={google} />
+		<BasicHeatMap google={google} />
 		</div>
 
 		<div className="xl:col-span-3">
@@ -1583,4 +1588,5 @@ const PublicOrder = ({ google }: MapContainerProps) => {
 
 export default GoogleApiWrapper({
 	apiKey: 'AIzaSyBsHtI7Ed8ZeQ-yvYIMw9VKORe5WdPo5yg',
+	libraries: ['visualization'],
 })(PublicOrder)
