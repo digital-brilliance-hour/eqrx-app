@@ -47,9 +47,6 @@ const PartsCharts = () => {
             <Tab type="button" className={({ selected }) => `${selected ? 'bg-primary text-white' : 'text-gray-500 hover:text-primary  bg-transparent'} flex-auto py-2 px-4 inline-flex justify-center items-center gap-2 text-center text-sm font-semibold  dark:hover:text-gray-400 first:rounded-s-md last:rounded-e-md`}>
                 Part 2 Crimes
             </Tab>
-            <Tab type="button" className={({ selected }) => `${selected ? 'bg-primary text-white' : 'text-gray-500 hover:text-primary  bg-transparent'} flex-auto py-2 px-4 inline-flex justify-center items-center gap-2 text-center text-sm font-semibold  dark:hover:text-gray-400 first:rounded-s-md last:rounded-e-md`}>
-                Part 3 Crimes
-            </Tab>
         </Tab.List>
 
         <Tab.Panels className="mt-3">
@@ -73,16 +70,6 @@ const PartsCharts = () => {
                     <Part2Types />
                 </div>
 
-            </Tab.Panel>
-
-            <Tab.Panel id="fill-and-justify-3" aria-labelledby="fill-and-justify-item-3">
-            <h5 className="text-base uppercase mb-6">
-                    <i className="ri-briefcase-line me-1"></i> Part 3 Crime Analysis
-                </h5>
-                <div className="grid lg:grid-cols-3 gap-6 mb-6">
-                    <TotalCrime1 />
-                    <Part3Types />
-                </div>
             </Tab.Panel>
         </Tab.Panels>
     </Tab.Group>

@@ -44,13 +44,13 @@ const Part1Types = () => {
         },
         series: [
             {
-                data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380],
+                data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380, 448, 470, 540, 580],
             },
         ],
         colors: ['#3e60d5', '#47ad77', '#fa5c7c', '#6c757d', '#39afd1', '#2b908f', '#ffbc00', '#90ee7e', '#f48024', '#212730', '#39afd1'],
         xaxis: {
             categories: [
-                "Aggravated assault", "Arson", "Burglary", "Criminal homicide", "Murder", "Manslaughter By Negligence", "Manslaughter", "Human Trafficking", "Rape", "Robbery"],
+                "Aggravated assault", "Arson", "Burglary", "Larceny From A Motor Vehicle", "Murder", "Motor Vehicle Theft", "Alcohol Violation", "Drug Violation", "Rape", "Robbery", "Preferred Crime", "Stalking", "Domestic Violation", "Weapon Violation"],
                 labels: {
                     show: false,
                 },
@@ -123,12 +123,12 @@ const Part2Types = () => {
         },
         series: [
             {
-                data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380],
+                data: [400, 430, 448, 470, 540, 580, 690],
             },
         ],
         colors: ['#39afd1'],
         xaxis: {
-            categories: ['Aggravated Assault ', 'Weapons Violations', 'Robbery', 'Armed Robbery', 'Domestic Violence', 'Strangulation', 'Kidnapping', 'Manslaughter', 'Intimate Partner Violence', 'Assault with Deadly Weapon'],
+            categories: ['Simple Assault ', 'Fraud', 'Vandalism', 'Gambling', 'Disorderly Conduct', 'Resist Delay and Obstruct', 'Runaways'],
         },
         // states: {
         //     // hover: {
