@@ -838,8 +838,8 @@ export const simplePieOpts: ApexOptions = {
 		height: 320,
 		type: 'pie',
 	},
-	series: [44, 55, 41, 17, 15],
-	labels: ['Total Officers', 'Sro Officers', 'Bomb Squad', 'Admin', 'Traffic'],
+	series: [44, 55, 41, 17],
+	labels: ['Non-Sro Officers', 'Sro Officers', 'Admin', 'Traffic'],
 	colors: colors1,
 	legend: {
 		show: true,
@@ -1025,24 +1025,20 @@ const stackedColumnOpts: ApexOptions = {
 	},
 	series: [
 		{
-			name: 'Burglary',
+			name: 'Cleared by Arrest',
 			data: [44, 55, 41, 67, 22, 43, 21, 49],
 		},
 		{
-			name: 'Escape from Custody',
+			name: 'Prosecution Declined',
 			data: [13, 23, 20, 8, 13, 27, 33, 12],
 		},
 		{
-			name: 'Drug Violation',
+			name: 'Refferals',
 			data: [11, 17, 15, 15, 21, 14, 15, 13],
 		},
 		{
-			name: 'Aggrevated Assault',
+			name: 'Unfounded',
 			data: [13, 23, 20, 8, 13, 27, 33, 12],
-		},
-		{
-			name: 'Disorderly Conduct',
-			data: [11, 17, 15, 15, 21, 14, 15, 13],
 		},
 	],
 	xaxis: {
@@ -1804,18 +1800,18 @@ const TotalContactsDisplay = () => {
 		<div className="grid 2xl:grid-cols-5 lg:grid-cols-6 md:grid-cols-2 gap-6 mb-6">
 		
 				<div className="2xl:col-span-1 lg:col-span-2">
-					<StatisticsWidget variant={'bg-success'} cardTitle={"Today's total juvenile contacts"} title={'Number of customers'} change={'2,541'} stats={'54,214'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
+					<StatisticsWidget variant={'bg-success'} cardTitle={"Today's total juvenile contacts"} title={'Number of customers'} change={'541'} stats={'1,214'} dataSince={'Since last yesterday'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
 				</div>
 
 				<div className="2xl:col-span-1 lg:col-span-2">
-					<StatisticsWidget variant={'bg-danger'} cardTitle={"This week's total (with comparison to last week)"} title={'Number of Orders'} change={'1.08%'} stats={'7,543'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
+					<StatisticsWidget variant={'bg-danger'} cardTitle={"Active Cases"} title={'Number of Orders'} change={'1.08%'} stats={'743'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
 				</div>  
 				<div className="2xl:col-span-1 lg:col-span-2">
-					<StatisticsWidget variant={'bg-success'} cardTitle={"This month's total (with comparison to last month)"} title={'Number of customers'} change={'2,541'} stats={'54,214'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
+					<StatisticsWidget variant={'bg-success'} cardTitle={"Cleared Cases"} title={'Number of customers'} change={'241'} stats={'2,214'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
 				</div>
 
 				<div className="2xl:col-span-1 lg:col-span-2">
-					<StatisticsWidget variant={'bg-danger'} cardTitle={"Year-to-date total (with comparison to last year)"} title={'Number of Orders'} change={'1.08%'} stats={'7,543'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
+					<StatisticsWidget variant={'bg-danger'} cardTitle={"School Realated"} title={'Number of Orders'} change={'2.54%'} stats={'1,543'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
 				</div> 
 			</div>
 		</>
@@ -1852,16 +1848,16 @@ const SystemPerformanceMetrics = () => {
 		<div className="xl:col-span-3 gap-6">
 			<div className="card">
 					<div className="p-6">
-						<h4 className="card-title mb-4">Resource utilization</h4>
+						<h4 className="card-title mb-4">Juvenile Encounter Officer Types</h4>
 						<div dir="ltr">
-							<ReactApexChart className="apex-charts" options={simplePieOpts} height={365} series={simplePieOpts.series} type="pie" />
+							<ReactApexChart className="apex-charts" options={simplePieOpts} height={397} series={simplePieOpts.series} type="pie" />
 						</div>
 					</div>
 				</div>
 		</div>
 		
 		<div className="lg:col-span-6">
-			<div className="card">
+			<div className="card hidden">
 				<div className="flex card-header justify-between items-center">
 					<h4 className="card-title">Average response times</h4>
 					<PopoverLayout placement="bottom-end" togglerClass="text-gray-600 dark:text-gray-400" toggler={<PopoverToggle />}>
