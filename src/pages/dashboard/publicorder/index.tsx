@@ -751,7 +751,7 @@ export const schoolbasedinfractions: ApexOptions = {
 		colors: ['#fff'],
 	},
 	xaxis: {
-		categories: ['Fighting', 'Assault with a weapon', 'Assualt', 'Disorderly conduct', 'Larceny', 'Weapons violation', 'Drug violations'],
+		categories: ['Affray', 'Assault with a weapon', 'Assualt', 'Disorderly conduct', 'Larceny', 'Weapons violation', 'Drug violations'],
 	},
 	yaxis: {
 		labels: {
@@ -776,6 +776,74 @@ export const schoolbasedinfractions: ApexOptions = {
 		},
 	},
 }
+
+// for use once Non school based incident has been clarified
+
+// export const schoolbasedinfractions2: ApexOptions = {
+// 	chart: {
+// 		height: 450,
+// 		type: 'bar',
+// 	},
+// 	plotOptions: {
+// 		bar: {
+// 			barHeight: '100%',
+// 			distributed: true,
+// 			horizontal: true,
+// 			dataLabels: {
+// 				position: 'bottom',
+// 			},
+// 		},
+// 	},
+// 	colors: ['#3e60d5', '#47ad77', '#fa5c7c', '#6c757d', '#39afd1', '#2b908f', '#ffbc00', '#90ee7e', '#f48024', '#212730'],
+// 	dataLabels: {
+// 		enabled: true,
+// 		textAnchor: 'start',
+// 		style: {
+// 			colors: ['#fff'],
+// 		},
+// 		formatter: function (val, opt) {
+// 			return opt.w.globals.labels[opt.dataPointIndex] + ':  ' + val
+// 		},
+// 		offsetX: 0,
+// 		dropShadow: {
+// 			enabled: false,
+// 		},
+// 	},
+// 	series: [
+// 		{
+// 			data: [400, 430, 448, 470, 540, 580, 690],
+// 		},
+// 	],
+// 	stroke: {
+// 		width: 0,
+// 		colors: ['#fff'],
+// 	},
+// 	xaxis: {
+// 		categories: ['Affray', 'Assault with a weapon', 'Assualt', 'Disorderly conduct', 'Larceny', 'Weapons violation', 'Drug violations'],
+// 	},
+// 	yaxis: {
+// 		labels: {
+// 			show: false,
+// 		},
+// 	},
+// 	grid: {
+// 		borderColor: '#f1f3fa',
+// 	},
+
+// 	tooltip: {
+// 		theme: 'dark',
+// 		x: {
+// 			show: false,
+// 		},
+// 		y: {
+// 			title: {
+// 				formatter: function () {
+// 					return ''
+// 				},
+// 			},
+// 		},
+// 	},
+// }
 
 const fullStackedColumnOpts: ApexOptions = {
 	chart: {
@@ -1253,28 +1321,28 @@ export const groupBarOpts: ApexOptions = {
 	},
 	series: [
 		{
-			name: 'White',
+			name: '2011',
 			data: [44, 55, 41, 64, 22, 43, 21],
 		},
 		{
-			name: 'Black',
+			name: '2012',
 			data: [53, 32, 33, 52, 13, 44, 32],
 		},
 		{
-			name: 'Asian',
+			name: '2013',
 			data: [44, 55, 41, 64, 22, 43, 21],
 		},
 		{
-			name: 'Native American',
+			name: '2014',
 			data: [53, 32, 33, 52, 13, 44, 32],
 		},
 		{
-			name: 'Latino',
+			name: '2015',
 			data: [53, 32, 33, 52, 13, 44, 32],
 		},
 	],
 	xaxis: {
-		categories: [2001, 2002, 2003, 2004, 2005, 2006, 2007],
+		categories: ['Arson', 'Murder', 'Stalking', 'Burglary', 'Rape', 'Robbery', 'Assault'],
 	},
 	legend: {
 		offsetY: 5,
@@ -1379,7 +1447,7 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 		<div className="xl:col-span-6">
 			<div className="card">
 				<div className="p-6">
-					<h4 className="card-title mb-4">Annual Trespassing</h4>
+					<h4 className="card-title mb-4">Public Nuisance Violations</h4>
 					<div dir="ltr">
 						<ReactApexChart className="apex-charts" options={groupBarOpts} height={650} series={groupBarOpts.series} type="bar" />
 					</div>
@@ -1427,7 +1495,7 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 		</div>
 		
 		<div className="xl:col-span-6">
-			<div className="card">
+			<div className="card hidden">
 				<div className="p-6">
 					<h4 className="card-title">Disorderly conduct patterns</h4>
 					<div dir="ltr">
