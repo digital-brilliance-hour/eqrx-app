@@ -1452,10 +1452,14 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 						<ReactApexChart className="apex-charts" options={groupBarOpts} height={650} series={groupBarOpts.series} type="bar" />
 					</div>
 						<div className="pt-6">
-						This chart presents "Public Nuisance Violations" across various offense types for the years 2011–2015, <br/>
-						with each year represented by a distinct color. 
-						The offenses included are Arson, Murder, Stalking, Burglary, Rape, Robbery, and Assault.<br/>
-						The data highlights trends and fluctuations in various public nuisance offenses over time.
+						The data highlights trends and fluctuations in various public nuisance offenses over time,<br/> with burglary consistently being the most reported offense type. <br/>
+						<b>Arson:</b> Shows consistent levels of violations across the years, with a slight increase in later years.<br/>
+						<b>Murder:</b> Relatively stable with minor variations year-to-year.<br/>
+						<b>Stalking:</b> Exhibits noticeable fluctuations, with some years showing significantly higher violations than others.<br/>
+						<b>Burglary:</b> The highest levels of violations among all categories, peaking in certain years, especially in 2013 and 2015.<br/>
+						<b>Rape:</b> Displays moderate levels of violations with some growth over time.<br/>
+						<b>Robbery:</b> Maintains a steady pattern, though not as high as burglary.<br/>
+						<b>Assault:</b> Similar to robbery, with stable trends and slight variations across the years.
 						</div>
 				</div>
 			</div>
@@ -1475,7 +1479,7 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 		<div className="xl:col-span-3">
 			<BasicHeatMap 
 			google={google} 
-			description='This chart is a heatmap overlaid on a map of Kinston, identifying "Trespassing Hotspots." The red and blue shaded areas indicate the intensity or frequency of trespassing incidents, with red likely representing higher activity and blue representing lower activity.' />
+			description='Key landmarks, streets, and locations like the "Mother Earth Motor Lodge" and "Holloway Community Center" are marked, providing context to the areas highlighted by the heatmap' />
 		</div>
 
 		<div className="xl:col-span-3">
@@ -1486,7 +1490,10 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 							<ReactApexChart className="apex-charts" options={trespassingcases} height={337} series={trespassingcases.series} type="line" />
 						</div>
 						<div className="pt-6">
-						This is a line chart titled "Trespassing Cases," showing the number of trespassing incidents reported each month. The y-axis represents the number of cases, while the x-axis represents months from January to September.
+						This trend indicates a consistent increase in trespassing incidents as the year progresses, particularly after midyear.<br/>
+						The number of cases starts at approximately 30 in January.<br/>
+						A gradual increase occurs from February to June, where the numbers stabilize briefly.<br/>
+						From July onward, the cases show a sharp rise, peaking in September at over 120 cases.
 						</div>
 					</div>
 				</div>
@@ -1501,8 +1508,14 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 							<ReactApexChart className="apex-charts" options={schoolbasedinfractions} height={450} series={schoolbasedinfractions.series} type="bar" />
 						</div>
 						<div className="pt-6">
-						This chart, titled "School-based Infractions," visualizes the frequency of various infractions in a school setting.<br/>
-						Drug violations are the most common infraction, while affray is the least frequent. This chart highlights areas that may require targeted intervention or policy changes.
+						This data highlights areas where targeted interventions or policy changes may be needed to reduce specific types of infractions.<br/>
+						<b>Affray (blue):</b> 400 incidents, making it the least frequent infraction.<br/>
+						<b>Assault with a weapon (green):</b> 430 incidents.<br/>
+						<b>Assault (pink):</b> 448 incidents.<br/>
+						<b>Disorderly conduct (gray):</b> 470 incidents.<br/>
+						<b>Larceny (teal):</b> 540 incidents.<br/>
+						<b>Weapons violation (dark teal):</b> 580 incidents.<br/>
+						<b>Drug violations (yellow):</b> 690 incidents, the most frequent infraction.
 						</div>
 					</div>
 				</div>
@@ -1529,7 +1542,16 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 					</div>
 						<div className="pt-6">
 						This chart tracks the monthly trends in misdemeanors and felonies over a year.<br/>
-						The chart shows contrasting trends with misdemeanors declining mid-year and increasing again, while felonies follow a similar but less dramatic pattern.
+						<b>Misdemeanors (gray line):</b><br/>
+Begin at 37 offenses in January.<br/>
+Peak at 42 offenses in March.<br/>
+Decline steadily through the middle of the year, reaching a low of 28 offenses in June.<br/>
+Increase again toward the end of the year, peaking at 48 offenses in November before declining to 35 in December.<br/>
+<br/>
+<b>Felonies (blue line):</b><br/>
+Start at 23 offenses in January.<br/>
+Decline steadily to a low of 9 offenses in June.<br/>
+Begin increasing mid-year, peaking at 27 offenses in November before declining to 14 in December.
 						</div>
 				</div>
 			</div>
@@ -1575,8 +1597,15 @@ const ResponseAnalysis = () => {
 							<ReactApexChart className="apex-charts" options={resolutionmethodsused} height={400} series={resolutionmethodsused.series} type="bar" />
 						</div>
 						<div className="pt-6">
-						This bar chart illustrates how offenses are handled after being referred for disposition<br/>
-						This highlights that the majority of cases are redirected to external jurisdictions or juvenile authorities.
+						Released: Approximately 45 instances, representing cases where individuals were released after referral.<br/>
+Juvenile Authorities: Around 60 instances, showing a significant number of cases referred to juvenile authorities.<br/>
+Social Services: Approximately 45 instances, indicating similar handling frequency to the "Released" category.<br/>
+Another Jurisdiction: The highest category, with approximately 75 instances, highlighting the frequent redirection of cases to external jurisdictions.<br/>
+None: About 25 instances, representing cases with no follow-up action.<br/>
+						This highlights that the majority of cases are redirected to external jurisdictions or juvenile authorities.<br/>
+						<br/>
+						"Another Jurisdiction" and "Juvenile Authorities" are the most common outcomes.
+"None" is the least common, suggesting that most cases are actively handled or referred
 						</div>
 					</div>
 				</div>
@@ -1591,7 +1620,16 @@ const ResponseAnalysis = () => {
 						</div>
 						<div className="pt-6">
 						This line chart tracks the monthly trends in parent notifications for two categories<br/>
-						The y-axis represents the number of encounters where notifications occurred, while the x-axis shows months from January to July.
+						<br/>
+						<b>Released to Parent (gray line):</b><br/>
+						Starts at 28 notifications in January.<br/>
+						Peaks at 36 in April.<br/>
+						Shows a slight decline through May and June, stabilizing around 32-33 notifications.<br/>
+						<br/>
+						<b>Released on Street (blue line):</b><br/>
+						Starts at 12 notifications in January.<br/>
+						Increases steadily to a peak of 18 notifications in April.<br/>
+						Declines through May and stabilizes at 13 notifications in June and July.
 						</div>
 					</div>
 				</div>
