@@ -49,8 +49,7 @@ const StatisticsWidget = ({ variant, cardTitle, title, stats, change, dataSince,
 						</h5>
 						<h3 className="text-2xl my-6">{stats}</h3>
 					</div>
-					<div className="shrink grow">
-						{/* <i className={`text-[${colors[0]}] text-6xl ri-chat-smile-3-fill`} style={{color: `${colors[0]}`}}></i> */}
+					<div className="shrink">
 						<ReactApexCharts className={`${classname} hidden`} options={apexOpts} series={chartSeries} type="donut" width={95} height={95} />
 					</div>
 				</div>
