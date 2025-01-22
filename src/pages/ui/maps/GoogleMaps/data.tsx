@@ -6,6 +6,7 @@ import { useRef, useState } from 'react'
 
 interface MapContainerProps {
 	google: any
+	description: string
 }
 
 const polyline = [
@@ -82,7 +83,7 @@ const gradient = [
 	)
 }
 
-const BasicHeatMap = ({ google }: MapContainerProps) => {
+const BasicHeatMap = ({ google , description }: MapContainerProps) => {
 	return (
 		<div className="card">
 			<div className="card-header">
@@ -117,6 +118,9 @@ const BasicHeatMap = ({ google }: MapContainerProps) => {
 							heatmap={positions}
 							>
 						</GoogleMapReact> */}
+					</div>
+					<div className="pt-6">
+							{description}
 					</div>
 				</div>
 			</div>

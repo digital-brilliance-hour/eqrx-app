@@ -1451,6 +1451,12 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 					<div dir="ltr">
 						<ReactApexChart className="apex-charts" options={groupBarOpts} height={650} series={groupBarOpts.series} type="bar" />
 					</div>
+						<div className="pt-6">
+						This chart presents "Public Nuisance Violations" across various offense types for the years 2011–2015, <br/>
+						with each year represented by a distinct color. 
+						The offenses included are Arson, Murder, Stalking, Burglary, Rape, Robbery, and Assault.<br/>
+						The data highlights trends and fluctuations in various public nuisance offenses over time.
+						</div>
 				</div>
 			</div>
 		</div>
@@ -1467,7 +1473,9 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 		</div>
 		
 		<div className="xl:col-span-3">
-		<BasicHeatMap google={google} />
+			<BasicHeatMap 
+			google={google} 
+			description='This chart is a heatmap overlaid on a map of Kinston, identifying "Trespassing Hotspots." The red and blue shaded areas indicate the intensity or frequency of trespassing incidents, with red likely representing higher activity and blue representing lower activity.' />
 		</div>
 
 		<div className="xl:col-span-3">
@@ -1476,6 +1484,9 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 						<h4 className="card-title">Trespassing Cases</h4>
 						<div dir="ltr">
 							<ReactApexChart className="apex-charts" options={trespassingcases} height={337} series={trespassingcases.series} type="line" />
+						</div>
+						<div className="pt-6">
+						This is a line chart titled "Trespassing Cases," showing the number of trespassing incidents reported each month. The y-axis represents the number of cases, while the x-axis represents months from January to September.
 						</div>
 					</div>
 				</div>
@@ -1488,6 +1499,10 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 						<h4 className="card-title mb-4">School-based infractions</h4>
 						<div dir="ltr">
 							<ReactApexChart className="apex-charts" options={schoolbasedinfractions} height={450} series={schoolbasedinfractions.series} type="bar" />
+						</div>
+						<div className="pt-6">
+						This chart, titled "School-based Infractions," visualizes the frequency of various infractions in a school setting.<br/>
+						Drug violations are the most common infraction, while affray is the least frequent. This chart highlights areas that may require targeted intervention or policy changes.
 						</div>
 					</div>
 				</div>
@@ -1512,6 +1527,10 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 					<div dir="ltr">
 						<ReactApexChart className="apex-charts" options={statusoffense} height={380} series={statusoffense.series} type="line" />
 					</div>
+						<div className="pt-6">
+						This chart tracks the monthly trends in misdemeanors and felonies over a year.<br/>
+						The chart shows contrasting trends with misdemeanors declining mid-year and increasing again, while felonies follow a similar but less dramatic pattern.
+						</div>
 				</div>
 			</div>
 		</div>
@@ -1553,7 +1572,11 @@ const ResponseAnalysis = () => {
 					<div className="p-6">
 						<h4 className="card-title">Disposition Referral</h4>
 						<div dir="ltr">
-							<ReactApexChart className="apex-charts" options={resolutionmethodsused} height={380} series={resolutionmethodsused.series} type="bar" />
+							<ReactApexChart className="apex-charts" options={resolutionmethodsused} height={400} series={resolutionmethodsused.series} type="bar" />
+						</div>
+						<div className="pt-6">
+						This bar chart illustrates how offenses are handled after being referred for disposition<br/>
+						This highlights that the majority of cases are redirected to external jurisdictions or juvenile authorities.
 						</div>
 					</div>
 				</div>
@@ -1565,6 +1588,10 @@ const ResponseAnalysis = () => {
 						<h4 className="card-title">Parent notification rates</h4>
 						<div dir="ltr">
 							<ReactApexChart className="apex-charts" options={parentnotificationrates} height={380} series={parentnotificationrates.series} type="line" />
+						</div>
+						<div className="pt-6">
+						This line chart tracks the monthly trends in parent notifications for two categories<br/>
+						The y-axis represents the number of encounters where notifications occurred, while the x-axis shows months from January to July.
 						</div>
 					</div>
 				</div>
@@ -1592,7 +1619,7 @@ const PatternRecognition = () => {
 			<div className="p-6">
 				<h4 className="card-title mb-4">Repeat incident tracking</h4>
 				<div dir="ltr">
-					<ReactApexChart className="apex-charts" options={repeatincidenttracking} height={363} series={repeatincidenttracking.series} type="pie" />
+					<ReactApexChart className="apex-charts" options={repeatincidenttracking} height={400} series={repeatincidenttracking.series} type="pie" />
 				</div>
 			</div>
 		</div>
@@ -1604,6 +1631,8 @@ const PatternRecognition = () => {
 					<div dir="ltr">
 						<ReactApexChart className="apex-charts" options={dashedLineChartOpts2} height={380} series={dashedLineChartOpts2.series} type="line" />
 					</div>
+						<div className="pt-6">
+						</div>
 				</div>
 			</div>
 		</div>

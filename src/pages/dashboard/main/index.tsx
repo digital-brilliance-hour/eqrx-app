@@ -22,6 +22,7 @@ import { Tab } from '@headlessui/react'
 import PublicOrder from '../../dashboard/publicorder/index'
 import ViolentCrimes from '../../dashboard/violentcrimes/index'
 import PropertyCrimes from '../../dashboard/propertycrimes/index'
+import { PlacesType, Tooltip, VariantType } from 'react-tooltip'
 
 // dummy data
 import { products } from './data'
@@ -1745,6 +1746,8 @@ interface MapContainerProps {
 	google: any
 }
 
+const placements: PlacesType[] = ['bottom']
+
 // code for the page begins
 
 // const GeographicOverview = () => {
@@ -1837,9 +1840,29 @@ const SystemPerformanceMetrics = () => {
 		<div className="xl:col-span-3">
 				<div className="card">
 					<div className="p-6">
-						<h4 className="card-title">Case resolution rates</h4>
+						<div className="flex justify-between">
+							<h4 className="card-title">Case resolution rates</h4>
+
+							<div className="pb-6">
+								<div className="flex flex-wrap gap-2 hidden">
+									{(placements || []).map((placement, idx) => (
+										<div key={idx}>
+											<button id={`tooltip1-${idx}`} className="btn bg-primary text-white">
+												Tooltip {placement.charAt(0).toUpperCase() + placement.slice(1)}
+											</button>
+											<Tooltip place={placement} content={`${placement.charAt(0).toUpperCase() + placement.slice(1)} tooltip`} anchorId={`tooltip1-${idx}`} />
+										</div>
+									))}
+								</div>
+							</div>
+
+						</div>
 						<div dir="ltr">
 						<ReactApexChart className="apex-charts" options={stackedColumnOpts} height={380} series={stackedColumnOpts.series} type="bar" />
+						</div>
+						<div className="pt-6">
+							The chart shows "Case resolution rates" from 2011 to 2018, broken down into four categories<br/>
+							The total bar heights represent the sum of these categories for each year,<br/> with considerable variability in case outcomes year by year.
 						</div>
 					</div>
 				</div>
@@ -1850,7 +1873,11 @@ const SystemPerformanceMetrics = () => {
 					<div className="p-6">
 						<h4 className="card-title mb-4">Juvenile Encounter Officer Types</h4>
 						<div dir="ltr">
-							<ReactApexChart className="apex-charts" options={simplePieOpts} height={397} series={simplePieOpts.series} type="pie" />
+							<ReactApexChart className="apex-charts" options={simplePieOpts} height={418} series={simplePieOpts.series} type="pie" />
+						</div>
+						<div className="pt-6">
+						The pie chart depicts the distribution of officer types involved in juvenile encounters.<br/>
+						This chart highlights the varying roles officers play in juvenile-related situations.
 						</div>
 					</div>
 				</div>

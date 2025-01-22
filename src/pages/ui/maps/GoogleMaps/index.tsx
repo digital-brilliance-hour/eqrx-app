@@ -13,13 +13,13 @@ const GoogleMaps = ({ google }: MapContainerProps) => {
 		<>
 			<PageBreadcrumb title="Google Maps" subName="Maps" />
 			<div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
-				<BasicGoogleMap google={google} />
-				<BasicHeatMap google={google}/>
-				<MapWithMarkers google={google} />
-				<StreetViewMap google={google} />
-				<PolyLineMap google={google} />
-				<LightStyledMap google={google} />
-				<DarkStyledMap google={google} />
+				<BasicGoogleMap google={google} description='' />
+				<BasicHeatMap google={google} description=''/>
+				<MapWithMarkers google={google} description=''/>
+				<StreetViewMap google={google} description=''/>
+				<PolyLineMap google={google} description=''/>
+				<LightStyledMap google={google} description=''/>
+				<DarkStyledMap google={google} description=''/>
 			</div>
 		</>
 	)
