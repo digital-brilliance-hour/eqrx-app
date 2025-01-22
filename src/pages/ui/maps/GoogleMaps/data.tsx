@@ -621,7 +621,7 @@ const DarkStyledMap = ({ google }: MapContainerProps) => {
 }
 
 export { BasicGoogleMap, DarkStyledMap, MapWithMarkers, StreetViewMap, PolyLineMap, LightStyledMap, BasicHeatMap, LocClustHeatMap }
-function setCurrentHeatMap(area: any) {
-	throw new Error('Function not implemented.')
-}
+//function setCurrentHeatMap(area: any) {
+//	throw new Error('Function not implemented.')
+//}
 
