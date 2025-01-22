@@ -1576,7 +1576,11 @@ const ResponseAnalysis = () => {
 	)
 }
 
-const PatternRecognition = () => {
+interface PatternRecognitionProps {
+	google: any;
+}
+
+const PatternRecognition: React.FC<PatternRecognitionProps> = ({ google }) => {
 	return (
 		<>
 		{/* phase 2 */}
