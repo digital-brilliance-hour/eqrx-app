@@ -126,136 +126,137 @@ const BasicHeatMap = ({ google }: MapContainerProps) => {
 
 
 
-const LocClustHeatMap = ({ google }) => {
-	const [activeLayers, setActiveLayers] = useState({
-		yearly: true,
-		monthly: true,
-	});
 
-	const heatMapData = {
-	yearly: [
-		{ lat: 35.262551, lng: -77.582368 },
-		{ lat: 35.262745, lng: -77.581586 },
-		{ lat: 35.262842, lng: -77.580688 },
-		{ lat: 35.262919, lng: -77.579815 },
-		{ lat: 35.262992, lng: -77.579112 },
-		{ lat: 35.2631,   lng: -77.578461 },
-		{ lat: 35.263206, lng: -77.577829 },
-		{ lat: 35.263273, lng: -77.577324 },
-		{ lat: 35.263316, lng: -77.577023 },
-		{ lat: 35.263357, lng: -77.576794 },
-		{ lat: 35.263371, lng: -77.576687 },
-		{ lat: 35.263368, lng: -77.576666 },
-		{ lat: 35.263383, lng: -77.576594 },
-		{ lat: 35.263508, lng: -77.576525 },
-		{ lat: 35.263842, lng: -77.576591 },
-		{ lat: 35.264147, lng: -77.576668 },
-		// Add more positions...
-	],
 
-	monthly: [
-		{ lat: 35.267188, lng: -77.584088 },
-		{ lat: 35.267188, lng: -77.583788 },
-		{ lat: 35.267188, lng: -77.583488 },
-		{ lat: 35.267188, lng: -77.583188 },
-		{ lat: 35.266888, lng: -77.584088 },
-		{ lat: 35.266888, lng: -77.583788 },
-		{ lat: 35.266888, lng: -77.583488 },
-		{ lat: 35.266888, lng: -77.583188 },
-		{ lat: 35.266588, lng: -77.584088 },
-		{ lat: 35.266588, lng: -77.583788 },
-		{ lat: 35.266588, lng: -77.583488 },
-		{ lat: 35.266588, lng: -77.583188 },
-		{ lat: 35.266288, lng: -77.584088 },
-		{ lat: 35.266288, lng: -77.583788 },
-		{ lat: 35.266288, lng: -77.583488 },
-		{ lat: 35.266288, lng: -77.583188 },
+	const LocClustHeatMap = ({ google }: MapContainerProps) => {    const [activeLayers, setActiveLayers] = useState({
+        yearly: true,
+        monthly: true,
+    });
 
-		// Add more positions...
-	],
-	};
+    const heatMapData = {
+        yearly: [
+            { lat: 35.262551, lng: -77.582368 },
+            { lat: 35.262745, lng: -77.581586 },
+            { lat: 35.262842, lng: -77.580688 },
+            { lat: 35.262919, lng: -77.579815 },
+            { lat: 35.262992, lng: -77.579112 },
+            { lat: 35.2631, lng: -77.578461 },
+            { lat: 35.263206, lng: -77.577829 },
+            { lat: 35.263273, lng: -77.577324 },
+            { lat: 35.263316, lng: -77.577023 },
+            { lat: 35.263357, lng: -77.576794 },
+            { lat: 35.263371, lng: -77.576687 },
+            { lat: 35.263368, lng: -77.576666 },
+            { lat: 35.263383, lng: -77.576594 },
+            { lat: 35.263508, lng: -77.576525 },
+            { lat: 35.263842, lng: -77.576591 },
+            { lat: 35.264147, lng: -77.576668 },
+            // Add more positions...
+        ],
 
-	const gradients = {
-		yearly: [
-		'rgba(0, 255, 255, 0)',
-		'rgba(0, 255, 255, 1)',
-		'rgba(0, 191, 255, 1)',
-		'rgba(0, 127, 255, 1)',
-		'rgba(0, 63, 255, 1)',
-		'rgba(0, 0, 255, 1)',
-		'rgba(0, 0, 223, 1)',
-		'rgba(0, 0, 191, 1)',
-		'rgba(0, 0, 159, 1)',
-		'rgba(0, 0, 127, 1)',
-		'rgba(63, 0, 91, 1)',
-		'rgba(127, 0, 63, 1)',
-		'rgba(191, 0, 31, 1)',
-		'rgba(255, 0, 0, 1)'
-		],
-		monthly: [
-		'rgba(255, 140, 0, 0)',
-		'rgba(255, 140, 0, 1)',
-		'rgba(255, 99, 71, 1)',
-		'rgba(255, 69, 0, 1)',
-		],
-	};
+        monthly: [
+            { lat: 35.267188, lng: -77.584088 },
+            { lat: 35.267188, lng: -77.583788 },
+            { lat: 35.267188, lng: -77.583488 },
+            { lat: 35.267188, lng: -77.583188 },
+            { lat: 35.266888, lng: -77.584088 },
+            { lat: 35.266888, lng: -77.583788 },
+            { lat: 35.266888, lng: -77.583488 },
+            { lat: 35.266888, lng: -77.583188 },
+            { lat: 35.266588, lng: -77.584088 },
+            { lat: 35.266588, lng: -77.583788 },
+            { lat: 35.266588, lng: -77.583488 },
+            { lat: 35.266588, lng: -77.583188 },
+            { lat: 35.266288, lng: -77.584088 },
+            { lat: 35.266288, lng: -77.583788 },
+            { lat: 35.266288, lng: -77.583488 },
+            { lat: 35.266288, lng: -77.583188 },
+            // Add more positions...
+        ],
+    };
 
-	const handleToggleHeatMap = (area) => {
-		setActiveLayers(prev => ({
-		...prev,
-		[area]: !prev[area]
-		}));
-	};
+    const gradients = {
+        yearly: [
+            'rgba(0, 255, 255, 0)',
+            'rgba(0, 255, 255, 1)',
+            'rgba(0, 191, 255, 1)',
+            'rgba(0, 127, 255, 1)',
+            'rgba(0, 63, 255, 1)',
+            'rgba(0, 0, 255, 1)',
+            'rgba(0, 0, 223, 1)',
+            'rgba(0, 0, 191, 1)',
+            'rgba(0, 0, 159, 1)',
+            'rgba(0, 0, 127, 1)',
+            'rgba(63, 0, 91, 1)',
+            'rgba(127, 0, 63, 1)',
+            'rgba(191, 0, 31, 1)',
+            'rgba(255, 0, 0, 1)',
+        ],
+        monthly: [
+            'rgba(255, 140, 0, 0)',
+            'rgba(255, 140, 0, 1)',
+            'rgba(255, 99, 71, 1)',
+            'rgba(255, 69, 0, 1)',
+        ],
+    };
 
-	return (
-		<div className="card">
-		<div className="card-header">
-		<h4 className="card-title">Location Clustering</h4>
-		</div>
-		<div className="p-6">
-		<div className="mb-3">
-			<div id="gmaps-basic" className="gmaps" style={{ position: 'relative', overflow: 'hidden' }}>
-			<Map
-				google={google}
-				initialCenter={{ lat: 35.2621, lng: -77.5818 }}
-				zoomControlOptions={{ position: google.maps.ControlPosition.LEFT_TOP }}>
-				{activeLayers.yearly && (
-				<HeatMap
-					mapCenter={{ lat: 35.2621, lng: -77.5818 }}
-					gradient={gradients.yearly}
-					google={google}
-					positions={heatMapData.yearly}
-					radius={20}
-					opacity={0.3}
-					/>
-				)}
-				{activeLayers.monthly && (
-					<HeatMap
-					mapCenter={{ lat: 35.2621, lng: -77.5818 }}
-					gradient={gradients.monthly}
-					google={google}
-					positions={heatMapData.monthly}
-					radius={20}
-					opacity={0.3}
-					/>
-				)}
-				</Map>
-			</div>
-			</div>
-			<div className="button-group">
-			<center>
-				<button onClick={() => handleToggleHeatMap('yearly')}>
-				Toggle Yearly ({activeLayers.yearly ? 'On' : 'Off'})
-			</button>
-			<button onClick={() => handleToggleHeatMap('monthly')}>
-				Toggle Monthly ({activeLayers.monthly ? 'On' : 'Off'})
-			</button>
-			</center>
-			</div>
-		</div>
-		</div>
-	)
-	};
+    const handleToggleHeatMap = (area: 'yearly' | 'monthly') => {
+        setActiveLayers((prev) => ({
+            ...prev,
+            [area]: !prev[area],
+        }));
+    };
+
+    return (
+        <div className="card">
+            <div className="card-header">
+                <h4 className="card-title">Location Clustering</h4>
+            </div>
+            <div className="p-6">
+                <div className="mb-3">
+                    <div id="gmaps-basic" className="gmaps" style={{ position: 'relative', overflow: 'hidden' }}>
+                        <Map
+                            google={google}
+                            initialCenter={{ lat: 35.2621, lng: -77.5818 }}
+                            zoomControlOptions={{ position: google.maps.ControlPosition.LEFT_TOP }}
+                        >
+                            {activeLayers.yearly && (
+                                <HeatMap
+                                    mapCenter={{ lat: 35.2621, lng: -77.5818 }}
+                                    gradient={gradients.yearly}
+                                    google={google}
+                                    positions={heatMapData.yearly}
+                                    radius={20}
+                                    opacity={0.3}
+                                />
+                            )}
+                            {activeLayers.monthly && (
+                                <HeatMap
+                                    mapCenter={{ lat: 35.2621, lng: -77.5818 }}
+                                    gradient={gradients.monthly}
+                                    google={google}
+                                    positions={heatMapData.monthly}
+                                    radius={20}
+                                    opacity={0.3}
+                                />
+                            )}
+                        </Map>
+                    </div>
+                </div>
+                <div className="button-group">
+                    <center>
+                        <button onClick={() => handleToggleHeatMap('yearly')}>
+                            Toggle Yearly ({activeLayers.yearly ? 'On' : 'Off'})
+                        </button>
+                        <button onClick={() => handleToggleHeatMap('monthly')}>
+                            Toggle Monthly ({activeLayers.monthly ? 'On' : 'Off'})
+                        </button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    );
+}
 
 const MapWithMarkers = ({ google }: MapContainerProps) => {
 	const [activeMarker, setActiveMarker] = useState<any>({})
