@@ -1861,8 +1861,10 @@ const SystemPerformanceMetrics = () => {
 						<ReactApexChart className="apex-charts" options={stackedColumnOpts} height={380} series={stackedColumnOpts.series} type="bar" />
 						</div>
 						<div className="pt-6">
-							The chart shows "Case resolution rates" from 2011 to 2018, broken down into four categories<br/>
-							The total bar heights represent the sum of these categories for each year,<br/> with considerable variability in case outcomes year by year.
+						The bars represents the sum of these categories for each year. Key trends include:<br/>
+						A significant increase in total case outcomes in 2012 and 2016.<br/>
+						2018 showing a lower total compared to earlier years.<br/>
+						The category "Cleared by Arrest" generally dominates each year.
 						</div>
 					</div>
 				</div>
@@ -1876,8 +1878,11 @@ const SystemPerformanceMetrics = () => {
 							<ReactApexChart className="apex-charts" options={simplePieOpts} height={418} series={simplePieOpts.series} type="pie" />
 						</div>
 						<div className="pt-6">
-						The pie chart depicts the distribution of officer types involved in juvenile encounters.<br/>
-						This chart highlights the varying roles officers play in juvenile-related situations.
+						This chart highlights the varying roles officers play in juvenile-related situations, with SRO Officers and Non-SRO Officers being the most prominent groups.<br/>
+						Non-SRO Officers (blue): Represent 28.0% of the total encounters.<br/>
+SRO Officers (gray): The largest category, accounting for 35.0% of the encounters.<br/>
+Admin (green): Accounts for 26.1% of the total, representing administrative involvement in juvenile encounters.<br/>
+Traffic (pink): The smallest category, making up 10.8% of the total.
 						</div>
 					</div>
 				</div>
