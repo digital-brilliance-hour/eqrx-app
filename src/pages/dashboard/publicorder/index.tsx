@@ -15,7 +15,7 @@ import { PageBreadcrumb } from '../../../components'
 import ReactApexChart from 'react-apexcharts'
 import { ApexOptions } from 'apexcharts'
 import StatisticsWidget from '../../dashboard/report/components/StatisticsWidget'
-import { BasicHeatMap } from '../../ui/maps/GoogleMaps/data'
+import { BasicHeatMap, LocClustHeatMap } from '../../ui/maps/GoogleMaps/data'
 import { GoogleApiWrapper } from 'google-maps-react'
 
 // dummy data
@@ -513,8 +513,11 @@ export const parentnotificationrates: ApexOptions = {
 		},
 	],
 	title: {
-		text: '',
+		text: '*optional',
 		align: 'left',
+		style: {
+			color:  '#6c757d'
+		},
 	},
 	grid: {
 		row: {
@@ -1588,16 +1591,31 @@ const PatternRecognition = () => {
 			</div>
 		</div>  */}
 		
-		<div className="card xl:col-span-3">
+		{/* <div className="card xl:col-span-3">
 			<div className="p-6">
 				<h4 className="card-title mb-4">Repeat incident tracking</h4>
 				<div dir="ltr">
 					<ReactApexChart className="apex-charts" options={repeatincidenttracking} height={363} series={repeatincidenttracking.series} type="pie" />
 				</div>
 			</div>
+		</div> */}
+		<div className="xl:col-span-3 hidden">
+			<div className="card">
+					<div className="p-6">
+						<h4 className="card-title">Trespassing hotspots</h4>
+						<div dir="ltr">
+							<ReactApexChart className="apex-charts" options={colorRangeHeatmapOpts} height={380} series={colorRangeHeatmapOpts.series} type="heatmap" />
+						</div>
+					</div>
+			</div>
+		</div>
+		
+		<div className="xl:col-span-3">
+		<LocClustHeatMap google={google} />
 		</div>
 
-		<div className="xl:col-span-6">
+
+		<div className="xl:col-span-6 hidden">
 			<div className="card">
 				<div className="p-6">
 					<h4 className="card-title">Location clustering</h4>
@@ -1634,6 +1652,8 @@ const PatternRecognition = () => {
 	)
 }
 
+
+
 const PublicOrder = ({ google }: MapContainerProps) => {
 	return (
 		<>
@@ -1642,12 +1662,11 @@ const PublicOrder = ({ google }: MapContainerProps) => {
 			<div className="grid lg:grid-cols-6 gap-6 mb-6">
 				<BehavioralIncidents google={google} />
 				<ResponseAnalysis />
-				<PatternRecognition />
+				<PatternRecognition google={google} />
+
 			</div>
+			
 			{/* <div className="grid lg:grid-cols-6 gap-6 mb-6">
-				<ResponseAnalysis />
-			</div>
-			<div className="grid lg:grid-cols-6 gap-6 mb-6">
 				<PatternRecognition />
 			</div> */}
 		</>

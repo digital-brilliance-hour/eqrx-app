@@ -16,6 +16,7 @@ import { PageBreadcrumb } from '../../../components'
 // dummy data
 import { products } from './data'
 import { options } from './option-data'
+import RepeatIncidentChart from './components/RepeatIncidentTracking'
 
 const FormSelect = () => {
 	return (
@@ -299,6 +300,7 @@ const Report = () => {
 					<RevenueByLocation />
 				</div>
 				<TotalSalesChart />
+				<RepeatIncidentChart/>
 			</div>
 		</>
 	)
