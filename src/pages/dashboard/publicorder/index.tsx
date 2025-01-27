@@ -17,6 +17,7 @@ import { ApexOptions } from 'apexcharts'
 import StatisticsWidget from '../../dashboard/report/components/StatisticsWidget'
 import { BasicHeatMap } from '../../ui/maps/GoogleMaps/data'
 import { GoogleApiWrapper } from 'google-maps-react'
+import { LocClustHeatMap } from '../../ui/maps/GoogleMaps/data'
 
 // dummy data
 import { products } from './data'
@@ -513,8 +514,11 @@ export const parentnotificationrates: ApexOptions = {
 		},
 	],
 	title: {
-		text: '',
+		text: '*Future',
 		align: 'left',
+		style: {
+			color:  '#6c757d'
+		},
 	},
 	grid: {
 		row: {
@@ -1342,7 +1346,7 @@ export const groupBarOpts: ApexOptions = {
 		},
 	],
 	xaxis: {
-		categories: ['Arson', 'Murder', 'Stalking', 'Burglary', 'Rape', 'Robbery', 'Assault'],
+		categories: ['Drunk and Disruptive', 'Disorderly conduct', 'Trespassing', 'Resist Delay & Obstruct', 'Assault', 'Vandalism', 'Shop Lifting'],
 	},
 	legend: {
 		offsetY: 5,
@@ -1475,10 +1479,10 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 					</div>
 			</div>
 		</div>
-		
+
 		<div className="xl:col-span-3">
-			<BasicHeatMap 
-			google={google} 
+			<BasicHeatMap
+			google={google}
 			description='Key landmarks, streets, and locations like the "Mother Earth Motor Lodge" and "Holloway Community Center" are marked, providing context to the areas highlighted by the heatmap' />
 		</div>
 
@@ -1498,7 +1502,7 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 					</div>
 				</div>
 		</div>
-		
+
 		<div className="xl:col-span-6 gap-6">
 			<div className="col-span-6 gap-6 mb-6">
 				<div className="card">
@@ -1638,7 +1642,7 @@ None: About 25 instances, representing cases with no follow-up action.<br/>
 	)
 }
 
-const PatternRecognition = () => {
+const PatternRecognition = ({ google }: MapContainerProps) => {
 	return (
 		<>
 		{/* phase 2 */}
@@ -1652,7 +1656,7 @@ const PatternRecognition = () => {
 				</div>
 			</div>
 		</div>  */}
-		
+
 		<div className="card xl:col-span-3">
 			<div className="p-6">
 				<h4 className="card-title mb-4">Repeat incident tracking</h4>
@@ -1662,7 +1666,13 @@ const PatternRecognition = () => {
 			</div>
 		</div>
 
-		<div className="xl:col-span-6">
+		<div className="xl:col-span-3">
+		<LocClustHeatMap
+			google={google}
+			description='Key landmarks, streets, and locations like the "Mother Earth Motor Lodge" and "Holloway Community Center" are marked, providing context to the areas highlighted by the heatmap' />
+		</div>
+
+		<div className="xl:col-span-6 hidden">
 			<div className="card">
 				<div className="p-6">
 					<h4 className="card-title">Location clustering</h4>
@@ -1674,7 +1684,7 @@ const PatternRecognition = () => {
 				</div>
 			</div>
 		</div>
-		
+
 		{/* <div className="xl:col-span-3">
 			<div className="card">
 				<div className="p-6">
@@ -1709,7 +1719,7 @@ const PublicOrder = ({ google }: MapContainerProps) => {
 			<div className="grid lg:grid-cols-6 gap-6 mb-6">
 				<BehavioralIncidents google={google} />
 				<ResponseAnalysis />
-				<PatternRecognition />
+				<PatternRecognition google={google}/>
 			</div>
 			{/* <div className="grid lg:grid-cols-6 gap-6 mb-6">
 				<ResponseAnalysis />

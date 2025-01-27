@@ -2,7 +2,7 @@ import { GoogleApiWrapper } from 'google-maps-react'
 
 // components
 import { PageBreadcrumb } from '../../../../components'
-import { BasicGoogleMap, DarkStyledMap, LightStyledMap, MapWithMarkers, PolyLineMap, StreetViewMap, BasicHeatMap } from './data'
+import { BasicGoogleMap, DarkStyledMap, LightStyledMap, MapWithMarkers, PolyLineMap, StreetViewMap, BasicHeatMap, LocClustHeatMap } from './data'
 
 interface MapContainerProps {
 	google: any
@@ -20,6 +20,8 @@ const GoogleMaps = ({ google }: MapContainerProps) => {
 				<PolyLineMap google={google} description=''/>
 				<LightStyledMap google={google} description=''/>
 				<DarkStyledMap google={google} description=''/>
+				<LocClustHeatMap google={google} description=''/>
+
 			</div>
 		</>
 	)
