@@ -513,7 +513,7 @@ export const parentnotificationrates: ApexOptions = {
 		},
 	],
 	title: {
-		text: '*optional',
+		text: '*Future',
 		align: 'left',
 		style: {
 			color:  '#6c757d'
@@ -1345,7 +1345,7 @@ export const groupBarOpts: ApexOptions = {
 		},
 	],
 	xaxis: {
-		categories: ['Arson', 'Murder', 'Stalking', 'Burglary', 'Rape', 'Robbery', 'Assault'],
+		categories: ['Drunk and Disruptive', 'Disorderly conduct', 'Trespassing', 'Resist Delay & Obstruct', 'Assault', 'Vandalism', 'Shop Lifting'],
 	},
 	legend: {
 		offsetY: 5,
@@ -1450,7 +1450,7 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 		<div className="xl:col-span-6">
 			<div className="card">
 				<div className="p-6">
-					<h4 className="card-title mb-4">Public Nuisance Violations</h4>
+					<h4 className="card-title mb-4">Most Common Offenses By Juveniles</h4>
 					<div dir="ltr">
 						<ReactApexChart className="apex-charts" options={groupBarOpts} height={650} series={groupBarOpts.series} type="bar" />
 					</div>

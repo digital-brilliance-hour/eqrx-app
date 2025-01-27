@@ -89,7 +89,7 @@ const RepeatIncidentChart = () => {
 	return (
 <div className="card xl:col-span-2">
 			<div className="p-6">
-				<h4 className="card-title mb-4">Repeat incident tracking</h4>
+				<h4 className="card-title mb-4">Repeat Offender tracking</h4>
 				<div dir="ltr">
 					<ReactApexChart className="apex-charts" options={repeatincidenttracking} height={363} series={repeatincidenttracking.series} type="pie" />
 				</div>
