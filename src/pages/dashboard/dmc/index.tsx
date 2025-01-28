@@ -379,7 +379,6 @@ const dmc = () => {
 				<ContactOriginChart />
 				<SystemWideAnalysisChart />
 				<OffenseTypesByCulture />
-				<OutcomeofInteractions />
 				<RepeatOffender />
 
 

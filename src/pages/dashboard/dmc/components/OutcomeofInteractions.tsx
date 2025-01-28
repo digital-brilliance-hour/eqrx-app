@@ -102,7 +102,7 @@ const RevenueChart = () => {
 		<div className="lg:col-span-2">
             <div className="card">
 					<div className="p-6">
-						<h4 className="card-title mb-4"> Disposition By Race</h4>
+						<h4 className="card-title mb-4"> Disposition By Culture/Race</h4>
 						<div dir="ltr">
 							<ReactApexCharts className="apex-charts" options={apexOpts} height={520} series={apexOpts.series} type="bar" />
 						</div>
