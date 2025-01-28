@@ -17,10 +17,12 @@ import { ApexOptions } from 'apexcharts'
 import StatisticsWidget from '../../dashboard/report/components/StatisticsWidget'
 import { BasicHeatMap } from '../../ui/maps/GoogleMaps/data'
 import { GoogleApiWrapper } from 'google-maps-react'
+import { LocClustHeatMap } from '../../ui/maps/GoogleMaps/data'
 
 // dummy data
 import { products } from './data'
 import { options } from './option-data'
+import AgeChart from '../dmc/components/AgeComepare'
 
 const colors1 = ['#3e60d5', '#6c757d', '#47ad77', '#fa5c7c', '#e3eaef']
 
@@ -513,8 +515,11 @@ export const parentnotificationrates: ApexOptions = {
 		},
 	],
 	title: {
-		text: '',
+		text: '*Future',
 		align: 'left',
+		style: {
+			color:  '#6c757d'
+		},
 	},
 	grid: {
 		row: {
@@ -1024,7 +1029,7 @@ const resolutionmethodsused: ApexOptions = {
 	series: [
 		{
 			name: 'Times used',
-			data: [44, 55, 41, 67, 22],
+			data: [44, 55, 41, 67, 22,33],
 		},
 	],
 	grid: {
@@ -1040,7 +1045,7 @@ const resolutionmethodsused: ApexOptions = {
 		labels: {
 			rotate: -45,
 		},
-		categories: ['Released', ' Juv Authorities', 'Social Services', 'Another Jurisdiction', 'None'],
+		categories: ['Released', ' Juv Authorities', 'Social Services', 'Another Jurisdiction', 'None', 'Other' ],
 	},
 	yaxis: {
 		title: {
@@ -1294,7 +1299,7 @@ export const groupBarOpts: ApexOptions = {
 		height: 380,
 		type: 'bar',
 		toolbar: {
-			show: false,
+			show: true,
 		},
 	},
 	plotOptions: {
@@ -1321,28 +1326,28 @@ export const groupBarOpts: ApexOptions = {
 	},
 	series: [
 		{
-			name: '2011',
-			data: [44, 55, 41, 64, 22, 43, 21],
+		  name: '2011',
+		  data: [44, 55, 41, 64, 22, 43, 21, 30],
 		},
 		{
-			name: '2012',
-			data: [53, 32, 33, 52, 13, 44, 32],
+		  name: '2012',
+		  data: [53, 32, 33, 52, 13, 44, 32, 25],
 		},
 		{
-			name: '2013',
-			data: [44, 55, 41, 64, 22, 43, 21],
+		  name: '2013',
+		  data: [44, 55, 41, 64, 22, 43, 21, 30], 
 		},
 		{
-			name: '2014',
-			data: [53, 32, 33, 52, 13, 44, 32],
+		  name: '2014',
+		  data: [53, 32, 33, 52, 13, 44, 32, 25],
 		},
 		{
-			name: '2015',
-			data: [53, 32, 33, 52, 13, 44, 32],
+		  name: '2015',
+		  data: [53, 32, 33, 52, 13, 44, 32, 25],
 		},
-	],
+	  ],
 	xaxis: {
-		categories: ['Arson', 'Murder', 'Stalking', 'Burglary', 'Rape', 'Robbery', 'Assault'],
+		categories: ['Drunk and Disruptive', 'Disorderly conduct', 'Trespassing', 'Resist Delay & Obstruct', 'Assault', 'Vandalism', 'Shop Lifting', 'Other'],
 	},
 	legend: {
 		offsetY: 5,
@@ -1449,8 +1454,13 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 				<div className="p-6">
 					<h4 className="card-title mb-4">Public Nuisance Violations</h4>
 					<div dir="ltr">
-						<ReactApexChart className="apex-charts" options={groupBarOpts} height={650} series={groupBarOpts.series} type="bar" />
-					</div>
+					<ReactApexChart
+                            className="apex-charts"
+                            options={groupBarOpts}
+                            series={groupBarOpts.series}
+                            type="bar"
+                            height={650}
+                        />					</div>
 						<div className="pt-6">
 						The data highlights trends and fluctuations in various public nuisance offenses over time,<br/> with burglary consistently being the most reported offense type. <br/>
 						<b>Arson:</b> Shows consistent levels of violations across the years, with a slight increase in later years.<br/>
@@ -1475,10 +1485,10 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 					</div>
 			</div>
 		</div>
-		
+
 		<div className="xl:col-span-3">
-			<BasicHeatMap 
-			google={google} 
+			<BasicHeatMap
+			google={google}
 			description='Key landmarks, streets, and locations like the "Mother Earth Motor Lodge" and "Holloway Community Center" are marked, providing context to the areas highlighted by the heatmap' />
 		</div>
 
@@ -1498,7 +1508,7 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 					</div>
 				</div>
 		</div>
-		
+
 		<div className="xl:col-span-6 gap-6">
 			<div className="col-span-6 gap-6 mb-6">
 				<div className="card">
@@ -1638,7 +1648,7 @@ None: About 25 instances, representing cases with no follow-up action.<br/>
 	)
 }
 
-const PatternRecognition = () => {
+const PatternRecognition = ({ google }: MapContainerProps) => {
 	return (
 		<>
 		{/* phase 2 */}
@@ -1652,7 +1662,10 @@ const PatternRecognition = () => {
 				</div>
 			</div>
 		</div>  */}
-		
+						<div className="xl:col-span-3 ">
+				<AgeChart />
+				</div>
+
 		<div className="card xl:col-span-3">
 			<div className="p-6">
 				<h4 className="card-title mb-4">Repeat incident tracking</h4>
@@ -1662,7 +1675,14 @@ const PatternRecognition = () => {
 			</div>
 		</div>
 
-		<div className="xl:col-span-6">
+
+		<div className="xl:col-span-3">
+		<LocClustHeatMap
+			google={google}
+			description='Key landmarks, streets, and locations like the "Mother Earth Motor Lodge" and "Holloway Community Center" are marked, providing context to the areas highlighted by the heatmap' />
+		</div>
+
+		<div className="xl:col-span-6 hidden">
 			<div className="card">
 				<div className="p-6">
 					<h4 className="card-title">Location clustering</h4>
@@ -1674,7 +1694,7 @@ const PatternRecognition = () => {
 				</div>
 			</div>
 		</div>
-		
+
 		{/* <div className="xl:col-span-3">
 			<div className="card">
 				<div className="p-6">
@@ -1697,6 +1717,17 @@ const PatternRecognition = () => {
 			</div>
 		</div>
 		
+		{/* <div className="lg:col-span-2">
+					<div className="card">
+							<div className="p-6">
+								<h4 className="card-title mb-4">Age and Culture/Race Interactions</h4>
+								<div dir="ltr">
+									<ReactApexCharts className="apex-charts" options={apexOpts} height={520} series={apexOpts.series} type="bar" />
+								</div>
+							</div>
+					</div>
+				</div>*/}
+
 		</>
 	)
 }
@@ -1709,7 +1740,7 @@ const PublicOrder = ({ google }: MapContainerProps) => {
 			<div className="grid lg:grid-cols-6 gap-6 mb-6">
 				<BehavioralIncidents google={google} />
 				<ResponseAnalysis />
-				<PatternRecognition />
+				<PatternRecognition google={google}/>
 			</div>
 			{/* <div className="grid lg:grid-cols-6 gap-6 mb-6">
 				<ResponseAnalysis />

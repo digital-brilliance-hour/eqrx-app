@@ -5,9 +5,9 @@ import ReactApexCharts from 'react-apexcharts'
 // components
 import { PopoverLayout } from '../../../../components/HeadlessUI'
 
-const RevenueChart = () => {
+const AgeChart = () => {
 
-	const apexOpts: ApexOptions = {
+     const apexAgeOpts: ApexOptions = {
         chart: {
             height: 380,
             type: 'bar',
@@ -20,13 +20,7 @@ const RevenueChart = () => {
             bar: {
                 horizontal: true,
                 dataLabels: {
-                    total: {
-                        enabled: true,
-                        formatter: function (val) {
-                            return val + ''
-                        },
-                        offsetX: 5
-                    }
+                    
                 }
             },
         },
@@ -39,25 +33,9 @@ const RevenueChart = () => {
                 name: 'Black',
                 data: [44, 55, 41, 37, 22],
             },
-            {
-                name: 'White',
-                data: [53, 32, 33, 52, 13],
-            },
-            {
-                name: 'Asian',
-                data: [0, 0, 0, 0, 0],
-            },
-            {
-                name: 'Latino',
-                data: [0, 0, 0, 0, 0],
-            },
-            {
-                name: 'Native American',
-                data: [0, 0, 0, 0, 0],
-            },
         ],
         xaxis: {
-            categories: ['No Action Taken', 'Warning/Counseling', 'Referral to Programs', 'Court Referral', 'Arrest'],
+            categories: ['Young Child (4-7)', 'Child (8-10)', 'Pre-Teen (11-13)', 'Teen (14-16)', 'Young Adult (16-19)'],
         },
         colors: ['#39afd1', '#6c757d', '#ffbc00', '#e3eaef', '#3e60d5'],
         tooltip: {
@@ -90,26 +68,20 @@ const RevenueChart = () => {
         },
     }
 
-	const series = [
-		{
-			name: 'Juvenile Offenses',
-			type: 'line',
-			data: [440, 505, 375, 200, 150, 160],
-		},
-	]
 
-	return (
-		<div className="lg:col-span-2">
+
+    return (
+        <div className="lg:col-span-2">
             <div className="card">
-					<div className="p-6">
-						<h4 className="card-title mb-4"> Disposition By Race</h4>
-						<div dir="ltr">
-							<ReactApexCharts className="apex-charts" options={apexOpts} height={520} series={apexOpts.series} type="bar" />
-						</div>
-					</div>
-				</div>
-		</div>
-	)
+                    <div className="p-6">
+                        <h4 className="card-title mb-4">Age Interactions</h4>
+                        <div dir="ltr">
+                            <ReactApexCharts className="apex-charts" options={apexAgeOpts} height={520} series={apexAgeOpts.series} type="bar" />
+                        </div>
+                    </div>
+                </div>
+        </div>
+    )
 }
 
-export default RevenueChart
+export default AgeChart

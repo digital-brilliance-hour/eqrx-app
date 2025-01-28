@@ -16,6 +16,10 @@ import { PageBreadcrumb } from '../../../components'
 // dummy data
 import { products } from './data'
 import { options } from './option-data'
+import ReactApexChart from 'react-apexcharts'
+import { repeatincidenttracking } from '../publicorder'
+import RepeatOffender from './components/RepeatOffender'
+import RepeatOffenderTracking from './components/RepeatOffender'
 
 const FormSelect = () => {
 	return (
@@ -175,7 +179,22 @@ const ResponsiveTable2 = () => {
 		</div>
 	)
 }
+const TrackingNums = () => {
+	return (
+		<>
 
+		<div className="card xl:col-span-3">
+			<div className="p-6">
+				<h4 className="card-title mb-4">Repeat offender tracking</h4>
+				<div dir="ltr">
+					<ReactApexChart className="apex-charts" options={repeatincidenttracking} height={400} series={repeatincidenttracking.series} type="pie" />
+				</div>
+			</div>
+		</div>
+		</>
+
+		)
+		}
 
 const Checkboxes = () => {
 	return (
@@ -299,6 +318,8 @@ const Report = () => {
 					<RevenueByLocation />
 				</div>
 				<TotalSalesChart />
+				<TrackingNums />
+				<RepeatOffender />
 			</div>
 		</>
 	)

@@ -840,7 +840,7 @@ export const simplePieOpts: ApexOptions = {
 		type: 'pie',
 	},
 	series: [44, 55, 41, 17],
-	labels: ['Non-Sro Officers', 'Sro Officers', 'Admin', 'Traffic'],
+	labels: ['Patrol Officers', 'Sro Officers', 'Detectives/Investigators', 'Traffic'],
 	colors: colors1,
 	legend: {
 		show: true,
@@ -1038,14 +1038,20 @@ const stackedColumnOpts: ApexOptions = {
 			data: [11, 17, 15, 15, 21, 14, 15, 13],
 		},
 		{
+			name: 'Death Of Offender',
+			data: [2, 13, 21, 8, 3, 27, 13, 22],
+		},
+		{
 			name: 'Unfounded',
 			data: [13, 23, 20, 8, 13, 27, 33, 12],
 		},
+
+		
 	],
 	xaxis: {
 		categories: ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018'],
 	},
-	colors: ['#3e60d5', '#6c757d', '#e3eaef', '#fa5c7c', '#47ad77'],
+	colors: ['#3e60d5', '#6c757d', '#e3eaef', '#fa5c7c', '#47ad77', '#6c153a'],
 	fill: {
 		opacity: 1,
 	},
@@ -1878,10 +1884,10 @@ const SystemPerformanceMetrics = () => {
 							<ReactApexChart className="apex-charts" options={simplePieOpts} height={418} series={simplePieOpts.series} type="pie" />
 						</div>
 						<div className="pt-6">
-						This chart highlights the varying roles officers play in juvenile-related situations, with SRO Officers and Non-SRO Officers being the most prominent groups.<br/>
-						Non-SRO Officers (blue): Represent 28.0% of the total encounters.<br/>
+						This chart highlights the varying roles officers play in juvenile-related situations, with SRO Officers and Patrol Officers being the most prominent groups.<br/>
+						Patrol Officers (blue): Represent 28.0% of the total encounters.<br/>
 SRO Officers (gray): The largest category, accounting for 35.0% of the encounters.<br/>
-Admin (green): Accounts for 26.1% of the total, representing administrative involvement in juvenile encounters.<br/>
+Detectives/Investigators (green): Accounts for 26.1% of the total, representing administrative involvement in juvenile encounters.<br/>
 Traffic (pink): The smallest category, making up 10.8% of the total.
 						</div>
 					</div>
@@ -2058,7 +2064,7 @@ Traffic (pink): The smallest category, making up 10.8% of the total.
 								</div>
 							</div>
 						</div>
-						
+
 						<div className="xl:col-span-3 mt-3">
 							<div className="card">
 								<div className="p-6">

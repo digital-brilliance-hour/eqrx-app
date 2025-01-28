@@ -299,6 +299,7 @@ const Report = () => {
 					<RevenueByLocation />
 				</div>
 				<TotalSalesChart />
+				
 			</div>
 		</>
 	)

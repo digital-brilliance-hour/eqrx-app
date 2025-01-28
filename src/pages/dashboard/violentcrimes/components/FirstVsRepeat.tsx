@@ -4,7 +4,7 @@ import { ApexOptions } from 'apexcharts'
 import ReactApexChart from 'react-apexcharts'
 import { Link } from 'react-router-dom'
 
-const RevenueChart = () => {
+const RepeatVNonRepeate = () => {
     const PopoverToggle = () => {
 		return <i className="ri-more-2-fill text-xl" />
 	}
@@ -16,7 +16,7 @@ const RevenueChart = () => {
 		type: 'pie',
 	},
 	series: [22, 78],
-	labels: ['First Time', 'Repeat Offenders'],
+	labels: ['Repeate', 'Non-Repeat'],
 	colors: colors1,
 	legend: {
 		show: true,
@@ -59,4 +59,4 @@ return(
 				</div>
 )
 }
-export default RevenueChart
+export default RepeatVNonRepeate
