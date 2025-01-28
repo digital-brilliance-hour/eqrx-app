@@ -15,7 +15,7 @@ const Part1Types = () => {
             height: 380,
             type: 'bar',
             toolbar: {
-                show: false,
+                show: true,
             },
         },
         plotOptions: {
@@ -110,7 +110,7 @@ const Part2Types = () => {
             height: 380,
             type: 'bar',
             toolbar: {
-                show: false,
+                show: true,
             },
         },
         plotOptions: {
@@ -169,7 +169,7 @@ const Part3Types = () => {
             height: 380,
             type: 'bar',
             toolbar: {
-                show: false,
+                show: true,
             },
         },
         plotOptions: {

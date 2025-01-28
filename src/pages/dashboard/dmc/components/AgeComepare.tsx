@@ -13,7 +13,7 @@ const AgeChart = () => {
             type: 'bar',
             stacked: true,
             toolbar: {
-                show: false,
+                show: true,
             },
         },
         plotOptions: {

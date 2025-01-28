@@ -88,6 +88,7 @@ const BasicHeatMap = ({ google , description }: MapContainerProps) => {
 		<div className="card">
 			<div className="card-header">
 				<h4 className="card-title">Trespassing Hotspots</h4>
+				
 			</div>
 			<div className="p-6">
 				<div className="mb-3">
@@ -108,16 +109,7 @@ const BasicHeatMap = ({ google , description }: MapContainerProps) => {
 								radius={20}
 							/>
 						</Map>
-						{/* <GoogleMapReact
-							bootstrapURLKeys={{
-								key: ["AIzaSyBsHtI7Ed8ZeQ-yvYIMw9VKORe5WdPo5yg"],
-								libraries:['visualization']
-							}}
-							zoom={google.maps.ControlPosition.LEFT_TOP}
-							center={{ lat: 37.782, lng: -122.435 }}
-							heatmap={positions}
-							>
-						</GoogleMapReact> */}
+
 					</div>
 					<div className="pt-6">
 							{description}

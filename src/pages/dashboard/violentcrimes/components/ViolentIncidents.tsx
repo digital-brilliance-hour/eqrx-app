@@ -58,7 +58,7 @@ const RevenueChart = () => {
 				options: {
 					chart: {
 						toolbar: {
-							show: false,
+							show: true,
 						},
 					},
 					legend: {
