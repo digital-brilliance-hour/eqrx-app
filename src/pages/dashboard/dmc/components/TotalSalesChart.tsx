@@ -45,7 +45,7 @@ const TotalSalesChart = () => {
             },
         ],
         xaxis: {
-            categories: ['SRO', "Non-SRO"],
+            categories: ['SRO', "Patrol"],
         },
         colors: ['#6c757d', '#ffbc00'],
         tooltip: {

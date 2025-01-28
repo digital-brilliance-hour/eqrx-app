@@ -1,6 +1,7 @@
 //import { useState } from 'react'
 import Select from 'react-select'
 //import { MaskedInput } from 'rsuite'
+import ReactApexChart from 'react-apexcharts'
 
 // components
 import Statistics from './components/Statistics'
@@ -15,11 +16,14 @@ import FirstChargeComparisonChart from './components/1stChargeComparisonChart'
 import ContactOriginChart from './components/ContactOriginChart'
 import SystemWideAnalysisChart from './components/SystemWideAnalysisChart'
 import OutcomeofInteractions from './components/OutcomeofInteractions'
+import RepeatOffender from './components/RepeatOffender'
 import { PageBreadcrumb } from '../../../components'
 
 // dummy data
 import { products } from './data'
 import { options } from './option-data'
+import { repeatincidenttracking } from '../publicorder'
+import RepeatOffenderTracking from './components/RepeatOffender'
 
 const FormSelect = () => {
 	return (
@@ -98,7 +102,7 @@ const referralrecords: HighlightTableRecord[] = [
 	{
 		id: 1,
 		name: 'Officer 1',
-		type: 'Non-SRO',
+		type: 'Patrol',
 		count: 125,
 		cell: 'Cell',
 	},
@@ -112,14 +116,14 @@ const referralrecords: HighlightTableRecord[] = [
 	{
 		id: 3,
 		name: 'Officer 3',
-		type: 'Non-SRO',
+		type: 'Patrol',
 		count: 55,
 		cell: 'Cell',
 	},
 	{
 		id: 4,
 		name: 'Officer 4',
-		type: 'Non-SRO',
+		type: 'Patrol',
 		count: 45,
 		cell: 'Cell',
 	},
@@ -246,6 +250,22 @@ const ResponsiveTable2 = () => {
 	)
 }
 
+const TrackingNums = () => {
+	return (
+		<>
+
+		<div className="card xl:col-span-3">
+			<div className="p-6">
+				<h4 className="card-title mb-4">Repeat Offender Tracking</h4>
+				<div dir="ltr">
+					<ReactApexChart className="apex-charts" options={repeatincidenttracking} height={400} series={repeatincidenttracking.series} type="pie" />
+				</div>
+			</div>
+		</div>
+		</>
+
+		)
+		}
 
 const Checkboxes = () => {
 	return (
@@ -346,7 +366,7 @@ const Checkboxes = () => {
 const dmc = () => {
 	return (
 		<>
-			<PageBreadcrumb title="RED/EMC Dashboard" subName="Menu" />
+			<PageBreadcrumb title="RED/DMC Dashboard" subName="Menu" />
 			<div className="grid lg:grid-cols-5 gap-6 mb-6">
 				<TotalSalesChart />
 				<ResponsiveTable2 />
@@ -360,6 +380,9 @@ const dmc = () => {
 				<SystemWideAnalysisChart />
 				<OffenseTypesByCulture />
 				<OutcomeofInteractions />
+				<RepeatOffender />
+
+
 			</div>
 		</>
 	)

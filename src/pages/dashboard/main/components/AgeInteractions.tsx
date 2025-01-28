@@ -7,7 +7,7 @@ import { PopoverLayout } from '../../../../components/HeadlessUI'
 
 const RevenueChart = () => {
 
-	const apexOpts: ApexOptions = {
+	const ageInter: ApexOptions = {
         chart: {
             height: 380,
             type: 'bar',
@@ -57,7 +57,7 @@ const RevenueChart = () => {
             },
         ],
         xaxis: {
-            categories: ['No Action Taken', 'Warning/Counseling', 'Referral to Programs', 'Court Referral', 'Arrest'],
+            categories: ['Young Child (4-7)', 'Child (8-10)', 'Pre-Teen (11-13)', 'Teen (14-16)', 'Young Adult (16-19)'],
         },
         colors: ['#39afd1', '#6c757d', '#ffbc00', '#e3eaef', '#3e60d5'],
         tooltip: {
@@ -102,9 +102,9 @@ const RevenueChart = () => {
 		<div className="lg:col-span-2">
             <div className="card">
 					<div className="p-6">
-						<h4 className="card-title mb-4"> Disposition By Race</h4>
+						<h4 className="card-title mb-4">Age Interactions</h4>
 						<div dir="ltr">
-							<ReactApexCharts className="apex-charts" options={apexOpts} height={520} series={apexOpts.series} type="bar" />
+							<ReactApexCharts className="apex-charts" options={ageInter} height={520} series={ageInter.series} type="bar" />
 						</div>
 					</div>
 				</div>
