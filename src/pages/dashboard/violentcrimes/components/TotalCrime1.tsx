@@ -14,7 +14,7 @@ const TotalCrimes = () => {
             stacked: true,
             stackType: undefined,
             toolbar: {
-                show: false,
+                show: true,
             },
         },
         plotOptions: {

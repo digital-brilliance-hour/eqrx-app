@@ -249,7 +249,7 @@ const recoveryTime: ApexOptions = {
 			options: {
 				chart: {
 					toolbar: {
-						show: false,
+						show: true,
 					},
 				},
 				legend: {
@@ -282,7 +282,7 @@ const ItemsRecovered1: ApexOptions = {
 			height: 380,
 			type: 'bar',
 			toolbar: {
-				show: false,
+				show: true,
 			},
 		},
 		plotOptions: {
@@ -472,7 +472,7 @@ export const lineWithDataLabelOpts: ApexOptions = {
 			enabled: false,
 		},
 		toolbar: {
-			show: false,
+			show: true,
 		},
 	},
 	colors: ['#6c757d', '#3e60d5'],
@@ -534,7 +534,7 @@ export const lineWithDataLabelOpts: ApexOptions = {
 			options: {
 				chart: {
 					toolbar: {
-						show: false,
+						show: true,
 					},
 				},
 				legend: {
@@ -674,7 +674,7 @@ const totalValue: ApexOptions = {
 		height: 380,
 		type: 'bar',
 		toolbar: {
-			show: false,
+			show: true,
 		},
 	},
 	plotOptions: {
@@ -838,6 +838,9 @@ export const simplePieOpts: ApexOptions = {
 	chart: {
 		height: 320,
 		type: 'pie',
+		toolbar: {
+			show: true,
+		},
 	},
 	series: [44, 55, 41, 17],
 	labels: ['Patrol Officers', 'Sro Officers', 'Detectives/Investigators', 'Traffic'],
@@ -873,7 +876,7 @@ export const groupBarOpts: ApexOptions = {
 		height: 380,
 		type: 'bar',
 		toolbar: {
-			show: false,
+			show: true,
 		},
 	},
 	plotOptions: {
@@ -998,7 +1001,7 @@ const trespassingcases: ApexOptions = {
 			options: {
 				chart: {
 					toolbar: {
-						show: false,
+						show: true,
 					},
 				},
 				legend: {
@@ -1015,7 +1018,7 @@ const stackedColumnOpts: ApexOptions = {
 		type: 'bar',
 		stacked: true,
 		toolbar: {
-			show: false,
+			show: true,
 		},
 	},
 	plotOptions: {
@@ -1078,7 +1081,7 @@ const disorderlyconduct: ApexOptions = {
 			enabled: false,
 		},
 		toolbar: {
-			show: false,
+			show: true,
 		},
 	},
 	dataLabels: {
@@ -1224,7 +1227,7 @@ export const statusoffense: ApexOptions = {
 			enabled: false,
 		},
 		toolbar: {
-			show: false,
+			show: true,
 		},
 	},
 	colors: ['#6c757d', '#3e60d5'],
@@ -1286,7 +1289,7 @@ export const statusoffense: ApexOptions = {
 			options: {
 				chart: {
 					toolbar: {
-						show: false,
+						show: true,
 					},
 				},
 				legend: {
@@ -1303,7 +1306,7 @@ const averageresponsetimes: ApexOptions = {
 		type: 'bar',
 		stacked: true,
 		toolbar: {
-			show: false,
+			show: true,
 		},
 	},
 	plotOptions: {
@@ -1370,7 +1373,7 @@ const resolutionmethodsused: ApexOptions = {
 		height: 380,
 		type: 'bar',
 		toolbar: {
-			show: false,
+			show: true,
 		},
 	},
 	plotOptions: {
@@ -1433,7 +1436,7 @@ const repeatincidenttracking: ApexOptions = {
 		type: 'bar',
 		stacked: true,
 		toolbar: {
-			show: false,
+			show: true,
 		},
 	},
 	plotOptions: {
@@ -1494,7 +1497,7 @@ export const parentnotificationrates: ApexOptions = {
 			enabled: false,
 		},
 		toolbar: {
-			show: false,
+			show: true,
 		},
 	},
 	colors: ['#6c757d', '#3e60d5'],
@@ -1556,7 +1559,7 @@ export const parentnotificationrates: ApexOptions = {
 			options: {
 				chart: {
 					toolbar: {
-						show: false,
+						show: true,
 					},
 				},
 				legend: {
@@ -1589,7 +1592,7 @@ const ItemsRecovered3: ApexOptions = {
 			height: 380,
 			type: 'bar',
 			toolbar: {
-				show: false,
+				show: true,
 			},
 		},
 		plotOptions: {
@@ -1651,7 +1654,7 @@ const breakDown: ApexOptions = {
 		height: 380,
 		type: 'bar',
 		toolbar: {
-			show: false,
+			show: true,
 		},
 	},
 	plotOptions: {
@@ -1737,7 +1740,7 @@ const TVI: ApexOptions = {
 			options: {
 				chart: {
 					toolbar: {
-						show: false,
+						show: true,
 					},
 				},
 				legend: {

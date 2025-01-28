@@ -14,7 +14,7 @@ const RevenueChart = () => {
             stacked: true,
             stackType: '100%',
             toolbar: {
-                show: false,
+                show: true,
             },
         },
         plotOptions: {

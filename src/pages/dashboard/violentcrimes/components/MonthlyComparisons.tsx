@@ -27,7 +27,7 @@ const ItemsRecovered3: ApexOptions = {
 		height: 380,
 		type: 'bar',
 		toolbar: {
-			show: false,
+			show: true,
 		},
 	},
 	plotOptions: {

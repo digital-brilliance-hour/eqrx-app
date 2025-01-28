@@ -207,7 +207,7 @@ const disorderlyconduct: ApexOptions = {
 			enabled: false,
 		},
 		toolbar: {
-			show: false,
+			show: true,
 		},
 	},
 	dataLabels: {
@@ -412,7 +412,7 @@ export const lineWithDataLabelOpts: ApexOptions = {
 			enabled: false,
 		},
 		toolbar: {
-			show: false,
+			show: true,
 		},
 	},
 	colors: ['#6c757d', '#3e60d5'],
@@ -474,7 +474,7 @@ export const lineWithDataLabelOpts: ApexOptions = {
 			options: {
 				chart: {
 					toolbar: {
-						show: false,
+						show: true,
 					},
 				},
 				legend: {
@@ -493,7 +493,7 @@ export const parentnotificationrates: ApexOptions = {
 			enabled: false,
 		},
 		toolbar: {
-			show: false,
+			show: true,
 		},
 	},
 	colors: ['#6c757d', '#3e60d5'],
@@ -547,7 +547,7 @@ export const parentnotificationrates: ApexOptions = {
 	},
 	legend: {
 		position: 'top',
-		horizontalAlign: 'right',
+		horizontalAlign: 'center',
 		floating: true,
 		offsetY: -25,
 		offsetX: -5,
@@ -558,7 +558,7 @@ export const parentnotificationrates: ApexOptions = {
 			options: {
 				chart: {
 					toolbar: {
-						show: false,
+						show: true,
 					},
 				},
 				legend: {
@@ -577,7 +577,7 @@ export const statusoffense: ApexOptions = {
 			enabled: false,
 		},
 		toolbar: {
-			show: false,
+			show: true,
 		},
 	},
 	colors: ['#6c757d', '#3e60d5'],
@@ -628,7 +628,7 @@ export const statusoffense: ApexOptions = {
 	},
 	legend: {
 		position: 'top',
-		horizontalAlign: 'right',
+		horizontalAlign: 'center',
 		floating: true,
 		offsetY: -25,
 		offsetX: -5,
@@ -639,7 +639,7 @@ export const statusoffense: ApexOptions = {
 			options: {
 				chart: {
 					toolbar: {
-						show: false,
+						show: true,
 					},
 				},
 				legend: {
@@ -1010,7 +1010,7 @@ const resolutionmethodsused: ApexOptions = {
 		height: 380,
 		type: 'bar',
 		toolbar: {
-			show: false,
+			show: true,
 		},
 	},
 	plotOptions: {
@@ -1232,6 +1232,9 @@ export const repeatincidenttracking: ApexOptions = {
 	chart: {
 		height: 320,
 		type: 'pie',
+		toolbar: {
+			show: true,
+		},
 	},
 	series: [44, 55, 41, 17, 15],
 	labels: ['Asian', 'Native American', 'Latino', 'White', 'Black'],
@@ -1424,7 +1427,7 @@ const trespassingcases: ApexOptions = {
 			options: {
 				chart: {
 					toolbar: {
-						show: false,
+						show: true,
 					},
 				},
 				legend: {

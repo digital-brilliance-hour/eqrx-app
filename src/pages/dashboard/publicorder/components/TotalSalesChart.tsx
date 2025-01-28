@@ -14,7 +14,7 @@ const TotalSalesChart = () => {
             stacked: true,
             stackType: '100%',
             toolbar: {
-                show: false,
+                show: true,
             },
         },
         plotOptions: {
