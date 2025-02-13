@@ -1997,18 +1997,18 @@ const TotalContactsDisplay = () => {
 					</div>
 				</div>
 				<div className="2xl:col-span-1 lg:col-span-2">
-					<StatisticsWidget variant={'bg-success'} cardTitle={"Total Juvenile Contacts"} title={'Number of customers'} change={'541'} stats={'1,214'} dataSince={'Since last yesterday'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
+					<StatisticsWidget variant={'bg-success'} cardTitle={"Total Juvenile Contacts"} title={'Number of customers'} change={'541'} stats={'486'} dataSince={'Since last yesterday'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
 				</div>
 
 				<div className="2xl:col-span-1 lg:col-span-2">
-					<StatisticsWidget variant={'bg-danger'} cardTitle={"Total School-Related Contacts"} title={'Number of Orders'} change={'1.08%'} stats={'743'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
+					<StatisticsWidget variant={'bg-danger'} cardTitle={"Total School-Related Contacts"} title={'Number of Orders'} change={'1.08%'} stats={'297'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
 				</div>  
 				<div className="2xl:col-span-1 lg:col-span-2">
-					<StatisticsWidget variant={'bg-success'} cardTitle={"Total Referrals"} title={'Number of customers'} change={'241'} stats={'2,214'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
+					<StatisticsWidget variant={'bg-success'} cardTitle={"Total Referrals"} title={'Number of customers'} change={'241'} stats={'886'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
 				</div>
 
 				<div className="2xl:col-span-1 lg:col-span-2">
-					<StatisticsWidget variant={'bg-danger'} cardTitle={"Reoffender Tracking"} title={'Number of Orders'} change={'2.54%'} stats={'1,543'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
+					<StatisticsWidget variant={'bg-danger'} cardTitle={"Reoffender Tracking"} title={'Number of Orders'} change={'2.54%'} stats={'617'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
 				</div> 
 			</div>
 			<div className="grid 2xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-2 gap-6 mb-6">
