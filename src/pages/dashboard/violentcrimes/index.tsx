@@ -13,6 +13,7 @@ import OffenseTypesByCulture from './components/OffenseTypesByCulture'
 import OffenseTypesByGender from './components/OffenseTypesByGender'
 import PageBreadcrumb from '@/components/PageBreadcrumb'
 import { ApexOptions } from 'apexcharts'
+import StatisticsWidget from './components/StatisticsWidget'
 
 // dummy data
 import { products } from './data'
@@ -323,11 +324,36 @@ const Monthly = () => {
 		)
 	}
 
+	const TotalContactsDisplay = () => {
+		return (
+			<>
+				<div className="grid 2xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 gap-6 mb-6">
+					<div className="2xl:col-span-1 lg:col-span-2">
+						<StatisticsWidget variant={'bg-success'} cardTitle={"Total Juvenile Contacts"} title={'Number of customers'} change={'541'} stats={'1,214'} dataSince={'Since last yesterday'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
+					</div>
+	
+					<div className="2xl:col-span-1 lg:col-span-2">
+						<StatisticsWidget variant={'bg-danger'} cardTitle={"Total Black Contacts"} title={'Number of Orders'} change={'1.08%'} stats={'743'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
+					</div>  
+					<div className="2xl:col-span-1 lg:col-span-2">
+						<StatisticsWidget variant={'bg-success'} cardTitle={"Total White Contacts"} title={'Number of customers'} change={'241'} stats={'2,214'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
+					</div>
+	
+					<div className="2xl:col-span-1 lg:col-span-2">
+						<StatisticsWidget variant={'bg-danger'} cardTitle={"Total Hispanic Contacts"} title={'Number of Orders'} change={'2.54%'} stats={'1,543'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
+					</div> 
+				</div>
+			</>
+		)
+	}
+
 const Report = () => {
 	return (
 		<>
 			{/* <PageBreadcrumb title="Violent Crimes Dashboard" subName="Menu" /> */}
 			<header className="text-slate-900 dark:text-slate-200 text-lg font-medium mb-6">Violent Crimes Dashboard</header>
+			<TotalContactsDisplay />
+
 			<div className="grid lg:grid-cols-5 gap-6 mb-6">
 				<ViolentIncidents />
 			</div>
