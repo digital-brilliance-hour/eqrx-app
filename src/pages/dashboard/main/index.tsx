@@ -22,6 +22,7 @@ import { Tab } from '@headlessui/react'
 import PublicOrder from '../../dashboard/publicorder/index'
 import ViolentCrimes from '../../dashboard/violentcrimes/index'
 import PropertyCrimes from '../../dashboard/propertycrimes/index'
+import SchoolMetrics from '../../dashboard/schoolmetrics/index'
 import { PlacesType, Tooltip, VariantType } from 'react-tooltip'
 
 // dummy data
@@ -842,8 +843,8 @@ export const simplePieOpts: ApexOptions = {
 			show: true,
 		},
 	},
-	series: [44, 55, 41, 17],
-	labels: ['Patrol Officers', 'Sro Officers', 'Detectives/Investigators', 'Traffic'],
+	series: [55, 44],
+	labels: ['SRO Officers', 'Non-SRO Officers'],
 	colors: colors1,
 	legend: {
 		show: true,
@@ -1104,26 +1105,6 @@ const disorderlyconduct: ApexOptions = {
 			name: 'Female Cases',
 			data: [65, 14, 28, 31],
 		},
-		// {
-		// 	name: 'Asian',
-		// 	data: [21, 38, 28, 26, 2, 20, 49, 27, 40, 6, 24, 30],
-		// },
-		// {
-		// 	name: 'Native American',
-		// 	data: [29, 9, 34, 45, 13, 27, 24, 43, 3, 15, 46, 34],
-		// },
-		// {
-		// 	name: 'Latino',
-		// 	data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51],
-		// },
-		// {
-		// 	name: 'White',
-		// 	data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51, 48, 26],
-		// },
-		// {
-		// 	name: 'Black',
-		// 	data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56, 36, 13],
-		// },
 	],
 
 	markers: {
@@ -1392,7 +1373,7 @@ const resolutionmethodsused: ApexOptions = {
 	series: [
 		{
 			name: 'Times used',
-			data: [44, 55, 41, 67, 22],
+			data: [44, 50, 41, 42, 22, 23, 30, 18, 25],
 		},
 	],
 	grid: {
@@ -1408,7 +1389,7 @@ const resolutionmethodsused: ApexOptions = {
 		labels: {
 			rotate: -45,
 		},
-		categories: ['Released', ' Juv Authorities', 'Social Services', 'Another Jurisdiction', 'None'],
+		categories: ['Released', ' Juv Authorities', 'Social Services', 'Another Jurisdiction', 'Mental Health Services', 'Domestic Violence Services', 'Healthcare Providers', 'School Administration', 'None'],
 	},
 	yaxis: {
 		title: {
@@ -1755,6 +1736,40 @@ interface MapContainerProps {
 	google: any
 }
 
+interface TableRecord {
+	id: number
+	name: string
+	cell: string
+}
+
+const records: TableRecord[] = [
+	{
+		id: 1,
+		name: 'Burglary',
+		cell: 'Cell',
+	},
+	{
+		id: 2,
+		name: 'Escape from Custody',
+		cell: 'Cell',
+	},
+	{
+		id: 3,
+		name: 'Drug Violation',
+		cell: 'Cell',
+	},
+	{
+		id: 4,
+		name: 'Aggrevated Assault',
+		cell: 'Cell',
+	},
+	{
+		id: 5,
+		name: 'Disorderly Conduct',
+		cell: 'Cell',
+	},
+]
+
 const placements: PlacesType[] = ['bottom']
 
 // code for the page begins
@@ -1809,22 +1824,50 @@ const placements: PlacesType[] = ['bottom']
 const TotalContactsDisplay = () => {
 	return (
 		<>
-		<div className="grid 2xl:grid-cols-5 lg:grid-cols-6 md:grid-cols-2 gap-6 mb-6">
-		
+			<div className="grid 2xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 gap-6 mb-6">
 				<div className="2xl:col-span-1 lg:col-span-2">
-					<StatisticsWidget variant={'bg-success'} cardTitle={"Today's total juvenile contacts"} title={'Number of customers'} change={'541'} stats={'1,214'} dataSince={'Since last yesterday'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
+					<StatisticsWidget variant={'bg-success'} cardTitle={"Total Juvenile Contacts"} title={'Number of customers'} change={'541'} stats={'1,214'} dataSince={'Since last yesterday'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
 				</div>
 
 				<div className="2xl:col-span-1 lg:col-span-2">
-					<StatisticsWidget variant={'bg-danger'} cardTitle={"Active Cases"} title={'Number of Orders'} change={'1.08%'} stats={'743'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
+					<StatisticsWidget variant={'bg-danger'} cardTitle={"Total School-Related Contacts"} title={'Number of Orders'} change={'1.08%'} stats={'743'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
 				</div>  
 				<div className="2xl:col-span-1 lg:col-span-2">
-					<StatisticsWidget variant={'bg-success'} cardTitle={"Cleared Cases"} title={'Number of customers'} change={'241'} stats={'2,214'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
+					<StatisticsWidget variant={'bg-success'} cardTitle={"Total Referrals"} title={'Number of customers'} change={'241'} stats={'2,214'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
 				</div>
 
 				<div className="2xl:col-span-1 lg:col-span-2">
-					<StatisticsWidget variant={'bg-danger'} cardTitle={"School Realated"} title={'Number of Orders'} change={'2.54%'} stats={'1,543'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
+					<StatisticsWidget variant={'bg-danger'} cardTitle={"Reoffender Tracking"} title={'Number of Orders'} change={'2.54%'} stats={'1,543'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
 				</div> 
+{/* 			
+				<div className="xl:col-span-1">
+					<div className="card">
+						<div className="p-6">
+							<h3 className="card-title mb-4">Top 5 Charges</h3>
+
+							<div className="overflow-x-auto">
+								<div className="min-w-full inline-block align-middle">
+									<div className="overflow-hidden">
+										<table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+											<tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+												{(records || []).slice(0, 5).map((record, idx) => {
+													return (
+														<tr key={idx}>
+															<th scope="col" className="px-4 py-4 text-start text-sm font-medium text-gray-500">
+																{record.id}
+															</th>
+															<td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-500 dark:text-gray-200">{record.name}</td>
+														</tr>
+													)
+												})}
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> */}
 			</div>
 		</>
 	)
@@ -1835,7 +1878,7 @@ const SystemPerformanceMetrics = () => {
 	return (
 		<>
 		{/* Phase 2 */}
-		{/* <div className="xl:col-span-6">
+		 <div className="xl:col-span-6 hidden">
 			<div className="card">
 				<div className="p-6">
 					<h4 className="card-title"> referral program success rate</h4>
@@ -1844,13 +1887,13 @@ const SystemPerformanceMetrics = () => {
 					</div>
 				</div>
 			</div>
-		</div> */}
+		</div> 
 
-		<div className="xl:col-span-3">
+		{/* <div className="xl:col-span-3">
 				<div className="card">
 					<div className="p-6">
 						<div className="flex justify-between">
-							<h4 className="card-title">Case resolution rates</h4>
+							<h4 className="card-title">Contact resolution rates</h4>
 
 							<div className="pb-6">
 								<div className="flex flex-wrap gap-2 hidden">
@@ -1871,27 +1914,48 @@ const SystemPerformanceMetrics = () => {
 						</div>
 						<div className="pt-6">
 						The bars represents the sum of these categories for each year. Key trends include:<br/>
-						A significant increase in total case outcomes in 2012 and 2016.<br/>
+						A significant increase in total contact outcomes in 2012 and 2016.<br/>
 						2018 showing a lower total compared to earlier years.<br/>
 						The category "Cleared by Arrest" generally dominates each year.
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> */}
+
+		
+					<div className="xl:col-span-3">
+						<div className="card">
+							<div className="p-6">
+								<h4 className="card-title">Juvenile Contact Disposition</h4>
+								<div dir="ltr">
+									<ReactApexChart className="apex-charts" options={resolutionmethodsused} height={400} series={resolutionmethodsused.series} type="bar" />
+								</div>
+								<div className="pt-6">
+								Released: Occurs with 45 instances, representing contacts where individuals were released after referral.<br/>
+								Juvenile Authorities: Around 50 instances, showing a significant number of contacts referred to juvenile authorities.<br/>
+								Social Services: Approximately 40 instances, indicating similar handling frequency to the "Released" category.<br/>
+								Another Jurisdiction: Approximately 45 instances, indicating a significant percentage of contacts are referred to other authorities<br/>
+								Mental Health Services: Approximately 25 instances, representing contacts where individuals were referred to a mental health specialist.<br/>
+								Domestic Violence Services: Occurs with 24 instances, representing contacts where individuals were handled by Domestic Violence Services.<br/>
+								Healthcare Providers: Occurs with 30 instances, representing contacts where individuals were provided healthcare or medical treatment.<br/>
+								School Administration: Approximately 20 instances, representing contacts where individuals were addresed within the school administration.<br/>
+								None: About 25 instances, representing contacts with no follow-up action.<br/>
+								</div>
+							</div>
+						</div>
+					</div>
 
 		<div className="xl:col-span-3 gap-6">
 			<div className="card">
 					<div className="p-6">
 						<h4 className="card-title mb-4">Juvenile Encounter Officer Types</h4>
 						<div dir="ltr">
-							<ReactApexChart className="apex-charts" options={simplePieOpts} height={418} series={simplePieOpts.series} type="pie" />
+							<ReactApexChart className="apex-charts" options={simplePieOpts} height={585} series={simplePieOpts.series} type="pie" />
 						</div>
 						<div className="pt-6">
-						This chart highlights the varying roles officers play in juvenile-related situations, with SRO Officers and Patrol Officers being the most prominent groups.<br/>
-						Patrol Officers (blue): Represent 28.0% of the total encounters.<br/>
-SRO Officers (gray): The largest category, accounting for 35.0% of the encounters.<br/>
-Detectives/Investigators (green): Accounts for 26.1% of the total, representing administrative involvement in juvenile encounters.<br/>
-Traffic (pink): The smallest category, making up 10.8% of the total.
+						This chart highlights the varying roles officers play in juvenile-related situations, with SRO Officers being the most prominent groups.<br/>
+						Non-SRO Officers (grey): Represent 44.4% of the total encounters.<br/>
+						SRO Officers (blue): The largest category, accounting for 55.6% of the encounters.<br/>
 						</div>
 					</div>
 				</div>
@@ -1959,308 +2023,12 @@ Traffic (pink): The smallest category, making up 10.8% of the total.
 					<Tab type="button" className={({ selected }) => `${selected ? 'bg-primary text-white' : 'text-gray-500 hover:text-primary  bg-transparent'} flex-auto py-2 px-4 inline-flex justify-center items-center gap-2 text-center text-sm font-semibold  dark:hover:text-gray-400 first:rounded-s-md last:rounded-e-md`}>
 						Property Crimes
 					</Tab>
+					<Tab type="button" className={({ selected }) => `${selected ? 'bg-primary text-white' : 'text-gray-500 hover:text-primary  bg-transparent'} flex-auto py-2 px-4 inline-flex justify-center items-center gap-2 text-center text-sm font-semibold  dark:hover:text-gray-400 first:rounded-s-md last:rounded-e-md`}>
+						School Metrics
+					</Tab>
 				</Tab.List>
 
 				<Tab.Panels className="mt-3">
-					
-					{/* first tab */}
-					{/* <Tab.Panel id="fill-and-justify-1" aria-labelledby="fill-and-justify-item-1">
-						
-						<div className="xl:col-span-3">
-							<div className="card">
-								<div className="p-6">
-									<h4 className="card-title mb-4">Annual Trespassing</h4>
-									<div dir="ltr">
-										<ReactApexChart className="apex-charts" options={groupBarOpts} height={800} series={groupBarOpts.series} type="bar" />
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div className="xl:col-span-3 hidden">
-							<div className="card">
-									<div className="p-6">
-										<h4 className="card-title">Trespassing hotspots</h4>
-										<div dir="ltr">
-											<ReactApexChart className="apex-charts" options={colorRangeHeatmapOpts} height={380} series={colorRangeHeatmapOpts.series} type="heatmap" />
-										</div>
-									</div>
-							</div>
-						</div>
-
-						<div className="xl:col-span-3 mt-3">
-							<div className="card">
-									<div className="p-6">
-										<h4 className="card-title">Trespassing Cases</h4>
-										<div dir="ltr">
-											<ReactApexChart className="apex-charts" options={trespassingcases} height={380} series={trespassingcases.series} type="line" />
-										</div>
-									</div>
-								</div>
-						</div>
-						
-						<div className="xl:col-span-6 gap-6 mt-3">
-							<div className="col-span-6 gap-6 mb-6">
-								<div className="card">
-									<div className="p-6">
-										<h4 className="card-title mb-4">School-based infractions</h4>
-										<div dir="ltr">
-											<ReactApexChart className="apex-charts" options={schoolbasedinfractions} height={450} series={schoolbasedinfractions.series} type="bar" />
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<div className="xl:col-span-6 mt-3">
-							<div className="card">
-								<div className="p-6">
-									<h4 className="card-title">Disorderly conduct patterns</h4>
-									<div dir="ltr">
-										<ReactApexChart className="apex-charts" options={disorderlyconduct} height={380} series={disorderlyconduct.series} type="line" />
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div className="xl:col-span-3 mt-3">
-							<div className="card">
-								<div className="p-6">
-									<h4 className="card-title">Status offense trends</h4>
-									<div dir="ltr">
-										<ReactApexChart className="apex-charts" options={statusoffense} height={380} series={statusoffense.series} type="line" />
-									</div>
-								</div>
-							</div>
-						</div>
-
-					
-						<div className="xl:col-span-3 hidden">
-							<div className="card">
-								<div className="p-6">
-									<h4 className="card-title">Average response times</h4>
-									<div dir="ltr">
-									<ReactApexChart className="apex-charts" options={averageresponsetimes} height={380} series={averageresponsetimes.series} type="bar" />
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div className="xl:col-span-3 mt-3">
-							<div className="card">
-								<div className="p-6">
-									<h4 className="card-title">Disposition Referral</h4>
-									<div dir="ltr">
-										<ReactApexChart className="apex-charts" options={resolutionmethodsused} height={380} series={resolutionmethodsused.series} type="bar" />
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div className="xl:col-span-3 mt-3">
-							<div className="card">
-								<div className="p-6">
-									<h4 className="card-title">Parent notification rates</h4>
-									<div dir="ltr">
-										<ReactApexChart className="apex-charts" options={parentnotificationrates} height={380} series={parentnotificationrates.series} type="line" />
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div className="xl:col-span-3 mt-3">
-							<div className="card">
-								<div className="p-6">
-									<h4 className="card-title">Repeat incident tracking</h4>
-									<div dir="ltr">
-									<ReactApexChart className="apex-charts" options={repeatincidenttracking} height={380} series={repeatincidenttracking.series} type="bar" />
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</Tab.Panel> */}
-
-					{/* second tab */}
-					{/* <Tab.Panel id="fill-and-justify-2" aria-labelledby="fill-and-justify-item-2">
-						<div className="border rounded mt-3 mb-6 dark:border-gray-600">
-							<div className="xl:col-span-6">
-								<div className="xl:col-span-3">
-									<div className="card">
-										<div className="p-6">
-											<h4 className="card-title">Total Violent Incidents</h4>
-											<div dir="ltr">
-												<ReactApexChart className="apex-charts" options={TVI} height={380} series={TVI.series} type="line" />
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div className="lg:col-span-2 mt-4">
-							<div className="card">
-								<div className="p-6">
-									<h4 className="card-title mb-4">Break Down By Type</h4>
-									<div dir="ltr">
-										<ReactApexChart className="apex-charts" options={breakDown} height={380} series={breakDown.series} type="bar" />
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div className="lg:col-span-2 mt-4">
-							<div className="card">
-								<div className="p-6">
-									<h4 className="card-title">Monthly Comparisons</h4>
-									<div dir="ltr">
-										<ReactApexChart className="apex-charts" options={ItemsRecovered3} height={380} series={ItemsRecovered3.series} type="bar" />
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div className="lg:col-span-2 mt-4">
-							<div className="card">
-								<div className="p-6">
-									<h4 className="card-title mb-4">School Related VS Community Incidents</h4>
-									<div dir="ltr">
-										<ReactApexChart className="apex-charts" options={simplePieOpts} height={320} series={simplePieOpts.series} type="pie" />
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div className="lg:col-span-2 mt-4">
-							<div className="card">
-								<div className="p-6">
-									<h4 className="card-title mb-4"> First Time VS Repeat Offenders</h4>
-									<div dir="ltr">
-										<ReactApexChart className="apex-charts" options={simplePieOpts} height={320} series={simplePieOpts.series} type="pie" />
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div className="lg:col-span-2 mt-4">
-							<div className="card">
-								<div className="flex card-header justify-between items-center">
-									<h4 className="card-title">School Schedule Correlation</h4>
-									<PopoverLayout placement="bottom-end" togglerClass="text-gray-600 dark:text-gray-400" toggler={<PopoverToggle />}>
-										<div className="min-w-40 z-50 transition-all duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-md py-1">
-											<Link className="flex items-center py-1.5 px-5 text-sm text-gray-500 hover:bg-slate-100 hover:text-slate-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" to="#">
-												Sales Report
-											</Link>
-											<Link className="flex items-center py-1.5 px-5 text-sm text-gray-500 hover:bg-slate-100 hover:text-slate-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" to="#">
-												Export Report
-											</Link>
-											<Link className="flex items-center py-1.5 px-5 text-sm text-gray-500 hover:bg-slate-100 hover:text-slate-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" to="#">
-												Profit
-											</Link>
-											<Link className="flex items-center py-1.5 px-5 text-sm text-gray-500 hover:bg-slate-100 hover:text-slate-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" to="#">
-												Action
-											</Link>
-										</div>
-									</PopoverLayout>
-								</div>
-								<div className="bg-light/40 border-b border-gray-100 dark:bg-light/5 dark:border-b-gray-700">
-									<div className="flex flex-wrap justify-around items-center text-center">
-										<div className="w-1/2 lg:w-1/4">
-											<p className="text-gray-400 mt-6 mb-4">
-												<i className="ri-donut-chart-fill"></i> Current Week
-											</p>
-											<h3 className="text-2xl font-normal mb-6">
-												<span>15</span>
-											</h3>
-										</div>
-										<div className="w-1/2 lg:w-1/4">
-											<p className="text-gray-400 mt-6 mb-4">
-												<i className="ri-donut-chart-fill"></i> Previous Week
-											</p>
-											<h3 className="text-2xl font-normal mb-6">
-												<span>
-													20 <i className="ri-corner-right-down-line text-success"></i>
-												</span>
-											</h3>
-										</div>
-										<div className="w-1/2 lg:w-1/4">
-											<p className="text-gray-400 mt-6 mb-4">
-												<i className="ri-donut-chart-fill"></i> In School
-											</p>
-											<h3 className="text-2xl font-normal mb-6">
-												<span>
-													16.20% <i className="ri-corner-right-up-line text-success"></i>
-												</span>
-											</h3>
-										</div>
-										<div className="w-1/2 lg:w-1/4">
-											<p className="text-gray-400 mt-6 mb-4">
-												<i className="ri-donut-chart-fill"></i> During Break
-											</p>
-											<h3 className="text-2xl font-normal mb-6">
-												<span>
-													10 <i className="ri-corner-right-up-line text-danger"></i>
-												</span>
-											</h3>
-										</div>
-									</div>
-								</div>
-								<div className="p-6">
-									<div dir="ltr">
-										<ReactApexCharts options={apexOpts2} series={schedule} type="line" height={380} className="apex-charts mt-3" />
-									</div>
-								</div>
-							</div>
-						</div>
-					</Tab.Panel> */}
-
-					{/* third tab */}
-					{/* <Tab.Panel id="fill-and-justify-3" aria-labelledby="fill-and-justify-item-3">
-						<div className="xl:col-span-3">
-							<div className="card">
-								<div className="p-6">
-									<h4 className="card-title">Crime Categories:</h4>
-									<div dir="ltr">
-										<ReactApexChart className="apex-charts" options={crimeCategories} height={380} series={crimeCategories.series} type="line" />
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div className="xl:col-span-3 mt-4">
-							<div className="card">
-								<div className="p-6">
-									<h4 className="card-title">Recovery Time Trends</h4>
-									<div dir="ltr">
-										<ReactApexChart className="apex-charts" options={recoveryTime} height={380} series={recoveryTime.series} type="line" />
-									</div>
-								</div>
-							</div>
-						</div>
-				
-						<div className="lg:col-span-2 mt-4">
-							<div className="card">
-								<div className="p-6">
-									<h4 className="card-title">Items Recovered By Type</h4>
-									<div dir="ltr">
-										<ReactApexChart className="apex-charts" options={ItemsRecovered1} height={380} series={ItemsRecovered1.series} type="bar" />
-									</div>
-								</div>
-							</div>
-						</div>
-				
-						<div className="lg:col-span-2 mt-4">
-							<div className="card">
-								<div className="p-6">
-									<h4 className="card-title mb-4">Total Value recovered</h4>
-									<div dir="ltr">
-										<ReactApexChart className="apex-charts" options={totalValue} height={380} series={totalValue.series} type="bar" />
-									</div>
-								</div>
-							</div>
-               			</div>
-					</Tab.Panel> */}
-
 					<Tab.Panel id="fill-and-justify-1" aria-labelledby="fill-and-justify-item-1">
 						 <PublicOrder />
 					</Tab.Panel>
@@ -2271,6 +2039,10 @@ Traffic (pink): The smallest category, making up 10.8% of the total.
 
 					<Tab.Panel id="fill-and-justify-1" aria-labelledby="fill-and-justify-item-1">
 						<PropertyCrimes />
+					</Tab.Panel>
+					
+					<Tab.Panel id="fill-and-justify-1" aria-labelledby="fill-and-justify-item-1">
+						<SchoolMetrics />
 					</Tab.Panel>
 				</Tab.Panels>
 			</Tab.Group>
