@@ -14,6 +14,9 @@ const RepeatVNonRepeate = () => {
 	chart: {
 		height: 320,
 		type: 'pie',
+		toolbar: {
+			show: true,
+		},
 	},
 	series: [22, 78],
 	labels: ['Repeate', 'Non-Repeat'],
@@ -54,6 +57,7 @@ return(
 						<div dir="ltr">
 							<ReactApexChart className="apex-charts" options={simplePieOpts} height={320} series={simplePieOpts.series} type="pie" />
 						</div>
+						<br/> The pie chart displays the distribution between two categories: "Repeat" and "Non-Repeat." The blue segment represents "Repeat," accounting for 22.0% of the total, while the gray segment represents "Non-Repeat," making up 78.0%. This visual comparison highlights that the majority of incidents fall under the "Non-Repeat" category, indicating that repeated incidents are relatively infrequent.
 					</div>
 				</div>
 				</div>

@@ -14,6 +14,9 @@ const RevenueChart = () => {
 	chart: {
 		height: 320,
 		type: 'pie',
+		toolbar: {
+			show: true,
+		},
 	},
 	series: [44, 55],
 	labels: ['School Related', 'Community Incidents'],
@@ -49,11 +52,12 @@ return(
 	<div className="lg:col-span-2">
 	<div className="card">
 			<div className="p-6">
-						<h4 className="card-title mb-4">School Related VS Community Incidents
+						<h4 className="card-title mb-4">School Related VS Out Of School 
 						</h4>
 						<div dir="ltr">
 							<ReactApexChart className="apex-charts" options={simplePieOpts} height={320} series={simplePieOpts.series} type="pie" />
 						</div>
+						<br/>The pie chart illustrates the distribution of incidents categorized into two segments: "School Related" and "Community Incidents." The blue segment, representing "School Related" incidents, accounts for 44.4% of the total, while the gray segment, representing "Community Incidents," makes up 55.6%. This visual comparison underscores that a slightly higher proportion of incidents occur within the community compared to the school environment.
 					</div>
 				</div>
 				</div>

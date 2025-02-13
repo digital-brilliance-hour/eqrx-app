@@ -85,7 +85,7 @@ const RevenueChart = () => {
 		<div className="lg:col-span-2">
 			<div className="card">
 				<div className="flex card-header justify-between items-center">
-					<h4 className="card-title">School Schedule Correlation</h4>
+					<h4 className="card-title">In School vs Out of School Comparison</h4>
 					<PopoverLayout placement="bottom-end" togglerClass="text-gray-600 dark:text-gray-400" toggler={<PopoverToggle />}>
 						<div className="min-w-40 z-50 transition-all duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-md py-1">
 							<Link className="flex items-center py-1.5 px-5 text-sm text-gray-500 hover:bg-slate-100 hover:text-slate-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" to="#">
@@ -149,6 +149,7 @@ const RevenueChart = () => {
 					<div dir="ltr">
 						<ReactApexCharts options={apexOpts} series={series} type="line" height={380} className="apex-charts mt-3" />
 					</div>
+					<br/> Illustrates juvenile offenses based on school periods. The blue line represents offenses occurring during school breaks, while the green line corresponds to offenses happening when school is in session. The data shows significantly higher offenses during breaks, with peaks in February, June, and December, and a dramatic drop in August and October. In contrast, offenses during school periods remain relatively stable and much lower throughout the year, suggesting that structured school environments may play a role in reducing juvenile offenses.
 				</div>
 			</div>
 		</div>

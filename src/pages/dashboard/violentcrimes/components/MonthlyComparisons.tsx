@@ -66,7 +66,7 @@ const ItemsRecovered3: ApexOptions = {
 	},
 	yaxis: {
 		title: {
-			text: 'Number Of Items',
+			text: 'Total Number of Contacts',
 		},
 	},
 	fill: {

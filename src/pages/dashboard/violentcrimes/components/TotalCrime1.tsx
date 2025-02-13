@@ -29,7 +29,7 @@ const TotalCrimes = () => {
         series: [
             {
                 name: 'Part 1',
-                data: [44],
+                data: [389],
             },
             
         ],
