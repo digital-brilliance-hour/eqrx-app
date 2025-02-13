@@ -670,6 +670,68 @@ const apexOpts: ApexOptions = {
 	],
 }
 
+
+const officerContacts: ApexOptions = {
+	chart: {
+		height: 240,
+		type: 'bar',
+		stacked: true,
+		stackType: '100%',
+		toolbar: {
+			show: true,
+		},
+	},
+	plotOptions: {
+		bar: {
+			horizontal: false,
+		},
+	},
+	stroke: {
+		width: 1,
+		colors: ['#fff'],
+	},
+	series: [
+		{
+			name: 'SRO',
+			data: [44],
+		},
+		{
+			name: 'Other',
+			data: [503],
+		},
+	],
+	xaxis: {
+		categories: ['Total'],
+	},
+	colors: ['#6c757d', '#ffbc00'],
+	tooltip: {
+		y: {
+			formatter: function (val) {
+				return val + 'K'
+			},
+		},
+	},
+	fill: {
+		opacity: 1,
+	},
+	states: {
+		// hover: {
+		//     filter: 'none'
+		// }
+	},
+	legend: {
+		position: 'top',
+		horizontalAlign: 'center',
+		offsetY: 10,
+	},
+	grid: {
+		borderColor: '#f1f3fa',
+		padding: {
+			top: 0,
+		},
+	},
+}
+
 const totalValue: ApexOptions = {
 	chart: {
 		height: 380,
@@ -957,6 +1019,20 @@ const series = {
 		dates: ['02 Jun 2017', '05 Jun 2017', '06 Jun 2017', '07 Jun 2017', '08 Jun 2017', '09 Jun 2017', '12 Jun 2017', '13 Jun 2017', '14 Jun 2017', '15 Jun 2017', '16 Jun 2017', '19 Jun 2017', '20 Jun 2017', '21 Jun 2017', '22 Jun 2017', '23 Jun 2017', '27 Jun 2017', '28 Jun 2017', '29 Jun 2017', '30 Jun 2017', '03 Jul 2017', '04 Jul 2017', '05 Jul 2017', '06 Jul 2017', '07 Jul 2017', '10 Jul 2017', '11 Jul 2017', '12 Jul 2017', '13 Jul 2017', '14 Jul 2017', '17 Jul 2017', '18 Jul 2017', '19 Jul 2017', '20 Jul 2017', '21 Jul 2017', '24 Jul 2017', '25 Jul 2017', '26 Jul 2017', '27 Jul 2017', '28 Jul 2017', '31 Jul 2017', '01 Aug 2017', '02 Aug 2017', '03 Aug 2017', '04 Aug 2017', '07 Aug 2017', '08 Aug 2017', '09 Aug 2017', '10 Aug 2017', '11 Aug 2017', '14 Aug 2017', '16 Aug 2017', '17 Aug 2017', '18 Aug 2017', '21 Aug 2017', '22 Aug 2017', '23 Aug 2017', '24 Aug 2017', '28 Aug 2017', '29 Aug 2017', '30 Aug 2017', '31 Aug 2017', '01 Sep 2017', '04 Sep 2017', '05 Sep 2017', '06 Sep 2017', '07 Sep 2017', '08 Sep 2017', '11 Sep 2017', '12 Sep 2017', '13 Sep 2017', '14 Sep 2017', '15 Sep 2017', '18 Sep 2017', '19 Sep 2017', '20 Sep 2017', '21 Sep 2017', '22 Sep 2017', '25 Sep 2017', '26 Sep 2017', '27 Sep 2017', '28 Sep 2017', '29 Sep 2017', '03 Oct 2017', '04 Oct 2017', '05 Oct 2017', '06 Oct 2017', '09 Oct 2017', '10 Oct 2017', '11 Oct 2017', '12 Oct 2017', '13 Oct 2017', '16 Oct 2017', '17 Oct 2017', '18 Oct 2017', '19 Oct 2017', '23 Oct 2017', '24 Oct 2017', '25 Oct 2017', '26 Oct 2017', '27 Oct 2017', '30 Oct 2017', '31 Oct 2017', '01 Nov 2017', '02 Nov 2017', '03 Nov 2017', '06 Nov 2017', '07 Nov 2017', '08 Nov 2017', '09 Nov 2017', '10 Nov 2017', '13 Nov 2017', '14 Nov 2017', '15 Nov 2017', '16 Nov 2017', '17 Nov 2017', '20 Nov 2017', '21 Nov 2017', '22 Nov 2017', '23 Nov 2017', '24 Nov 2017', '27 Nov 2017', '28 Nov 2017'],
 	},
 }
+
+
+const series2 = [
+	{
+		name: 'Black Offenses',
+		type: 'line',
+		data: [440, 505, 375, 200, 150, 160],
+	},
+	{
+		name: 'White Offenses',
+		type: 'line',
+		data: [10, 20, 5, 0, 30, 20],
+	},
+]
 
 const trespassingcases: ApexOptions = {
 	chart: {
@@ -1772,6 +1848,36 @@ const records: TableRecord[] = [
 
 const placements: PlacesType[] = ['bottom']
 
+const referralrecords: TableRecord[] = [
+	{
+		id: 1,
+		name: 'Handled Within The Department',
+		cell: 'Cell',
+	},
+	{
+		id: 2,
+		name: 'Referred to Juvenile Authorities',
+		cell: 'Cell',
+	},
+	{
+		id: 3,
+		name: 'None',
+		cell: 'Cell',
+	},
+	{
+		id: 4,
+		name: 'Referred to Another Police/Jurisdiction',
+		cell: 'Cell',
+	},
+	{
+		id: 5,
+		name: 'Social Services',
+		cell: 'Cell',
+	},
+]
+
+
+
 // code for the page begins
 
 // const GeographicOverview = () => {
@@ -1825,6 +1931,71 @@ const TotalContactsDisplay = () => {
 	return (
 		<>
 			<div className="grid 2xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 gap-6 mb-6">
+				<div className="lg:col-span-4">
+					<div className="card">
+						<div className="flex card-header justify-between items-center">
+							<h4 className="card-title">Juvenile Offenses</h4>
+							<PopoverLayout placement="bottom-end" togglerClass="text-gray-600 dark:text-gray-400" toggler={<PopoverToggle />}>
+								<div className="min-w-40 z-50 transition-all duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-md py-1">
+									<Link className="flex items-center py-1.5 px-5 text-sm text-gray-500 hover:bg-slate-100 hover:text-slate-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" to="#">
+										Sales Report
+									</Link>
+									<Link className="flex items-center py-1.5 px-5 text-sm text-gray-500 hover:bg-slate-100 hover:text-slate-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" to="#">
+										Export Report
+									</Link>
+									<Link className="flex items-center py-1.5 px-5 text-sm text-gray-500 hover:bg-slate-100 hover:text-slate-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" to="#">
+										Profit
+									</Link>
+									<Link className="flex items-center py-1.5 px-5 text-sm text-gray-500 hover:bg-slate-100 hover:text-slate-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" to="#">
+										Action
+									</Link>
+								</div>
+							</PopoverLayout>
+						</div>
+						<div className="bg-light/40 border-b border-gray-100 dark:bg-light/5 dark:border-b-gray-700">
+							<div className="flex flex-wrap justify-around items-center text-center">
+								<div className="w-1/2 lg:w-1/4">
+									<p className="text-gray-400 mt-6 mb-4">
+										<i className="ri-donut-chart-fill"></i> Current Week
+									</p>
+									<h3 className="text-2xl font-normal mb-6">
+										<span>15</span>
+									</h3>
+								</div>
+								<div className="w-1/2 lg:w-1/4">
+									<p className="text-gray-400 mt-6 mb-4">
+										<i className="ri-donut-chart-fill"></i> Previous Week
+									</p>
+									<h3 className="text-2xl font-normal mb-6">
+										<span>
+											20 <i className="ri-corner-right-down-line text-success"></i>
+										</span>
+									</h3>
+								</div>
+								<div className="w-1/2 lg:w-1/4">
+									<p className="text-gray-400 mt-6 mb-4">
+										<i className="ri-donut-chart-fill"></i> Referral
+									</p>
+									<h3 className="text-2xl font-normal mb-6">
+										<span>
+											16.20% <i className="ri-corner-right-up-line text-success"></i>
+										</span>
+									</h3>
+								</div>
+								<div className="w-1/2 lg:w-1/4">
+									<p className="text-gray-400 mt-6 mb-4">
+										<i className="ri-donut-chart-fill"></i> First Charge
+									</p>
+									<h3 className="text-2xl font-normal mb-6">
+										<span>
+											10 <i className="ri-corner-right-up-line text-danger"></i>
+										</span>
+									</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div className="2xl:col-span-1 lg:col-span-2">
 					<StatisticsWidget variant={'bg-success'} cardTitle={"Total Juvenile Contacts"} title={'Number of customers'} change={'541'} stats={'1,214'} dataSince={'Since last yesterday'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
 				</div>
@@ -1839,18 +2010,49 @@ const TotalContactsDisplay = () => {
 				<div className="2xl:col-span-1 lg:col-span-2">
 					<StatisticsWidget variant={'bg-danger'} cardTitle={"Reoffender Tracking"} title={'Number of Orders'} change={'2.54%'} stats={'1,543'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
 				</div> 
-{/* 			
-				<div className="xl:col-span-1">
+			</div>
+			<div className="grid 2xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-2 gap-6 mb-6">
+				
+				<div className="xl:col-span-2">
+						<div className="card">
+							<div className="p-6">
+								<h3 className="card-title mb-4">Top 5 Charges</h3>
+
+								<div className="overflow-x-auto">
+									<div className="min-w-full inline-block align-middle">
+										<div className="overflow-hidden">
+											<table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+												<tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+													{(records || []).slice(0, 5).map((record, idx) => {
+														return (
+															<tr key={idx}>
+																<th scope="col" className="px-4 py-4 text-start text-sm font-medium text-gray-500">
+																	{record.id}
+																</th>
+																<td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-500 dark:text-gray-200">{record.name}</td>
+															</tr>
+														)
+													})}
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>
+				
+				<div className="xl:col-span-2">
 					<div className="card">
 						<div className="p-6">
-							<h3 className="card-title mb-4">Top 5 Charges</h3>
+							<h3 className="card-title mb-4">Top 5 Referrals</h3>
 
 							<div className="overflow-x-auto">
 								<div className="min-w-full inline-block align-middle">
 									<div className="overflow-hidden">
 										<table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
 											<tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-												{(records || []).slice(0, 5).map((record, idx) => {
+												{(referralrecords || []).slice(0, 5).map((record, idx) => {
 													return (
 														<tr key={idx}>
 															<th scope="col" className="px-4 py-4 text-start text-sm font-medium text-gray-500">
@@ -1867,7 +2069,18 @@ const TotalContactsDisplay = () => {
 							</div>
 						</div>
 					</div>
-				</div> */}
+				</div>
+
+				<div className="xl:col-span-1">
+					<div className="card">
+							<div className="p-6">
+								<h4 className="card-title mb-4">Contacts by Officer Type</h4>
+								<div dir="ltr">
+									<ReactApexCharts className="apex-charts" options={officerContacts} height={265} series={officerContacts.series} type="bar" />
+								</div>
+							</div>
+						</div>
+				</div>
 			</div>
 		</>
 	)
