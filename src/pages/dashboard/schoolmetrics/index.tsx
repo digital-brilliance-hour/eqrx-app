@@ -748,7 +748,7 @@ export const schoolbasedinfractions: ApexOptions = {
 	},
 	series: [
 		{
-			data: [400, 430, 448, 470, 540, 580, 690],
+			data: [100, 172, 179, 188, 216, 232, 276],
 		},
 	],
 	stroke: {
