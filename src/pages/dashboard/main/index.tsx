@@ -1997,14 +1997,14 @@ const TotalContactsDisplay = () => {
 					</div>
 				</div>
 				<div className="2xl:col-span-1 lg:col-span-2">
-					<StatisticsWidget variant={'bg-success'} cardTitle={"Total Juvenile Contacts"} title={'Number of customers'} change={'541'} stats={'486'} dataSince={'Since last yesterday'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
+					<StatisticsWidget variant={'bg-success'} cardTitle={"Total Juvenile Contacts"} title={'Number of customers'} change={'216'} stats={'486'} dataSince={'Since last yesterday'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
 				</div>
 
 				<div className="2xl:col-span-1 lg:col-span-2">
 					<StatisticsWidget variant={'bg-danger'} cardTitle={"Total School-Related Contacts"} title={'Number of Orders'} change={'1.08%'} stats={'297'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
 				</div>  
 				<div className="2xl:col-span-1 lg:col-span-2">
-					<StatisticsWidget variant={'bg-success'} cardTitle={"Total Referrals"} title={'Number of customers'} change={'241'} stats={'886'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
+					<StatisticsWidget variant={'bg-success'} cardTitle={"Total Referrals"} title={'Number of customers'} change={'96'} stats={'886'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
 				</div>
 
 				<div className="2xl:col-span-1 lg:col-span-2">
