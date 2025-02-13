@@ -1321,7 +1321,7 @@ export const groupBarOpts: ApexOptions = {
 			colors: ['#000000'],
 		},
 	},
-	colors: ['#3e60d5','#6c757d', '#2b908f','#fa5c7c','#ffbc00'],
+	colors: ['#ffbc00','#3e60d5','#fa5c7c','#6c757d', '#2b908f'],
 	stroke: {
 		show: true,
 		width: 1,
@@ -1340,14 +1340,14 @@ export const groupBarOpts: ApexOptions = {
 		  name: '2013',
 		  data: [44, 55, 41, 64, 22, 43, 21, 30], 
 		},
-		// {
-		//   name: '2014',
-		//   data: [53, 32, 33, 52, 13, 44, 32, 25],
-		// },
-		// {
-		//   name: '2015',
-		//   data: [53, 32, 33, 52, 13, 44, 32, 25],
-		// },
+		{
+		  name: '2014',
+		  data: [53, 32, 33, 52, 13, 44, 32, 25],
+		},
+		{
+		  name: '2015',
+		  data: [53, 32, 33, 52, 13, 44, 32, 25],
+		},
 	  ],
 	xaxis: {
 		categories: ['Drunk and Disruptive', 'Disorderly conduct', 'Trespassing', 'Resist Delay & Obstruct', 'Assault', 'Vandalism', 'Shop Lifting', 'Other'],
@@ -1449,70 +1449,10 @@ const heatmapdata = {
 	}
 }
 
-const BehavioralIncidents = ({ google }: MapContainerProps) => {
+const BehavioralIncidents = ({}: MapContainerProps) => {
 	return (
 		<>
-		<div className="xl:col-span-6">
-			<div className="card">
-				<div className="p-6">
-					<h4 className="card-title mb-4">Public Nuisance Violations</h4>
-					<div dir="ltr">
-					<ReactApexChart
-                            className="apex-charts"
-                            options={groupBarOpts}
-                            series={groupBarOpts.series}
-                            type="bar"
-                            height={650}
-                        />					</div>
-						<div className="pt-6">
-						The data highlights trends and fluctuations in various public nuisance offenses over time,<br/> with burglary consistently being the most reported offense type. <br/>
-						<b>Arson:</b> Shows consistent levels of violations across the years, with a slight increase in later years.<br/>
-						<b>Murder:</b> Relatively stable with minor variations year-to-year.<br/>
-						<b>Stalking:</b> Exhibits noticeable fluctuations, with some years showing significantly higher violations than others.<br/>
-						<b>Burglary:</b> The highest levels of violations among all categories, peaking in certain years, especially in 2013 and 2015.<br/>
-						<b>Rape:</b> Displays moderate levels of violations with some growth over time.<br/>
-						<b>Robbery:</b> Maintains a steady pattern, though not as high as burglary.<br/>
-						<b>Assault:</b> Similar to robbery, with stable trends and slight variations across the years.
-						</div>
-				</div>
-			</div>
-		</div>
-
-		<div className="xl:col-span-3 hidden">
-			<div className="card">
-					<div className="p-6">
-						<h4 className="card-title">Trespassing hotspots</h4>
-						<div dir="ltr">
-							<ReactApexChart className="apex-charts" options={colorRangeHeatmapOpts} height={380} series={colorRangeHeatmapOpts.series} type="heatmap" />
-						</div>
-					</div>
-			</div>
-		</div>
-
-		<div className="xl:col-span-3">
-			<BasicHeatMap
-			google={google}
-			description='Key landmarks, streets, and locations like the "Mother Earth Motor Lodge" and "Holloway Community Center" are marked, providing context to the areas highlighted by the heatmap' />
-		</div>
-
-		<div className="xl:col-span-3">
-			<div className="card">
-					<div className="p-6">
-						<h4 className="card-title">Trespassing Contact</h4>
-						<div dir="ltr">
-							<ReactApexChart className="apex-charts" options={trespassingcases} height={337} series={trespassingcases.series} type="line" />
-						</div>
-						<div className="pt-6">
-						This trend indicates a consistent increase in trespassing incidents as the year progresses, particularly after midyear.<br/>
-						The number of contacts starts at approximately 30 in January.<br/>
-						A gradual increase occurs from February to June, where the numbers stabilize briefly.<br/>
-						From July onward, the contacts show a sharp rise, peaking in September at over 120 contacts.
-						</div>
-					</div>
-				</div>
-		</div>
-
-		<div className="xl:col-span-6 gap-6 hidden">
+		<div className="xl:col-span-6 gap-6">
 			<div className="col-span-6 gap-6 mb-6">
 				<div className="card">
 					<div className="p-6">
@@ -1534,42 +1474,6 @@ const BehavioralIncidents = ({ google }: MapContainerProps) => {
 				</div>
 			</div>
 		</div>
-		
-		<div className="xl:col-span-6">
-			<div className="card hidden">
-				<div className="p-6">
-					<h4 className="card-title">Disorderly conduct patterns</h4>
-					<div dir="ltr">
-						<ReactApexChart className="apex-charts" options={disorderlyconduct} height={380} series={disorderlyconduct.series} type="line" />
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div className="xl:col-span-3">
-			<div className="card">
-				<div className="p-6">
-					<h4 className="card-title">Status offense trends</h4>
-					<div dir="ltr">
-						<ReactApexChart className="apex-charts" options={statusoffense} height={380} series={statusoffense.series} type="line" />
-					</div>
-						<div className="pt-6">
-						This chart tracks the monthly trends in misdemeanors and felonies over a year.<br/>
-						<b>Misdemeanors (gray line):</b><br/>
-Begin at 37 offenses in January.<br/>
-Peak at 42 offenses in March.<br/>
-Decline steadily through the middle of the year, reaching a low of 28 offenses in June.<br/>
-Increase again toward the end of the year, peaking at 48 offenses in November before declining to 35 in December.<br/>
-<br/>
-<b>Felonies (blue line):</b><br/>
-Start at 23 offenses in January.<br/>
-Decline steadily to a low of 9 offenses in June.<br/>
-Begin increasing mid-year, peaking at 27 offenses in November before declining to 14 in December.
-						</div>
-				</div>
-			</div>
-		</div>
-
 		</>
 	)
 }
@@ -1590,68 +1494,32 @@ const ResponseAnalysis = () => {
 				</div>
 			</div>
 		</div> */}
-
-			<div className="xl:col-span-3 hidden">
-				<div className="card">
-					<div className="p-6">
-						<h4 className="card-title">Average response times</h4>
-						<div dir="ltr">
-						<ReactApexChart className="apex-charts" options={averageresponsetimes} height={380} series={averageresponsetimes.series} type="bar" />
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div className="xl:col-span-3 hidden">
-				<div className="card">
-					<div className="p-6">
-						<h4 className="card-title">Disposition Referral</h4>
-						<div dir="ltr">
-							<ReactApexChart className="apex-charts" options={resolutionmethodsused} height={400} series={resolutionmethodsused.series} type="bar" />
-						</div>
-						<div className="pt-6">
-						Released: Approximately 45 instances, representing contacts where individuals were released after referral.<br/>
-Juvenile Authorities: Around 60 instances, showing a significant number of contacts referred to juvenile authorities.<br/>
-Social Services: Approximately 45 instances, indicating similar handling frequency to the "Released" category.<br/>
-Another Jurisdiction: The highest category, with approximately 75 instances, highlighting the frequent redirection of contacts to external jurisdictions.<br/>
-None: About 25 instances, representing contacts with no follow-up action.<br/>
-						This highlights that the majority of contacts are redirected to external jurisdictions or juvenile authorities.<br/>
-						<br/>
-						"Another Jurisdiction" and "Juvenile Authorities" are the most common outcomes.
-"None" is the least common, suggesting that most contacts are actively handled or referred
-						</div>
-					</div>
-				</div>
-			</div>
-
 			<div className="xl:col-span-3">
-				<div className="card">
-					<div className="p-6">
-						<h4 className="card-title">Parent notification rates</h4>
-						<div dir="ltr">
-							<ReactApexChart className="apex-charts" options={parentnotificationrates} height={380} series={parentnotificationrates.series} type="line" />
-						</div>
-						<div className="pt-6">
-						This line chart tracks the monthly trends in parent notifications for two categories<br/>
-						<br/>
-						<b>Released to Parent (gray line):</b><br/>
-						Starts at 28 notifications in January.<br/>
-						Peaks at 36 in April.<br/>
-						Shows a slight decline through May and June, stabilizing around 32-33 notifications.<br/>
-						<br/>
-						<b>Released on Street (blue line):</b><br/>
-						Starts at 12 notifications in January.<br/>
-						Increases steadily to a peak of 18 notifications in April.<br/>
-						Declines through May and stabilizes at 13 notifications in June and July.
-						</div>
-					</div>
-				</div>
-			</div>
+									<div className="card">
+										<div className="p-6">
+											<h4 className="card-title">Juvenile Contact Disposition</h4>
+											<div dir="ltr">
+												<ReactApexChart className="apex-charts" options={resolutionmethodsused} height={400} series={resolutionmethodsused.series} type="bar" />
+											</div>
+											<div className="pt-6">
+											Released: Occurs with 45 instances, representing contacts where individuals were released after referral.<br/>
+											Juvenile Authorities: Around 50 instances, showing a significant number of contacts referred to juvenile authorities.<br/>
+											Social Services: Approximately 40 instances, indicating similar handling frequency to the "Released" category.<br/>
+											Another Jurisdiction: Approximately 45 instances, indicating a significant percentage of contacts are referred to other authorities<br/>
+											Mental Health Services: Approximately 25 instances, representing contacts where individuals were referred to a mental health specialist.<br/>
+											Domestic Violence Services: Occurs with 24 instances, representing contacts where individuals were handled by Domestic Violence Services.<br/>
+											Healthcare Providers: Occurs with 30 instances, representing contacts where individuals were provided healthcare or medical treatment.<br/>
+											School Administration: Approximately 20 instances, representing contacts where individuals were addresed within the school administration.<br/>
+											None: About 25 instances, representing contacts with no follow-up action.<br/>
+											</div>
+										</div>
+									</div>
+								</div>
 		</>
 	)
 }
 
-const PatternRecognition = ({ google }: MapContainerProps) => {
+const PatternRecognition = ({}: MapContainerProps) => {
 	return (
 		<>
 		{/* phase 2 */}
@@ -1664,38 +1532,11 @@ const PatternRecognition = ({ google }: MapContainerProps) => {
 					</div>
 				</div>
 			</div>
-		</div>  */}
-						<div className="xl:col-span-3 hidden">
-				<AgeChart />
-				</div>
+		</div>  */
+		}
 
-		<div className="card xl:col-span-3">
-			<div className="p-6">
-				<h4 className="card-title mb-4">Repeat incident tracking</h4>
-				<div dir="ltr">
-					<ReactApexChart className="apex-charts" options={repeatincidenttracking} height={400} series={repeatincidenttracking.series} type="pie" />
-				</div>
-			</div>
-		</div>
-
-
-		<div className="xl:col-span-3">
-		<LocClustHeatMap
-			google={google}
-			description='Key landmarks, streets, and locations like the "Mother Earth Motor Lodge" and "Holloway Community Center" are marked, providing context to the areas highlighted by the heatmap' />
-		</div>
-
-		<div className="xl:col-span-6 hidden">
-			<div className="card">
-				<div className="p-6">
-					<h4 className="card-title">Location clustering</h4>
-					<div dir="ltr">
-						<ReactApexChart className="apex-charts" options={dashedLineChartOpts2} height={380} series={dashedLineChartOpts2.series} type="line" />
-					</div>
-						<div className="pt-6">
-						</div>
-				</div>
-			</div>
+		<div className="xl:col-span-3 ">
+			<AgeChart />
 		</div>
 
 		{/* <div className="xl:col-span-3">
@@ -1735,11 +1576,11 @@ const PatternRecognition = ({ google }: MapContainerProps) => {
 	)
 }
 
-const PublicOrder = ({ google }: MapContainerProps) => {
+const SchoolMetrics = ({ google }: MapContainerProps) => {
 	return (
 		<>
 			{/* <PageBreadcrumb title="Dashboard" subName="Menu" /> */}
-			<header className="text-slate-900 dark:text-slate-200 text-lg font-medium mb-6">Public Order Dashboard</header>
+			<header className="text-slate-900 dark:text-slate-200 text-lg font-medium mb-6">School Metrics Dashboard</header>
 			<div className="grid lg:grid-cols-6 gap-6 mb-6">
 				<BehavioralIncidents google={google} />
 				<ResponseAnalysis />
@@ -1758,4 +1599,4 @@ const PublicOrder = ({ google }: MapContainerProps) => {
 export default GoogleApiWrapper({
 	apiKey: 'AIzaSyBsHtI7Ed8ZeQ-yvYIMw9VKORe5WdPo5yg',
 	libraries: ['visualization'],
-})(PublicOrder)
+})(SchoolMetrics)

@@ -76,7 +76,7 @@ const AgeChart = () => {
                     <div className="p-6">
                         <h4 className="card-title mb-4">Age Interactions</h4>
                         <div dir="ltr">
-                            <ReactApexCharts className="apex-charts" options={apexAgeOpts} height={520} series={apexAgeOpts.series} type="bar" />
+                            <ReactApexCharts className="apex-charts" options={apexAgeOpts} height={680} series={apexAgeOpts.series} type="bar" />
                         </div>
                     </div>
                 </div>
