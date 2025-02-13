@@ -29,7 +29,7 @@ const MENU_ITEMS: MenuItemTypes[] = [
 			text: '2',
 		},
 		children: [
-			{
+			/* {
 				key: 'dashboard-report',
 				label: 'Report',
 				url: '/report',
@@ -52,17 +52,17 @@ const MENU_ITEMS: MenuItemTypes[] = [
 				label: 'Ecommerce',
 				url: '/ecommerce',
 				parentKey: 'dashboard',
+			}, */
+			{
+				key: 'dashboard-main',
+				label: 'Command Center',
+				url: '/main',
+				parentKey: 'dashboard',
 			},
 			{
 				key: 'dashboard-publicorder',
 				label: 'Public Order',
 				url: '/publicorder',
-				parentKey: 'dashboard',
-			},
-			{
-				key: 'dashboard-main',
-				label: 'Command Center',
-				url: '/main',
 				parentKey: 'dashboard',
 			},
 			{
@@ -79,7 +79,7 @@ const MENU_ITEMS: MenuItemTypes[] = [
 			},
 		],
 	},
-	{
+	/* {
 		key: 'apps',
 		label: 'Apps',
 		isTitle: true,
@@ -746,7 +746,7 @@ const MENU_ITEMS: MenuItemTypes[] = [
 			variant: 'bg-danger rounded-md',
 			text: 'Hot',
 		},
-	},
+	}, */
 ]
 
 export { MENU_ITEMS }
