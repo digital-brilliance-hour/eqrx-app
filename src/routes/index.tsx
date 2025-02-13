@@ -154,7 +154,7 @@ const dashboardRoutes: RoutesProps = {
 		{
 			path: '/',
 			name: 'Root',
-			element: <Navigate to="/report" />,
+			element: <Navigate to="/main" />,
 			route: PrivateRoute,
 		},
 		{
