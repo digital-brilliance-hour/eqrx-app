@@ -316,6 +316,12 @@ return(
 						<div dir="ltr">
 							<ReactApexChart className="apex-charts" options={ItemsRecovered1} height={380} series={ItemsRecovered1.series} type="bar" />
 						</div>
+						<div>
+							<h2>Analysis of Items Recovered By Type</h2>
+							<p>The data indicates a diverse range of recovered items, with <strong>Office Equipment (67 items)</strong> being the most frequently recovered, followed by <strong>Precious Metals (55 items)</strong> and <strong>Currency (44 items)</strong>. <strong>Stolen Vehicles (41 items)</strong> and <strong>Clothing & Furs (45 items)</strong> also show notable recovery rates.</p>
+							<p>On the lower end, <strong>Electronics (22 items)</strong> and <strong>Cosmetics (21 items)</strong> had the least recoveries, suggesting either lower theft rates or less successful recovery efforts. <strong>Household Goods (43 items)</strong> and <strong>Miscellaneous Items (31 items)</strong> fall within a mid-range recovery level.</p>
+							<p>This distribution suggests a focus on high-value assets in police operations, with financial assets and office-related items being prioritized. The lower recovery of consumer goods may indicate either different theft patterns or challenges in tracing such items.</p>
+						</div>
 					</div>
 				</div>
 				</div>
