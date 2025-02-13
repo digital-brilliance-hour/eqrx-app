@@ -309,11 +309,13 @@ const Monthly = () => {
 		<div className="lg:col-span-2">
 		<div className="card">
 						<div className="p-6">
-							<h4 className="card-title">Monthly Comparisons
+							<h4 className="card-title"> Contact by Months
 							</h4>
 							<div dir="ltr">
 								<ReactApexChart className="apex-charts" options={ItemsRecovered3} height={540} series={ItemsRecovered3.series} type="bar" />
 							</div>
+							<br/> Shows the total interactions or incidents recorded each month. The highest number of contacts occurs in April, November, and December, while a noticeable drop is seen in May, June, and July. This could suggest fewer incidents or interventions during the summer months, with a sharp increase towards the end of the year.
+							This may also show that the holiday season may have a impact on the number of incidents and this county or mamisable might want to increase patrols or have more officers on duty during these months.
 						</div>
 					</div>
 					</div>

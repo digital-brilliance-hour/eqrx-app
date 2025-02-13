@@ -79,6 +79,9 @@ return(
 						<div dir="ltr">
 							<ReactApexChart className="apex-charts" options={lineChartOpts1} height={380} series={lineChartOpts1.series} type="line" />
 						</div>
+						<div className="pt-6">
+Tracks violent incidents over the year, showing trends and fluctuations. The graph peaks in July, indicating a high point for violent crimes, then declines in September before gradually increasing again towards December. This suggests that violent crimes may have seasonal trends, with mid-year spikes and end-of-year rises.
+						</div>
 					</div>
 				</div>
 				</div>

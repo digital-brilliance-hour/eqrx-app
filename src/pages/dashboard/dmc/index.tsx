@@ -135,6 +135,18 @@ const referralrecords: HighlightTableRecord[] = [
 		cell: 'Cell',
 	},
 ]
+const RepeatIncidentTracking = () => {
+	return (
+		<div className="card col-lg-4 lg:col-span-2">
+			<div className="p-6">
+				<h4 className="card-title mb-4">Repeat incident tracking</h4>
+				<div dir="ltr">
+					<ReactApexChart className="apex-charts" options={repeatincidenttracking} height={400} series={repeatincidenttracking.series} type="pie" />
+				</div>
+			</div>
+		</div>
+			)
+		}
 
 const ResponsiveTable = () => {
 	return (
@@ -379,7 +391,7 @@ const dmc = () => {
 				<ContactOriginChart />
 				<SystemWideAnalysisChart />
 				<OffenseTypesByCulture />
-				<RepeatOffender />
+				<RepeatIncidentTracking />
 
 
 			</div>
