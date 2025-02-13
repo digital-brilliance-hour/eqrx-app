@@ -1458,7 +1458,7 @@ const BehavioralIncidents = ({}: MapContainerProps) => {
 					<div className="p-6">
 						<h4 className="card-title mb-4">School-based infractions</h4>
 						<div dir="ltr">
-							<ReactApexChart className="apex-charts" options={schoolbasedinfractions} height={450} series={schoolbasedinfractions.series} type="bar" />
+							<ReactApexChart className="apex-charts" options={schoolbasedinfractions} height={380} series={schoolbasedinfractions.series} type="bar" />
 						</div>
 						<div className="pt-6">
 						This data highlights areas where targeted interventions or policy changes may be needed to reduce specific types of infractions.<br/>

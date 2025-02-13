@@ -55,6 +55,21 @@ return(
 						<div dir="ltr">
 							<ReactApexChart className="apex-charts" options={basicBarOpts} height={380} series={basicBarOpts.series} type="bar" />
 						</div>
+                        <div className='mt-6'>
+                            <h2>Total Value Recovered (2019-2023) - Summary</h2>
+                            <h3>Key Insights:</h3>
+                            <ul>
+                                <li><strong>Steady Increase:</strong> Recovery values rose yearly (<strong>400 → 540</strong>), indicating improved enforcement.</li>
+                                <li><strong>Largest Jump in 2023:</strong> A significant rise suggests stronger policies or better retrieval methods.</li>
+                                <li><strong>Gradual Growth (2019-2022):</strong> Incremental gains reflect steady improvement.</li>
+                            </ul>
+                            <h3>Implications:</h3>
+                            <ul>
+                                <li>Enhanced <strong>recovery efficiency</strong> and asset retrieval.</li>
+                                <li>Possible <strong>policy shifts</strong> or increased focus in 2023.</li>
+                                <li><strong>Future Outlook:</strong> If the trend continues, recovery rates may rise further in 2024.</li>
+                            </ul>
+                        </div>
 					</div>
 				</div>
                 </div>

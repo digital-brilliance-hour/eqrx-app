@@ -13,7 +13,7 @@ import OffenseTypesByCulture from './components/OffenseTypesByCulture'
 import OffenseTypesByGender from './components/OffenseTypesByGender'
 import PageBreadcrumb from '@/components/PageBreadcrumb'
 import { ApexOptions } from 'apexcharts'
-import StatisticsWidget from './components/StatisticsWidget'
+import StatisticsWidget from '../../dashboard/report/components/StatisticsWidget'
 
 // dummy data
 import { products } from './data'

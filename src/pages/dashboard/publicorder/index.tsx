@@ -1675,6 +1675,13 @@ const PatternRecognition = ({ google }: MapContainerProps) => {
 				<div dir="ltr">
 					<ReactApexChart className="apex-charts" options={repeatincidenttracking} height={400} series={repeatincidenttracking.series} type="pie" />
 				</div>
+				<div className='mt-6'>
+					<h3>Implications:</h3>
+					<ul>
+						<li>Disproportionate reporting suggests differences in community interactions with authorities.</li>
+						<li>Further investigation needed into enforcement, policy, or societal factors influencing reporting trends.</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 
@@ -1693,6 +1700,21 @@ const PatternRecognition = ({ google }: MapContainerProps) => {
 						<ReactApexChart className="apex-charts" options={dashedLineChartOpts2} height={380} series={dashedLineChartOpts2.series} type="line" />
 					</div>
 						<div className="pt-6">
+						<h2>Heatmap Analysis – Police Stops in Kinston, NC</h2>
+        <p>This heatmap highlights areas in Kinston, NC where police stops are most concentrated. The intensity of the colors represents the frequency of stops, with redder areas showing higher activity.</p>
+        <h3>Key Observations:</h3>
+        <ul>
+            <li><strong>Downtown Kinston is the primary hotspot,</strong> particularly around <strong>Queen St and King St</strong>, where stops are most frequent.</li>
+            <li><strong>Moderate activity extends</strong> toward <strong>E Vernon Ave and Mother Earth Motor Lodge</strong>, possibly due to higher traffic, businesses, or visitor activity.</li>
+            <li><strong>Lower stop frequency</strong> is observed outside the central downtown region, with less enforcement or fewer incidents recorded.</li>
+        </ul>
+        <h3>Implications:</h3>
+        <ul>
+            <li>The <strong>high concentration of stops downtown</strong> may reflect enforcement efforts in business-heavy or high-traffic zones.</li>
+            <li>The <strong>presence of stops near Mother Earth Motor Lodge</strong> suggests possible interactions in hospitality or tourism areas.</li>
+            <li>Understanding these trends can help assess the <strong>impact of policing strategies, traffic control, and community concerns</strong> in these areas.</li>
+        </ul>
+        <p>This heatmap provides valuable insight into <strong>where stops occur most frequently in Kinston</strong> and can inform discussions on law enforcement distribution and its effects on different parts of the city.</p>
 						</div>
 				</div>
 			</div>

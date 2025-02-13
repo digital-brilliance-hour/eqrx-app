@@ -79,6 +79,16 @@ return(
 						<div dir="ltr">
 							<ReactApexChart className="apex-charts" options={lineChartOpts1} height={380} series={lineChartOpts1.series} type="line" />
 						</div>
+						<div className='mt-6'>
+							<p><strong>Key observations:</strong></p>
+							<ul>
+								<li>The trend shows a general increase from January to May, peaking in May.</li>
+								<li>A sharp decline is observed in June, followed by a steep rise reaching the highest point in July.</li>
+								<li>Another decline occurs in August and September, hitting the lowest point in September.</li>
+								<li>A gradual recovery follows from October to December.</li>
+							</ul>
+							<p>This pattern suggests seasonal variations, operational challenges, or external factors influencing recovery times. The sharp drops in June and September may indicate resource constraints or specific incidents impacting recovery efficiency.</p>
+						</div>
 					</div>
 				</div>
 				</div>

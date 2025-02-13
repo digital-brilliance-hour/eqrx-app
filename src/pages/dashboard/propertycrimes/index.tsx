@@ -68,6 +68,23 @@ const AverageResponse  = () => {
 						<div dir="ltr">
 							<ReactApexChart className="apex-charts" options={dashedLineChartOpts4} height={380} series={dashedLineChartOpts5.series} type="line" />
 						</div>
+						<div className='mt-6'>
+							<h2>Crime Trends Analysis (2019-2023)</h2>
+							<h3>Key Takeaways:</h3>
+							<ul>
+								<li><strong>Larceny spiked in 2022</strong> before declining, suggesting either enforcement gaps or increased theft opportunities.</li>
+								<li><strong>Vandalism steadily declined,</strong> possibly due to deterrents or community initiatives.</li>
+								<li><strong>Breaking and Entering is rising,</strong> requiring stronger interventions.</li>
+								<li><strong>Shoplifting dropped after 2021</strong> but saw a slight rebound in 2023, likely influenced by retail security measures.</li>
+							</ul>
+							<h3>Implications for Law Enforcement:</h3>
+							<ul>
+								<li>Increased focus on <strong>Larceny and Breaking & Entering</strong> is needed.</li>
+								<li>Declining <strong>Vandalism and Shoplifting</strong> may reflect effective policing strategies.</li>
+								<li>Resource allocation should adapt to emerging trends.</li>
+							</ul>
+							<p>This data highlights areas for strategic policing efforts to curb crime effectively.</p>
+						</div>
 					</div>
 				</div>
 			</div>
