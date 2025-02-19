@@ -1927,6 +1927,30 @@ const referralrecords: TableRecord[] = [
 // 	)
 // }
 
+const TotalContactsDisplay2 = () => {
+	return (
+		<>
+			<div className="grid 2xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 gap-6 mb-6">
+				<div className="2xl:col-span-1 lg:col-span-2">
+					<StatisticsWidget variant={'bg-success'} cardTitle={"Total Juvenile Contacts"} title={'Number of customers'} change={'216'} stats={'486'} dataSince={'Since last yesterday'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
+				</div>
+
+				<div className="2xl:col-span-1 lg:col-span-2">
+					<StatisticsWidget variant={'bg-danger'} cardTitle={"Total Black Contacts"} title={'Number of Orders'} change={'1.08%'} stats={'297'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
+				</div>  
+				<div className="2xl:col-span-1 lg:col-span-2">
+					<StatisticsWidget variant={'bg-success'} cardTitle={"Total White Contacts"} title={'Number of customers'} change={'96'} stats={'886'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[58, 42]} colors={['#47ad77', '#e3e9ee']} />
+				</div>
+
+				<div className="2xl:col-span-1 lg:col-span-2">
+					<StatisticsWidget variant={'bg-danger'} cardTitle={"Total Hispanic Contacts"} title={'Number of Orders'} change={'2.54%'} stats={'617'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
+				</div> 
+			</div>
+		</>
+	)
+}
+
+
 const TotalContactsDisplay = () => {
 	return (
 		<>
@@ -2009,8 +2033,9 @@ const TotalContactsDisplay = () => {
 
 				<div className="2xl:col-span-1 lg:col-span-2">
 					<StatisticsWidget variant={'bg-danger'} cardTitle={"Reoffender Tracking"} title={'Number of Orders'} change={'2.54%'} stats={'617'} dataSince={'Since last month'} classname={'apex-charts'} chartSeries={[34, 66]} colors={['#3e60d5', '#e3e9ee']} />
-				</div> 
+				</div>
 			</div>
+			<TotalContactsDisplay2 />
 			<div className="grid 2xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-2 gap-6 mb-6">
 				
 				<div className="xl:col-span-2">

@@ -23,6 +23,8 @@ import { LocClustHeatMap } from '../../ui/maps/GoogleMaps/data'
 import { products } from './data'
 import { options } from './option-data'
 import AgeChart from '../dmc/components/AgeComepare'
+import SchoolScheduleCorrelation from '../violentcrimes/components/SchoolScheduleCorrelation'
+import SchoolVsCommunity from '../violentcrimes/components/SchoolVsCommunity'
 
 const colors1 = ['#3e60d5', '#6c757d', '#47ad77', '#fa5c7c', '#e3eaef']
 
@@ -1585,6 +1587,8 @@ const SchoolMetrics = ({ google }: MapContainerProps) => {
 				<BehavioralIncidents google={google} />
 				<ResponseAnalysis />
 				<PatternRecognition google={google}/>
+				<SchoolScheduleCorrelation/>
+				<SchoolVsCommunity />
 			</div>
 			{/* <div className="grid lg:grid-cols-6 gap-6 mb-6">
 				<ResponseAnalysis />

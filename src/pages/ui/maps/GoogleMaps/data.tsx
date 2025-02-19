@@ -41,22 +41,22 @@ const gradient = [
   ];
 
   const positions = [
-	{ lat: 35.262551, lng: -77.582368 },
-	{ lat: 35.262745, lng: -77.581586 },
-	{ lat: 35.262842, lng: -77.580688 },
-	{ lat: 35.262919, lng: -77.579815 },
-	{ lat: 35.262992, lng: -77.579112 },
-	{ lat: 35.2631, lng: -77.578461 },
-	{ lat: 35.263206, lng: -77.577829 },
-	{ lat: 35.263273, lng: -77.577324 },
-	{ lat: 35.263316, lng: -77.577023 },
-	{ lat: 35.263357, lng: -77.576794 },
-	{ lat: 35.263371, lng: -77.576687 },
-	{ lat: 35.263368, lng: -77.576666 },
-	{ lat: 35.263383, lng: -77.576594 },
-	{ lat: 35.263508, lng: -77.576525 },
-	{ lat: 35.263842, lng: -77.576591 },
-	{ lat: 35.264147, lng: -77.576668 },
+	{ lat: 37.782551, lng: -122.445368 },
+    { lat: 37.782745, lng: -122.444586 },
+    { lat: 37.782842, lng: -122.443688 },
+    { lat: 37.782919, lng: -122.442815 },
+    { lat: 37.782992, lng: -122.442112 },
+    { lat: 37.7831, lng: -122.441461 },
+    { lat: 37.783206, lng: -122.440829 },
+    { lat: 37.783273, lng: -122.440324 },
+    { lat: 37.783316, lng: -122.440023 },
+    { lat: 37.783357, lng: -122.439794 },
+    { lat: 37.783371, lng: -122.439687 },
+    { lat: 37.783368, lng: -122.439666 },
+    { lat: 37.783383, lng: -122.439594 },
+    { lat: 37.783508, lng: -122.439525 },
+    { lat: 37.783842, lng: -122.439591 },
+    { lat: 37.784147, lng: -122.439668 },
   ];
 
 
@@ -71,7 +71,7 @@ const gradient = [
 					<div id="gmaps-basic" className="gmaps" style={{ position: 'relative', overflow: 'hidden' }}>
 						<Map
 							google={google}
-							initialCenter={{ lat: 35.2621, lng: -77.5818 }}
+							initialCenter={{ lat: 37.782, lng: -122.435 }}
 							zoomControlOptions={{
 								position: google.maps.ControlPosition.LEFT_TOP,
 							}}>
@@ -95,12 +95,12 @@ const BasicHeatMap = ({ google , description }: MapContainerProps) => {
 					<div id="gmaps-basic" className="gmaps" style={{ position: 'relative', overflow: 'hidden' }}>
 						<Map
 							google={google}
-							initialCenter={{ lat: 35.2621, lng: -77.5818 }}
+							initialCenter={{ lat: 37.782, lng: -122.435 }}
 							zoomControlOptions={{
 								position: google.maps.ControlPosition.LEFT_TOP,
 							}}>
 							<HeatMap
-								mapCenter={{ lat: 35.2621, lng: -77.5818 }}
+								mapCenter={{ lat: 37.782, lng: -122.435 }}
 								gradient={gradient}
 								google={google}
 								map={Map}
@@ -127,42 +127,43 @@ const LocClustHeatMap = ({ google }: MapContainerProps) => {    const [activeLay
 
 const heatMapData = {
 	yearly: [
-		{ lat: 35.262551, lng: -77.582368 },
-		{ lat: 35.262745, lng: -77.581586 },
-		{ lat: 35.262842, lng: -77.580688 },
-		{ lat: 35.262919, lng: -77.579815 },
-		{ lat: 35.262992, lng: -77.579112 },
-		{ lat: 35.2631, lng: -77.578461 },
-		{ lat: 35.263206, lng: -77.577829 },
-		{ lat: 35.263273, lng: -77.577324 },
-		{ lat: 35.263316, lng: -77.577023 },
-		{ lat: 35.263357, lng: -77.576794 },
-		{ lat: 35.263371, lng: -77.576687 },
-		{ lat: 35.263368, lng: -77.576666 },
-		{ lat: 35.263383, lng: -77.576594 },
-		{ lat: 35.263508, lng: -77.576525 },
-		{ lat: 35.263842, lng: -77.576591 },
-		{ lat: 35.264147, lng: -77.576668 },
+		{ lat: 37.782551, lng: -122.445368 },
+		{ lat: 37.782745, lng: -122.444586 },
+		{ lat: 37.782842, lng: -122.443688 },
+		{ lat: 37.782919, lng: -122.442815 },
+		{ lat: 37.782992, lng: -122.442112 },
+		{ lat: 37.7831, lng: -122.441461 },
+		{ lat: 37.783206, lng: -122.440829 },
+		{ lat: 37.783273, lng: -122.440324 },
+		{ lat: 37.783316, lng: -122.440023 },
+		{ lat: 37.783357, lng: -122.439794 },
+		{ lat: 37.783371, lng: -122.439687 },
+		{ lat: 37.783368, lng: -122.439666 },
+		{ lat: 37.783383, lng: -122.439594 },
+		{ lat: 37.783508, lng: -122.439525 },
+		{ lat: 37.783842, lng: -122.439591 },
+		{ lat: 37.784147, lng: -122.439668 },
 		// Add more positions...
 	],
 
 	monthly: [
-		{ lat: 35.267188, lng: -77.584088 },
-		{ lat: 35.267188, lng: -77.583788 },
-		{ lat: 35.267188, lng: -77.583488 },
-		{ lat: 35.267188, lng: -77.583188 },
-		{ lat: 35.266888, lng: -77.584088 },
-		{ lat: 35.266888, lng: -77.583788 },
-		{ lat: 35.266888, lng: -77.583488 },
-		{ lat: 35.266888, lng: -77.583188 },
-		{ lat: 35.266588, lng: -77.584088 },
-		{ lat: 35.266588, lng: -77.583788 },
-		{ lat: 35.266588, lng: -77.583488 },
-		{ lat: 35.266588, lng: -77.583188 },
-		{ lat: 35.266288, lng: -77.584088 },
-		{ lat: 35.266288, lng: -77.583788 },
-		{ lat: 35.266288, lng: -77.583488 },
-		{ lat: 35.266288, lng: -77.583188 },
+		{ lat: 37.782551, lng: -122.440368 },
+{ lat: 37.782745, lng: -122.439586 },
+{ lat: 37.782842, lng: -122.438688 },
+{ lat: 37.782919, lng: -122.437815 },
+{ lat: 37.782992, lng: -122.437112 },
+{ lat: 37.7831, lng: -122.436461 },
+{ lat: 37.783206, lng: -122.435829 },
+{ lat: 37.783273, lng: -122.435324 },
+{ lat: 37.783316, lng: -122.434123 },
+{ lat: 37.783357, lng: -122.434794 },
+{ lat: 37.783371, lng: -122.434687 },
+{ lat: 37.783368, lng: -122.434666 },
+{ lat: 37.783383, lng: -122.434594 },
+{ lat: 37.783508, lng: -122.434525 },
+{ lat: 37.783842, lng: -122.434591 },
+{ lat: 37.784147, lng: -122.434668 },
+
 		// Add more positions...
 	],
 };
@@ -209,12 +210,12 @@ return (
 				<div id="gmaps-basic" className="gmaps" style={{ position: 'relative', overflow: 'hidden' }}>
 					<Map
 						google={google}
-						initialCenter={{ lat: 35.2621, lng: -77.5818 }}
+						initialCenter={{  lat: 37.782, lng: -122.435  }}
 						zoomControlOptions={{ position: google.maps.ControlPosition.LEFT_TOP }}
 					>
 						{activeLayers.yearly && (
 							<HeatMap
-								mapCenter={{ lat: 35.2621, lng: -77.5818 }}
+								mapCenter={{  lat: 37.782, lng: -122.435 }}
 								gradient={gradients.yearly}
 								google={google}
 								positions={heatMapData.yearly}
@@ -224,7 +225,7 @@ return (
 						)}
 						{activeLayers.monthly && (
 							<HeatMap
-								mapCenter={{ lat: 35.2621, lng: -77.5818 }}
+								mapCenter={{  lat: 37.782, lng: -122.435  }}
 								gradient={gradients.monthly}
 								google={google}
 								positions={heatMapData.monthly}
@@ -247,11 +248,11 @@ return (
 			</div>
 			<div className='mt-6'>
 				
-				<h2>Heatmap Analysis – Police Stops in Kinston, NC</h2>
-				<p>This heatmap highlights areas in Kinston, NC where police stops are most concentrated. The intensity of the colors represents the frequency of stops, with redder areas showing higher activity.</p>
+				<h2>Heatmap Analysis – Police Stops in San Francisco, CA</h2>
+				<p>This heatmap highlights areas in San Francisco, CA where police stops are most concentrated. The intensity of the colors represents the frequency of stops, with redder areas showing higher activity.</p>
 				<h3>Key Observations:</h3>
 				<ul>
-					<li><strong>Downtown Kinston is the primary hotspot,</strong> particularly around <strong>Queen St and King St</strong>, where stops are most frequent.</li>
+					<li><strong>Downtown San Francisco is the primary hotspot,</strong> particularly around <strong>Queen St and King St</strong>, where stops are most frequent.</li>
 					<li><strong>Moderate activity extends</strong> toward <strong>E Vernon Ave and Mother Earth Motor Lodge</strong>, possibly due to higher traffic, businesses, or visitor activity.</li>
 					<li><strong>Lower stop frequency</strong> is observed outside the central downtown region, with less enforcement or fewer incidents recorded.</li>
 				</ul>
@@ -261,7 +262,7 @@ return (
 					<li>The <strong>presence of stops near Mother Earth Motor Lodge</strong> suggests possible interactions in hospitality or tourism areas.</li>
 					<li>Understanding these trends can help assess the <strong>impact of policing strategies, traffic control, and community concerns</strong> in these areas.</li>
 				</ul>
-				<p>This heatmap provides valuable insight into <strong>where stops occur most frequently in Kinston</strong> and can inform discussions on law enforcement distribution and its effects on different parts of the city.</p>
+				<p>This heatmap provides valuable insight into <strong>where stops occur most frequently in San Francisco</strong> and can inform discussions on law enforcement distribution and its effects on different parts of the city.</p>
 			</div>
 		</div>
 	</div>
