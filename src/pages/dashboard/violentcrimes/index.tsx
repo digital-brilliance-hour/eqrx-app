@@ -350,7 +350,6 @@ const Report = () => {
 		<>
 			{/* <PageBreadcrumb title="Violent Crimes Dashboard" subName="Menu" /> */}
 			<header className="text-slate-900 dark:text-slate-200 text-lg font-medium mb-6">Violent Crimes Dashboard</header>
-			<TotalContactsDisplay />
 
 			<div className="grid lg:grid-cols-5 gap-6 mb-6">
 				<ViolentIncidents />
