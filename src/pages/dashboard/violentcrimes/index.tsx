@@ -21,11 +21,9 @@ import { options } from './option-data'
 import ViolentIncidents from './components/ViolentIncidents'
 import ReactApexChart from 'react-apexcharts'
 import { Part1Types } from './components/BreakdownByType'
-import SchoolVsCommunity from './components/SchoolVsCommunity'
 import { simplePieOpts } from '@/pages/charts/ApexCharts/PieApex/data'
 import FirstVsRepeat from './components/FirstVsRepeat'
 import ItemsRecovered3 from './components/MonthlyComparisons'
-import SchoolScheduleCorrelation from './components/SchoolScheduleCorrelation'
 //import Parts from './components/parts'
 import TotalCrimes from './components/TotalCrime1'
 import Parts from './components/Parts'
@@ -362,8 +360,6 @@ const Report = () => {
 			</div>
 			<div className="grid lg:grid-cols-4 gap-6 mb-6">
 				<Monthly />
-				<SchoolScheduleCorrelation/>
-				<SchoolVsCommunity />
 				<FirstVsRepeat />
 			</div>
 
