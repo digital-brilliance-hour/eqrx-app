@@ -63,7 +63,7 @@ const AverageResponse  = () => {
 		<div className="xl:col-span-3">
 				<div className="card">
 					<div className="p-6">
-						<h4 className="card-title">Crime Categories:
+						<h4 className="card-title">Most Frequent Property Crimes:
 						</h4>
 						<div dir="ltr">
 							<ReactApexChart className="apex-charts" options={dashedLineChartOpts4} height={380} series={dashedLineChartOpts5.series} type="line" />

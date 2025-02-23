@@ -1458,7 +1458,7 @@ const BehavioralIncidents = ({}: MapContainerProps) => {
 			<div className="col-span-6 gap-6 mb-6">
 				<div className="card">
 					<div className="p-6">
-						<h4 className="card-title mb-4">School-based infractions</h4>
+						<h4 className="card-title mb-4">School-based Charges</h4>
 						<div dir="ltr">
 							<ReactApexChart className="apex-charts" options={schoolbasedinfractions} height={380} series={schoolbasedinfractions.series} type="bar" />
 						</div>
@@ -1584,10 +1584,10 @@ const SchoolMetrics = ({ google }: MapContainerProps) => {
 			{/* <PageBreadcrumb title="Dashboard" subName="Menu" /> */}
 			<header className="text-slate-900 dark:text-slate-200 text-lg font-medium mb-6">School Metrics Dashboard</header>
 			<div className="grid lg:grid-cols-6 gap-6 mb-6">
+				<SchoolScheduleCorrelation/>
 				<BehavioralIncidents google={google} />
 				<ResponseAnalysis />
 				<PatternRecognition google={google}/>
-				<SchoolScheduleCorrelation/>
 				<SchoolVsCommunity />
 			</div>
 			{/* <div className="grid lg:grid-cols-6 gap-6 mb-6">

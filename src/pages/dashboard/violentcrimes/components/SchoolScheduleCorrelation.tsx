@@ -82,7 +82,7 @@ const RevenueChart = () => {
 	]
 
 	return (
-		<div className="lg:col-span-3">
+		<div className="lg:col-span-6">
 			<div className="card">
 				<div className="flex card-header justify-between items-center">
 					<h4 className="card-title">In School vs Out of School Comparison</h4>
