@@ -31,6 +31,7 @@ const Dmc = React.lazy(() => import('../pages/dashboard/dmc/'))
 const Main = React.lazy(() => import('../pages/dashboard/main/'))
 const ViolentCrimes = React.lazy(() => import('../pages/dashboard/violentcrimes/'))
 const PropertyCrimes = React.lazy(() => import('../pages/dashboard/propertycrimes/'))
+const Main2 = React.lazy(() => import('../pages/dashboard/dashboard2/'))
 
 
 // apps
@@ -204,6 +205,12 @@ const dashboardRoutes: RoutesProps = {
 			path: '/propertycrimes',
 			name: 'Property Crimes',
 			element: <PropertyCrimes />,
+			route: PrivateRoute,
+		},
+		{
+			path: '/dashboard2',
+			name: 'dashboard2',
+			element: <Main2 />,
 			route: PrivateRoute,
 		},
 	],
