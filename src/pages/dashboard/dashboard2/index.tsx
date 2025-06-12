@@ -19,6 +19,8 @@ import StatisticsWidget from '../../dashboard/report/components/StatisticsWidget
 import ReactApexCharts from 'react-apexcharts'
 import { Link } from 'react-router-dom'
 import { Tab } from '@headlessui/react'
+import DisparateTreatment from '../../dashboard/disparatetreatment/index'
+import DMC from '../../dashboard/dmcupdated/index'
 import PublicOrder from '../../dashboard/publicorder/index'
 import ViolentCrimes from '../../dashboard/violentcrimes/index'
 import PropertyCrimes from '../../dashboard/propertycrimes/index'
@@ -2253,26 +2255,26 @@ const SystemPerformanceMetrics = () => {
 			<Tab.Group>
 				<Tab.List as="nav" className="flex flex-wrap space-x-2 bg-light dark:bg-gray-700/60 mb-6" aria-label="Tabs">
 					<Tab type="button" className={({ selected }) => `${selected ? 'bg-primary text-white' : 'text-gray-500 hover:text-primary  bg-transparent'} flex-auto py-2 px-4 inline-flex justify-center items-center gap-2 text-center text-sm font-semibold  dark:hover:text-gray-400 first:rounded-s-md last:rounded-e-md`}>
-						Public Order
+						DMC
 					</Tab>
 					<Tab type="button" className={({ selected }) => `${selected ? 'bg-primary text-white' : 'text-gray-500 hover:text-primary  bg-transparent'} flex-auto py-2 px-4 inline-flex justify-center items-center gap-2 text-center text-sm font-semibold  dark:hover:text-gray-400 first:rounded-s-md last:rounded-e-md`}>
-						Violent Crimes
+						Disparate Treatment
 					</Tab>
 					<Tab type="button" className={({ selected }) => `${selected ? 'bg-primary text-white' : 'text-gray-500 hover:text-primary  bg-transparent'} flex-auto py-2 px-4 inline-flex justify-center items-center gap-2 text-center text-sm font-semibold  dark:hover:text-gray-400 first:rounded-s-md last:rounded-e-md`}>
-						Property Crimes
+						Disparate Treatment pt2
 					</Tab>
 					<Tab type="button" className={({ selected }) => `${selected ? 'bg-primary text-white' : 'text-gray-500 hover:text-primary  bg-transparent'} flex-auto py-2 px-4 inline-flex justify-center items-center gap-2 text-center text-sm font-semibold  dark:hover:text-gray-400 first:rounded-s-md last:rounded-e-md`}>
-						School Metrics
+						KPD DMC/RED Analysis
 					</Tab>
 				</Tab.List>
 
 				<Tab.Panels className="mt-3">
 					<Tab.Panel id="fill-and-justify-1" aria-labelledby="fill-and-justify-item-1">
-						 <PublicOrder />
+						 <DMC />
 					</Tab.Panel>
 
 					<Tab.Panel id="fill-and-justify-1" aria-labelledby="fill-and-justify-item-1">
-						<ViolentCrimes />
+						<DisparateTreatment />
 					</Tab.Panel>
 
 					<Tab.Panel id="fill-and-justify-1" aria-labelledby="fill-and-justify-item-1">
