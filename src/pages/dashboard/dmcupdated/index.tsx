@@ -82,201 +82,6 @@ const contactBW: ApexOptions = {
 	},
 }
 
-const timebasedtrends: ApexOptions = {
-	chart: {
-		height: 380,
-		type: 'line',
-		zoom: {
-			enabled: false,
-		},
-	},
-	dataLabels: {
-		enabled: false,
-	},
-	stroke: {
-		width: [3, 5, 3],
-		curve: 'straight',
-		dashArray: [0, 8, 5],
-	},
-	series: [
-		{
-			name: 'Burglary',
-			data: [45, 52, 38, 24, 33, 26, 21, 20, 6, 8],
-		},
-		{
-			name: 'Drug Violation',
-			data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51],
-		},
-		{
-			name: 'Larceny',
-			data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56],
-		},
-	],
-
-	markers: {
-		size: 0,
-		// style: 'hollow', // full, hollow, inverted
-	},
-	xaxis: {
-		categories: ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
-	},
-	colors: ['#6c757d', '#47ad77', '#39afd1'],
-	tooltip: {
-		y: {
-			title: {
-				formatter: function (val) {
-					if (val === 'Session Duration') return val + ' (mins)'
-					else if (val === 'Page Views') return val + ' per session'
-					return val
-				},
-			},
-		},
-	},
-	grid: {
-		borderColor: '#f1f3fa',
-	},
-	legend: {
-		offsetY: 7,
-	},
-}
-const dashedLineChartOpts2: ApexOptions = {
-	chart: {
-		height: 380,
-		type: 'line',
-		zoom: {
-			enabled: false,
-		},
-	},
-	dataLabels: {
-		enabled: false,
-	},
-	stroke: {
-		width: [3, 5, 3],
-		curve: 'straight',
-		dashArray: [0, 8, 5],
-	},
-	series: [
-		{
-			name: 'Escape from Custody',
-			data: [45, 52, 38, 24, 33, 26, 21, 20, 6, 8],
-		},
-		{
-			name: 'City Ordinance',
-			data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51],
-		},
-		{
-			name: 'Motor Vehicle',
-			data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56],
-		},
-	],
-
-	markers: {
-		size: 0,
-		// style: 'hollow', // full, hollow, inverted
-	},
-	xaxis: {
-		categories: ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
-	},
-	colors: ['#6c757d', '#47ad77', '#39afd1'],
-	tooltip: {
-		y: {
-			title: {
-				formatter: function (val) {
-					if (val === 'Session Duration') return val + ' (mins)'
-					else if (val === 'Page Views') return val + ' per session'
-					return val
-				},
-			},
-		},
-	},
-	grid: {
-		borderColor: '#f1f3fa',
-	},
-	legend: {
-		offsetY: 7,
-	},
-}
-
-const disorderlyconduct: ApexOptions = {
-	chart: {
-		height: 380,
-		type: 'line',
-		zoom: {
-			enabled: false,
-		},
-		toolbar: {
-			show: true,
-		},
-	},
-	dataLabels: {
-		enabled: true,
-	},
-	stroke: {
-		width: [3, 3, 3],
-		curve: 'smooth',
-	},
-	series: [
-		{
-			name: 'Age',
-			data: [45, 52, 38, 24],
-		},
-		{
-			name: 'Male Cases',
-			data: [23, 19, 14, 48],
-		},
-		{
-			name: 'Female Cases',
-			data: [65, 14, 28, 31],
-		},
-		// {
-		// 	name: 'Asian',
-		// 	data: [21, 38, 28, 26, 2, 20, 49, 27, 40, 6, 24, 30],
-		// },
-		// {
-		// 	name: 'Native American',
-		// 	data: [29, 9, 34, 45, 13, 27, 24, 43, 3, 15, 46, 34],
-		// },
-		// {
-		// 	name: 'Latino',
-		// 	data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51],
-		// },
-		// {
-		// 	name: 'White',
-		// 	data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51, 48, 26],
-		// },
-		// {
-		// 	name: 'Black',
-		// 	data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56, 36, 13],
-		// },
-	],
-
-	markers: {
-		size: 0,
-		// style: 'hollow', // full, hollow, inverted
-	},
-	xaxis: {
-		categories: ['Quarter 1', 'Quarter 2', 'Quarter 3', 'Quarter 4'],
-	},
-	colors: ['#6c757d','#3e60d5','#fa5c7c','#6c757d', '#2b908f', '#47ad77', '#39afd1', '#212730'],
-	tooltip: {
-		y: {
-			title: {
-				formatter: function (val) {
-					if (val === 'Session Duration') return val + ' (mins)'
-					else if (val === 'Page Views') return val + ' per session'
-					return val
-				},
-			},
-		},
-	},
-	grid: {
-		borderColor: '#f1f3fa',
-	},
-	legend: {
-		offsetY: 7,
-	},
-}
-
 function generateData(count: number, yrange: any) {
 	let i = 0
 	const series = []
@@ -780,401 +585,6 @@ export const schoolbasedinfractions: ApexOptions = {
 	},
 }
 
-// for use once Non school based incident has been clarified
-
-// export const schoolbasedinfractions2: ApexOptions = {
-// 	chart: {
-// 		height: 450,
-// 		type: 'bar',
-// 	},
-// 	plotOptions: {
-// 		bar: {
-// 			barHeight: '100%',
-// 			distributed: true,
-// 			horizontal: true,
-// 			dataLabels: {
-// 				position: 'bottom',
-// 			},
-// 		},
-// 	},
-// 	colors: ['#3e60d5', '#47ad77', '#fa5c7c', '#6c757d', '#39afd1', '#2b908f', '#ffbc00', '#90ee7e', '#f48024', '#212730'],
-// 	dataLabels: {
-// 		enabled: true,
-// 		textAnchor: 'start',
-// 		style: {
-// 			colors: ['#fff'],
-// 		},
-// 		formatter: function (val, opt) {
-// 			return opt.w.globals.labels[opt.dataPointIndex] + ':  ' + val
-// 		},
-// 		offsetX: 0,
-// 		dropShadow: {
-// 			enabled: false,
-// 		},
-// 	},
-// 	series: [
-// 		{
-// 			data: [400, 430, 448, 470, 540, 580, 690],
-// 		},
-// 	],
-// 	stroke: {
-// 		width: 0,
-// 		colors: ['#fff'],
-// 	},
-// 	xaxis: {
-// 		categories: ['Affray', 'Assault with a weapon', 'Assualt', 'Disorderly conduct', 'Larceny', 'Weapons violation', 'Drug violations'],
-// 	},
-// 	yaxis: {
-// 		labels: {
-// 			show: false,
-// 		},
-// 	},
-// 	grid: {
-// 		borderColor: '#f1f3fa',
-// 	},
-
-// 	tooltip: {
-// 		theme: 'dark',
-// 		x: {
-// 			show: false,
-// 		},
-// 		y: {
-// 			title: {
-// 				formatter: function () {
-// 					return ''
-// 				},
-// 			},
-// 		},
-// 	},
-// }
-
-const fullStackedColumnOpts: ApexOptions = {
-	chart: {
-		height: 380,
-		type: 'bar',
-		stacked: true,
-		stackType: '100%',
-		toolbar: {
-			show: false,
-		},
-	},
-	plotOptions: {
-		bar: {
-			columnWidth: '50%',
-		},
-	},
-	series: [
-		{
-			name: 'White',
-			data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51, 48, 26],
-		},
-		{
-			name: 'Black',
-			data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56, 36, 13],
-		},
-		{
-			name: 'Asian',
-			data: [21, 38, 28, 26, 21, 20, 49, 27, 40, 6, 24, 30],
-		},
-		{
-			name: 'Native American',
-			data: [29, 9, 34, 45, 13, 27, 24, 43, 3, 15, 46, 34],
-		},
-		{
-			name: 'Latino',
-			data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51],
-		},
-	],
-	xaxis: {
-		categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-	},
-	fill: {
-		opacity: 1,
-	},
-	legend: {
-		offsetY: 7,
-	},
-	colors: ['#ffbc00','#3e60d5','#fa5c7c','#6c757d', '#2b908f'],
-	grid: {
-		row: {
-			colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
-			opacity: 0.2,
-		},
-		borderColor: '#f1f3fa',
-		padding: {
-			bottom: 5,
-		},
-	},
-}
-
-const columnWithRotatedlabelsOpts: ApexOptions = {
-	annotations: {
-		points: [
-			{
-				x: 'Bananas',
-				seriesIndex: 0,
-				label: {
-					borderColor: '#3e60d5',
-					offsetY: 0,
-					style: {
-						color: '#fff',
-						background: '#3e60d5',
-					},
-					text: 'Bananas are good',
-				},
-			},
-		],
-	},
-	chart: {
-		height: 380,
-		type: 'bar',
-		toolbar: {
-			show: false,
-		},
-	},
-	plotOptions: {
-		bar: {
-			columnWidth: '50%',
-			// endingShape: 'rounded'
-		},
-	},
-	dataLabels: {
-		enabled: false,
-	},
-	stroke: {
-		width: 2,
-	},
-	colors: ['#fa5c7c'],
-	series: [
-		{
-			name: 'Servings',
-			data: [44, 55, 41, 67, 22, 43, 21, 33, 45, 31, 87, 65, 35],
-		},
-	],
-	grid: {
-		borderColor: '#f1f3fa',
-		padding: {
-			top: 0,
-			right: -2,
-			bottom: -35,
-			left: 10,
-		},
-	},
-	xaxis: {
-		labels: {
-			rotate: -45,
-		},
-		categories: ['Apples', 'Oranges', 'Strawberries', 'Pineapples', 'Mangoes', 'Bananas', 'Blackberries', 'Pears', 'Watermelons', 'Cherries', 'Pomegranates', 'Tangerines', 'Papayas'],
-	},
-	yaxis: {
-		title: {
-			text: 'Servings',
-		},
-	},
-	fill: {
-		type: 'gradient',
-		gradient: {
-			shade: 'light',
-			type: 'horizontal',
-			shadeIntensity: 0.25,
-			gradientToColors: undefined,
-			inverseColors: true,
-			opacityFrom: 0.85,
-			opacityTo: 0.85,
-			stops: [50, 0, 100],
-		},
-	},
-}
-
-const resolutionmethodsused: ApexOptions = {
-	annotations: {
-		points: [
-			{
-				x: 'Bananas',
-				seriesIndex: 0,
-				label: {
-					borderColor: '#3e60d5',
-					offsetY: 0,
-					style: {
-						color: '#fff',
-						background: '#3e60d5',
-					},
-					text: 'Bananas are good',
-				},
-			},
-		],
-	},
-	chart: {
-		height: 380,
-		type: 'bar',
-		toolbar: {
-			show: true,
-		},
-	},
-	plotOptions: {
-		bar: {
-			columnWidth: '50%',
-			// endingShape: 'rounded'
-		},
-	},
-	dataLabels: {
-		enabled: false,
-	},
-	stroke: {
-		width: 2,
-	},
-	colors: ['#fa5c7c'],
-	series: [
-		{
-			name: 'Times used',
-			data: [44, 55, 41, 67, 22,33],
-		},
-	],
-	grid: {
-		borderColor: '#f1f3fa',
-		padding: {
-			top: 0,
-			right: -2,
-			bottom: 0,
-			left: 10,
-		},
-	},
-	xaxis: {
-		labels: {
-			rotate: -45,
-		},
-		categories: ['Released', ' Juv Authorities', 'Social Services', 'Another Jurisdiction', 'None', 'Other' ],
-	},
-	yaxis: {
-		title: {
-			text: 'Frequncy used',
-		},
-	},
-	fill: {
-		type: 'gradient',
-		gradient: {
-			shade: 'light',
-			type: 'horizontal',
-			shadeIntensity: 0.25,
-			gradientToColors: undefined,
-			inverseColors: true,
-			opacityFrom: 0.85,
-			opacityTo: 0.85,
-			stops: [50, 0, 100],
-		},
-	},
-}
-
-const stackedColumnOpts: ApexOptions = {
-	chart: {
-		height: 380,
-		type: 'bar',
-		stacked: true,
-		toolbar: {
-			show: false,
-		},
-	},
-	plotOptions: {
-		bar: {
-			horizontal: false,
-			columnWidth: '50%',
-		},
-	},
-	series: [
-		{
-			name: 'Product A',
-			data: [44, 55, 41, 67, 22, 43, 21, 49],
-		},
-		{
-			name: 'Product B',
-			data: [13, 23, 20, 8, 13, 27, 33, 12],
-		},
-		{
-			name: 'Product C',
-			data: [11, 17, 15, 15, 21, 14, 15, 13],
-		},
-	],
-	xaxis: {
-		categories: ['2011 Q1', '2011 Q2', '2011 Q3', '2011 Q4', '2012 Q1', '2012 Q2', '2012 Q3', '2012 Q4'],
-	},
-	colors: ['#39afd1', '#ffbc00', '#e3eaef'],
-	fill: {
-		opacity: 1,
-	},
-	legend: {
-		offsetY: 7,
-	},
-	grid: {
-		row: {
-			colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
-			opacity: 0.2,
-		},
-		borderColor: '#f1f3fa',
-		padding: {
-			bottom: 5,
-		},
-	},
-}
-
-// const repeatincidenttracking: ApexOptions = {
-// 	chart: {
-// 		height: 380,
-// 		type: 'bar',
-// 		stacked: true,
-// 		toolbar: {
-// 			show: false,
-// 		},
-// 	},
-// 	plotOptions: {
-// 		bar: {
-// 			horizontal: false,
-// 			columnWidth: '50%',
-// 		},
-// 	},
-// 	series: [
-// 		{
-// 			name: 'Asian',
-// 			data: [21, 38, 28, 26, 22, 20, 49, 27, 40, 26, 24, 30],
-// 		},
-// 		{
-// 			name: 'Asian, Native American, Latino, White, Black',
-// 			data: [29, 9, 34, 45, 13, 27, 24, 43, 3, 15, 46, 34],
-// 		},
-// 		{
-// 			name: 'Latino',
-// 			data: [35, 41, 62, 42, 16, 38, 29, 37, 36, 51, 38, 29],
-// 		},
-// 		{
-// 			name: 'White',
-// 			data: [35, 41, 62, 42, 19, 18, 29, 37, 36, 51, 48, 26],
-// 		},
-// 		{
-// 			name: 'Black',
-// 			data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56, 36, 53],
-// 		},
-// 	],
-// 	xaxis: {
-// 		categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-// 	},
-// 	colors: ['#ffbc00','#3e60d5','#fa5c7c','#6c757d', '#2b908f', '#47ad77', '#39afd1', '#212730'],
-// 	fill: {
-// 		opacity: 1,
-// 	},
-// 	legend: {
-// 		offsetY: 7,
-// 	},
-// 	grid: {
-// 		row: {
-// 			colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
-// 			opacity: 0.2,
-// 		},
-// 		borderColor: '#f1f3fa',
-// 		padding: {
-// 			bottom: 5,
-// 		},
-// 	},
-// }
-
 const ageRaceInt: ApexOptions = {
 	chart: {
 		height: 240,
@@ -1379,7 +789,7 @@ const firstCharge: ApexOptions = {
 		},
 	],
 	xaxis: {
-		categories: ['Aggravated assault', 'ALL OTHER DRUG VIOLATIONS','All Other Larceny','ALL OTHER SEX OFFENSES','ALL OTHER SIMPLE ASSAULT',
+		categories: ['AGGRAVATED ASSAULT', 'ALL OTHER DRUG VIOLATIONS','All Other Larceny','ALL OTHER SEX OFFENSES','ALL OTHER SIMPLE ASSAULT',
 			'ALL TRAFFIC','BURGLARY-FORCIBLE ENTRY','BURGLARY NON-FORCED ENTRY','CALLS FOR SERVICE','CITY ORDINANCE VIOLATIONS',
 			'CRIMINAL DAMAGE TO PROPERTY','DISORDERLY CONDUCT','DRUG VIOLATIONS','ESCAPE FROM CUSTODY OR RESIST ARREST','FIGHTING (AFFRAY)',
 			'LARCENY','LARCENY FROM BUILDINGS','LARCENY FROM MOTOR VEHICLE','MOTOR VEHICLE THEFT OF ALL OTHER VEHICLES',
@@ -1458,7 +868,7 @@ const minorReferrals: ApexOptions = {
 		},
 	],
 	xaxis: {
-		categories: ['Aggravated assault', 'ALL OTHER DRUG VIOLATIONS','All Other Larceny','ALL OTHER SEX OFFENSES','ALL OTHER SIMPLE ASSAULT',
+		categories: ['AGGRAVATED ASSAULT', 'ALL OTHER DRUG VIOLATIONS','All Other Larceny','ALL OTHER SEX OFFENSES','ALL OTHER SIMPLE ASSAULT',
 			'ALL TRAFFIC','BURGLARY-FORCIBLE ENTRY','BURGLARY NON-FORCED ENTRY','CALLS FOR SERVICE','CITY ORDINANCE VIOLATIONS',
 			'CRIMINAL DAMAGE TO PROPERTY','DISORDERLY CONDUCT','DRUG VIOLATIONS','ESCAPE FROM CUSTODY OR RESIST ARREST','FIGHTING (AFFRAY)',
 			'LARCENY','LARCENY FROM BUILDINGS','LARCENY FROM MOTOR VEHICLE','MOTOR VEHICLE THEFT OF ALL OTHER VEHICLES',
@@ -1485,118 +895,6 @@ const minorReferrals: ApexOptions = {
 		borderColor: '#f1f3fa',
 		padding: {
 			top: 0,
-		},
-	},
-}
-
-const officerContactsH: ApexOptions = {
-	chart: {
-		height: 240,
-		type: 'bar',
-		stacked: false,
-		stackType: '100%',
-		toolbar: {
-			show: true,
-		},
-	},
-	plotOptions: {
-		bar: {
-			horizontal: true,
-		},
-	},
-	stroke: {
-		width: 1,
-		colors: ['#fff'],
-	},
-	series: [
-		{
-			name: 'SRO',
-			data: [44],
-		},
-		{
-			name: 'Other',
-			data: [503],
-		},
-	],
-	xaxis: {
-		categories: ['Total'],
-	},
-	colors: ['#6c757d', '#ffbc00'],
-	tooltip: {
-		y: {
-			formatter: function (val) {
-				return val + 'K'
-			},
-		},
-	},
-	fill: {
-		opacity: 1,
-	},
-	states: {
-		// hover: {
-		//     filter: 'none'
-		// }
-	},
-	legend: {
-		position: 'top',
-		horizontalAlign: 'center',
-		offsetY: 10,
-	},
-	grid: {
-		borderColor: '#f1f3fa',
-		padding: {
-			top: 0,
-		},
-	},
-}
-
-const averageresponsetimes: ApexOptions = {
-	chart: {
-		height: 380,
-		type: 'bar',
-		stacked: true,
-		toolbar: {
-			show: false,
-		},
-	},
-	plotOptions: {
-		bar: {
-			horizontal: false,
-			columnWidth: '50%',
-		},
-	},
-	series: [
-		{
-			name: 'Min',
-			data: [44, 55, 41, 67, 22, 43, 21, 49, 55, 41, 67, 22],
-		},
-		{
-			name: 'Med',
-			data: [13, 23, 20, 8, 13, 27, 33, 12, 23, 20, 8, 13],
-		},
-		{
-			name: 'Max',
-			data: [11, 17, 15, 15, 21, 14, 15, 13, 17, 15, 15, 21],
-		},
-	],
-	xaxis: {
-		categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-	},
-	colors: ['#39afd1', '#ffbc00', '#e3eaef'],
-	fill: {
-		opacity: 1,
-	},
-	legend: {
-		offsetY: 7,
-	},
-	grid: {
-		row: {
-			colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
-			opacity: 0.2,
-		},
-		borderColor: '#f1f3fa',
-		padding: {
-			bottom: 5,
 		},
 	},
 }
@@ -1949,78 +1247,11 @@ const series = {
 	},
 }
 
-const trespassingcases: ApexOptions = {
-	chart: {
-		height: 380,
-		type: 'line',
-		zoom: {
-			enabled: false,
-		},
-	},
-	dataLabels: {
-		enabled: false,
-	},
-	colors: ['#ffbc00'],
-	stroke: {
-		width: [4],
-		curve: 'straight',
-	},
-	series: [
-		{
-			name: 'Cases',
-			data: [30, 41, 35, 51, 49, 62, 69, 91, 126],
-		},
-	],
-	legend: {
-		position: 'top',
-		horizontalAlign: 'center',
-		offsetY: 10,
-	},
-	title: {
-		text: 'Trespassing Reported',
-		align: 'center',
-	},
-	grid: {
-		row: {
-			colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
-			opacity: 0.2,
-		},
-		borderColor: '#f1f3fa',
-	},
-	
-	labels: series.monthDataSeries1.dates,
-	xaxis: {
-		categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-	},
-	responsive: [
-		{
-			breakpoint: 600,
-			options: {
-				chart: {
-					toolbar: {
-						show: true,
-					},
-				},
-				legend: {
-					show: false,
-				},
-			},
-		},
-	],
-}
-
 interface MapContainerProps {
 	google: any
 }
 
-const heatmapdata = {
-	mapData:{
-		lat: [37.782, 37.782, 37.782, 37.782, 37.782, 37.782, 37.782, 37.785, 37.785, 37.785, 37.785, 37.785, 37.785, 37.785],
-		lng: [-122.447, -122.445, -122.443, -122.441, -122.439, -122.437,-122.435, -122.447, -122.445, -122.443, -122.441, -122.439, -122.437, -122.435]
-	}
-}
-
-const BehavioralIncidents = ({}: MapContainerProps) => {
+const BarCharts = ({}: MapContainerProps) => {
 	return (
 		<>
 		<div className="xl:col-span-6">
@@ -2033,17 +1264,14 @@ const BehavioralIncidents = ({}: MapContainerProps) => {
                             options={totalCountRace}
                             series={totalCountRace.series}
                             type="bar"
-                            height={650}
-                        />					</div>
+                            height={500}
+                        />
+						</div>
 						<div className="pt-6">
-						The data highlights trends and fluctuations in various public nuisance offenses over time,<br/> with burglary consistently being the most reported offense type. <br/>
-						<b>Arson:</b> Shows consistent levels of violations across the years, with a slight increase in later years.<br/>
-						<b>Murder:</b> Relatively stable with minor variations year-to-year.<br/>
-						<b>Stalking:</b> Exhibits noticeable fluctuations, with some years showing significantly higher violations than others.<br/>
-						<b>Burglary:</b> The highest levels of violations among all categories, peaking in certain years, especially in 2013 and 2015.<br/>
-						<b>Rape:</b> Displays moderate levels of violations with some growth over time.<br/>
-						<b>Robbery:</b> Maintains a steady pattern, though not as high as burglary.<br/>
-						<b>Assault:</b> Similar to robbery, with stable trends and slight variations across the years.
+						<h3>Implications:</h3>
+						This chart reinforces racial disparity in enforcement outcomes. <br/>
+						Black individuals not only experience more frequent interactions, <br/>
+						but they also tend to receive more charges per interaction than White individuals.
 						</div>
 				</div>
 			</div>
@@ -2059,17 +1287,13 @@ const BehavioralIncidents = ({}: MapContainerProps) => {
                             options={intReferral}
                             series={intReferral.series}
                             type="bar"
-                            height={650}
+                            height={500}
                         />					</div>
 						<div className="pt-6">
-						The data highlights trends and fluctuations in various public nuisance offenses over time,<br/> with burglary consistently being the most reported offense type. <br/>
-						<b>Arson:</b> Shows consistent levels of violations across the years, with a slight increase in later years.<br/>
-						<b>Murder:</b> Relatively stable with minor variations year-to-year.<br/>
-						<b>Stalking:</b> Exhibits noticeable fluctuations, with some years showing significantly higher violations than others.<br/>
-						<b>Burglary:</b> The highest levels of violations among all categories, peaking in certain years, especially in 2013 and 2015.<br/>
-						<b>Rape:</b> Displays moderate levels of violations with some growth over time.<br/>
-						<b>Robbery:</b> Maintains a steady pattern, though not as high as burglary.<br/>
-						<b>Assault:</b> Similar to robbery, with stable trends and slight variations across the years.
+						<h3>Implications:</h3>
+						This disparity suggests that Black youth are more frequently funneled into the juvenile justice system, <br/>
+						raising concerns about over-policing, differential treatment, and long-term systemic impacts on communities of color. <br/>
+						Even at low offense levels, unequal referral patterns may contribute to cumulative disadvantage.
 						</div>
 				</div>
 			</div>
@@ -2085,17 +1309,13 @@ const BehavioralIncidents = ({}: MapContainerProps) => {
                             options={primaryCount}
                             series={primaryCount.series}
                             type="bar"
-                            height={650}
+                            height={500}
                         />					</div>
 						<div className="pt-6">
-						The data highlights trends and fluctuations in various public nuisance offenses over time,<br/> with burglary consistently being the most reported offense type. <br/>
-						<b>Arson:</b> Shows consistent levels of violations across the years, with a slight increase in later years.<br/>
-						<b>Murder:</b> Relatively stable with minor variations year-to-year.<br/>
-						<b>Stalking:</b> Exhibits noticeable fluctuations, with some years showing significantly higher violations than others.<br/>
-						<b>Burglary:</b> The highest levels of violations among all categories, peaking in certain years, especially in 2013 and 2015.<br/>
-						<b>Rape:</b> Displays moderate levels of violations with some growth over time.<br/>
-						<b>Robbery:</b> Maintains a steady pattern, though not as high as burglary.<br/>
-						<b>Assault:</b> Similar to robbery, with stable trends and slight variations across the years.
+						<h3>Implications:</h3>
+						 The data suggests a strong preference for formal interventions over alternative or community-based referrals. <br/>
+						 This pattern could indicate limited use of diversion programs, potentially increasing juvenile system <br/>
+						 involvement and contributing to cumulative disadvantages for youth.
 						</div>
 				</div>
 			</div>
@@ -2109,10 +1329,10 @@ const BehavioralIncidents = ({}: MapContainerProps) => {
 							<ReactApexChart className="apex-charts" options={contactBW} height={337} series={contactBW.series} type="line" />
 						</div>
 						<div className="pt-6">
-						This trend indicates a consistent increase in trespassing incidents as the year progresses, particularly after midyear.<br/>
-						The number of contacts starts at approximately 30 in January.<br/>
-						A gradual increase occurs from February to June, where the numbers stabilize briefly.<br/>
-						From July onward, the contacts show a sharp rise, peaking in September at over 120 contacts.
+						<h3>Implications:</h3>
+						The fluctuating trend for Black individuals may indicate changes in policies, enforcement practices, or community dynamics affecting contact rates.<br/>
+						The stable trend for White individuals suggests consistent contact rates, possibly reflecting less variation in influencing factors.<br/>
+						The disparity in trends may highlight systemic issues or differences in how policies impact different racial groups, warranting further analysis to understand underlying causes
 						</div>
 					</div>
 				</div>
@@ -2123,7 +1343,12 @@ const BehavioralIncidents = ({}: MapContainerProps) => {
 					<div className="p-6">
 						<h4 className="card-title mb-4">Age and Race of Interactions with KPD 2014-2018</h4>
 						<div dir="ltr">
-							<ReactApexCharts className="apex-charts" options={ageRaceInt} height={265} series={ageRaceInt.series} type="bar" />
+							<ReactApexCharts className="apex-charts" options={ageRaceInt} height={363} series={ageRaceInt.series} type="bar" />
+						</div>
+						<div className="pt-6">
+						<h3>Implications:</h3>
+						The data indicates that Black youth had significantly more interactions than White youth across all age groups.<br/>
+						This disparity may reflect broader systemic issues, such as racial profiling, socio-economic factors, or differences in community-police relationships.
 						</div>
 					</div>
 				</div>
@@ -2136,6 +1361,12 @@ const BehavioralIncidents = ({}: MapContainerProps) => {
 						<div dir="ltr">
 							<ReactApexCharts className="apex-charts" options={officerInt} height={350} series={officerInt.series} type="bar" />
 						</div>
+						<div className="pt-6">
+						<h3>Implications:</h3>
+						The data suggests racial disparities in referral outcomes, with Black individuals more often referred to formal judicial authorities and handled by non-SROs. <br/>
+						In contrast, White individuals are more frequently directed to alternative resolutions like Teen Court or receive no formal referral, managed exclusively by SROs. <br/>
+						This may indicate systemic differences in how student behavior is addressed based on race and officer type.
+						</div>
 					</div>
 				</div>
 		</div>
@@ -2145,7 +1376,13 @@ const BehavioralIncidents = ({}: MapContainerProps) => {
 					<div className="p-6">
 						<h4 className="card-title mb-4">Comparison of Interaction Outcomes by Race</h4>
 						<div dir="ltr">
-							<ReactApexCharts className="apex-charts" options={raceIntComp} height={265} series={raceIntComp.series} type="bar" />
+							<ReactApexCharts className="apex-charts" options={raceIntComp} height={350} series={raceIntComp.series} type="bar" />
+						</div>
+						<div className="pt-6">
+						<h3>Implications:</h3>
+						The data suggests racial disparities in referral outcomes, with Black individuals more often referred to formal judicial authorities and handled by non-SROs. <br/>
+						In contrast, White individuals are more frequently directed to alternative resolutions like Teen Court or receive no formal referral, managed exclusively by SROs. <br/>
+						This may indicate systemic differences in how student behavior is addressed based on race and officer type.
 						</div>
 					</div>
 				</div>
@@ -2158,16 +1395,32 @@ const BehavioralIncidents = ({}: MapContainerProps) => {
 						<div dir="ltr">
 							<ReactApexCharts className="apex-charts" options={firstCharge} height={820} series={firstCharge.series} type="bar" />
 						</div>
+						<div className="pt-6">
+							<h3>Implications:</h3>
+							<b>Racial Disparity:</b> The pronounced difference suggests potential racial disparities in arrest or charging practices.<br/>
+							<b>Criminal Justice Concerns:</b> It may reflect systemic biases within law enforcement or judicial processes.<br/>
+							<b>Policy Impact:</b> The data can inform discussions on criminal justice reform, aiming to address these disparities through equitable law enforcement policies.
+						</div>
 					</div>
 				</div>
 		</div>
 
-		<div className="xl:col-span-3">
+		<div className="xl:col-span-6">
 			<div className="card">
 					<div className="p-6">
 						<h4 className="card-title mb-4">Referrals Types used after Interactions</h4>
 						<div dir="ltr">
 							<ReactApexCharts className="apex-charts" options={minorReferrals} height={820} series={minorReferrals.series} type="bar" />
+						</div>
+						<div className="pt-6">
+							<h3>Implications:</h3>
+							<b>High Referral to Juvenile Authorities:</b> Offenses like "Criminal Larceny," "City Ordinance Violations," and "Aggravated Assault" predominantly result in referrals to juvenile authorities, indicating their seriousness.<br/>
+							<b>Department Handling Dominates Minor Offenses:</b> Less severe infractions like "Shoplifting - Third" and "Simple Physical Assault" are mostly handled within the department and released, reflecting a focus on in-house resolution for minor offenses.<br/>
+							<b>Limited Use of Alternative Programs:</b> Referrals to social services, teen court, or no referrals are rare, suggesting limited reliance on alternative intervention programs.<br/>
+							There's a strong dependency on formal juvenile justice interventions for serious crimes, which could impact youth recidivism rates.<br/>
+							Minor offenses are often resolved internally, possibly to avoid burdening the juvenile system.<br/>
+							The minimal use of social services and teen court highlights an opportunity to expand restorative justice approaches for certain cases.
+
 						</div>
 					</div>
 				</div>
@@ -2177,7 +1430,7 @@ const BehavioralIncidents = ({}: MapContainerProps) => {
 }
 
 
-const PatternRecognition = ({}: MapContainerProps) => {
+const PieCharts = ({}: MapContainerProps) => {
 	return (
 		<>
 		<div className="card xl:col-span-3">
@@ -2205,7 +1458,7 @@ const PatternRecognition = ({}: MapContainerProps) => {
 				<div className='mt-6'>
 					<h3>Implications:</h3>
 					<ul>
-						<li>Disproportionate reporting suggests differences in community interactions with authorities.</li>
+						<li>This data suggests Non-SRO law enforcement makes up majority of interactions with authorities in the community.</li>
 						<li>Further investigation needed into enforcement, policy, or societal factors influencing reporting trends.</li>
 					</ul>
 				</div>
@@ -2222,8 +1475,8 @@ const DMC = ({ google }: MapContainerProps) => {
 			{/* <PageBreadcrumb title="Dashboard" subName="Menu" /> */}
 			<header className="text-slate-900 dark:text-slate-200 text-lg font-medium mb-6">DMC</header>
 			<div className="grid lg:grid-cols-6 gap-6 mb-6">
-				<BehavioralIncidents google={google} />
-				<PatternRecognition google={google}/>
+				<PieCharts google={google}/>
+				<BarCharts google={google} />
 			</div>
 			{/* <div className="grid lg:grid-cols-6 gap-6 mb-6">
 				<ResponseAnalysis />
