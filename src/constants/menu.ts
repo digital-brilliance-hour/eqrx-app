@@ -77,6 +77,12 @@ const MENU_ITEMS: MenuItemTypes[] = [
 				url: '/violentcrimes',
 				parentKey: 'dashboard',
 			},
+			{
+				key: 'dashboard-2',
+				label: 'dashboard2',
+				url: '/dashboard2',
+				parentKey: 'dashboard',
+			},
 		],
 	},
 	/* {
