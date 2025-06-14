@@ -1585,7 +1585,7 @@ const PatternRecognition = ({}: MapContainerProps) => {
 	)
 }
 
-const Analysis = ({ google }: MapContainerProps) => {
+const Analysis = () => {
 	return (
 		<>
 			{/* <PageBreadcrumb title="Dashboard" subName="Menu" /> */}
