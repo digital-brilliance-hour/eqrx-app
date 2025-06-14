@@ -21,6 +21,7 @@ import { Link } from 'react-router-dom'
 import { Tab } from '@headlessui/react'
 import DisparateTreatment from '../../dashboard/disparatetreatment/index'
 import DMC from '../../dashboard/dmcupdated/index'
+import Analysis from '../../dashboard/analysis/index'
 import PublicOrder from '../../dashboard/publicorder/index'
 import ViolentCrimes from '../../dashboard/violentcrimes/index'
 import PropertyCrimes from '../../dashboard/propertycrimes/index'
@@ -2274,7 +2275,7 @@ const SystemPerformanceMetrics = () => {
 					</Tab.Panel>
 
 					<Tab.Panel id="fill-and-justify-1" aria-labelledby="fill-and-justify-item-1">
-						<PropertyCrimes />
+						<Analysis/>
 					</Tab.Panel>
 
 					<Tab.Panel id="fill-and-justify-1" aria-labelledby="fill-and-justify-item-1">
