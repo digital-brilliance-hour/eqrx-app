@@ -4,11 +4,11 @@ import { ApexOptions } from 'apexcharts'
 import ReactApexChart from 'react-apexcharts'
 import { Link } from 'react-router-dom'
 
-const CountOfSubstanceUse = () => {
+const CountOfAddresses = () => {
     const PopoverToggle = () => {
 		return <i className="ri-more-2-fill text-xl" />
 	}
-	const colors1 = ['#EE4B2B', '#3e60d5','#FFC300']
+	const colors1 = ['#EE4B2B', '#3e60d5']
 
  const residencePie: ApexOptions = {
 	chart: {
@@ -18,8 +18,8 @@ const CountOfSubstanceUse = () => {
 			show: true,
 		},
 	},
-	series: [4.9,69.1,26.0],
-	labels: ['Yes', 'No', 'Unknown'],
+	series: [35.4,64.6],
+	labels: ['Not-Unique', 'Unique'],
 	colors: colors1,
 	legend: {
 		show: true,
@@ -52,7 +52,7 @@ return(
 	<div className="lg:col-span-3">
 	<div className="card">
 			<div className="p-6">
-						<h4 className="card-title mb-4">Count Of Substance Use
+						<h4 className="card-title mb-4">Count Of Addresses
 						</h4>
 						<div dir="ltr">
 							<ReactApexChart className="apex-charts" options={residencePie} height={320} series={residencePie.series} type="pie" />
@@ -65,4 +65,4 @@ return(
 				
 )
 }
-export default CountOfSubstanceUse
+export default CountOfAddresses

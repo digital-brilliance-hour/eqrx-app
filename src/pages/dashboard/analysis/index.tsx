@@ -31,6 +31,7 @@ import CountOfContactOrigin from './components/CountOfContactOrigin'
 import CountOfResidence1 from './components/CountOfResidence1'
 import CountOfSubstanceUse from './components/CountOfSubstanceUse'
 import CountOfReferralPrimary2 from './components/CountOfReferralPrimary2'
+import CountOfAddresses from './components/CountOfAddresses'
 
 const colors1 = ['#3e60d5', '#6c757d', '#47ad77', '#fa5c7c', '#e3eaef']
 
@@ -1595,11 +1596,9 @@ const Analysis = ({ google }: MapContainerProps) => {
 				<CountOfContactOrigin/>
 				<CountOfResidence1/>
 				<CountOfSubstanceUse/>
+				<CountOfAddresses/>
 				<CountOfReferralPrimary2/>
-				<BehavioralIncidents google={google} />
-				<ResponseAnalysis />
-				<PatternRecognition google={google}/>
-				<SchoolVsCommunity />
+
 			</div>
 			{/* <div className="grid lg:grid-cols-6 gap-6 mb-6">
 				<ResponseAnalysis />
