@@ -272,7 +272,6 @@ const Checkboxes = () => {
 const Report = () => {
 	return (
 		<>
-			<PageBreadcrumb title="Dashboard" subName="Menu" />
 			<FormSelect />
 			<Checkboxes />
 			<div className="grid lg:grid-cols-5 gap-6 mb-6">
