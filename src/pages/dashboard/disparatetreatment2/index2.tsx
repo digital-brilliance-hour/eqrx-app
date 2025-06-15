@@ -7,11 +7,7 @@ import Statistics from './components/Statistics'
 import RevenueChart from './components/RevenueChart'
 import TotalSalesChart from './components/TotalSalesChart'
 import TopSellingProducts from './components/TopSellingProducts'
-import RevenueByLocation from './components/RevenueByLocation'
-import OffenseTypesByAge from './components/OffenseTypesByAge'
-import OffenseTypesByCulture from './components/OffenseTypesByCulture'
-import OffenseTypesByGender from './components/OffenseTypesByGender'
-import { PageBreadcrumb } from '../../../components'
+
 
 // dummy data
 import { products } from './data'
