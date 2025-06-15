@@ -57,7 +57,7 @@ return(
 						<div dir="ltr">
 							<ReactApexChart className="apex-charts" options={officerTyePie} height={320} series={officerTyePie.series} type="pie" />
 						</div>
-						<br/>The pie chart illustrates the distribution of incidents categorized into two segments: "School Related" and "Community Incidents." The blue segment, representing "School Related" incidents, accounts for 44.4% of the total, while the gray segment, representing "Community Incidents," makes up 55.6%. This visual comparison underscores that a slightly higher proportion of incidents occur within the community compared to the school environment.
+						<br/>The data shows that 86.9% of juvenile contacts were made by officers who are not School Resource Officers (SROs), while only 13.5% of contacts involved SROs. This large difference suggests that most juvenile interactions with law enforcement occur outside of school environments or that SROs play a limited role in overall youth-related policing. The disparity may also reflect staffing patterns, deployment priorities, or specific responsibilities assigned to SROs compared to other officers.
 					</div>
 				</div>
 				</div>

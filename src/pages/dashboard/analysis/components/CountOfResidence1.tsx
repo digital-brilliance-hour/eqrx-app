@@ -57,7 +57,7 @@ return(
 						<div dir="ltr">
 							<ReactApexChart className="apex-charts" options={residencePie} height={320} series={residencePie.series} type="pie" />
 						</div>
-						<br/>The pie chart illustrates the distribution of incidents categorized into two segments: "School Related" and "Community Incidents." The blue segment, representing "School Related" incidents, accounts for 44.4% of the total, while the gray segment, representing "Community Incidents," makes up 55.6%. This visual comparison underscores that a slightly higher proportion of incidents occur within the community compared to the school environment.
+						<br/>The data shows that 89.8% of juvenile contacts involved individuals who were residents, while only 10.2% were non-residents. This suggests that the majority of youth interactions with law enforcement are happening within the local community. The low percentage of non-resident contacts may indicate that most incidents involve youth who live in the area, pointing to localized enforcement activity and issues primarily affecting the resident population.
 					</div>
 				</div>
 				</div>

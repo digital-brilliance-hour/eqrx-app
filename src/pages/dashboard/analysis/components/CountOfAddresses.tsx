@@ -10,7 +10,7 @@ const CountOfAddresses = () => {
 	}
 	const colors1 = ['#EE4B2B', '#3e60d5']
 
- const residencePie: ApexOptions = {
+ const CountAddresses: ApexOptions = {
 	chart: {
 		height: 320,
 		type: 'pie',
@@ -55,9 +55,9 @@ return(
 						<h4 className="card-title mb-4">Count Of Addresses
 						</h4>
 						<div dir="ltr">
-							<ReactApexChart className="apex-charts" options={residencePie} height={320} series={residencePie.series} type="pie" />
+							<ReactApexChart className="apex-charts" options={CountAddresses} height={320} series={CountAddresses.series} type="pie" />
 						</div>
-						<br/>The pie chart illustrates the distribution of incidents categorized into two segments: "School Related" and "Community Incidents." The blue segment, representing "School Related" incidents, accounts for 44.4% of the total, while the gray segment, representing "Community Incidents," makes up 55.6%. This visual comparison underscores that a slightly higher proportion of incidents occur within the community compared to the school environment.
+						<br/>The data shows that 64.6% of juvenile contacts were associated with unique addresses, while 35.4% were linked to non-unique addresses, meaning multiple contacts occurred at the same location. This suggests that while most incidents are spread across various locations, a significant portion clusters around certain addresses. These repeated locations may indicate geographic patterns, such as high-activity areas, or reflect environmental or social factors contributing to recurring incidents.
 					</div>
 				</div>
 				</div>
