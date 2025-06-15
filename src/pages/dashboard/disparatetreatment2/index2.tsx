@@ -283,17 +283,6 @@ const Report = () => {
 
 			<div className="grid lg:grid-cols-4 gap-6 mb-6">
 				<RevenueChart />
-				<OffenseTypesByAge />
-				<OffenseTypesByGender />
-				<OffenseTypesByCulture />
-			</div>
-			<div className="grid grid-cols-12 gap-6">
-				<div className="xl:col-span-5 col-span-12">
-					<TopSellingProducts products={products} />
-				</div>
-				<div className="xl:col-span-7 col-span-12">
-					<RevenueByLocation />
-				</div>
 				<TotalSalesChart />
 			</div>
 		</>
