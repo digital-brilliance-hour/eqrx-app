@@ -31,6 +31,7 @@ import { PlacesType, Tooltip, VariantType } from 'react-tooltip'
 // dummy data
 import { products } from './data'
 import { options } from './option-data'
+import Disparatetreatment2 from '../disparatetreatment2'
 
 const dashedLineChartOpts: ApexOptions = {
 	chart: {
@@ -2283,7 +2284,7 @@ const SystemPerformanceMetrics = () => {
 					</Tab.Panel>
 					
 					<Tab.Panel id="fill-and-justify-1" aria-labelledby="fill-and-justify-item-1">
-						<SchoolMetrics />
+						<Disparatetreatment2 />
 					</Tab.Panel>
 				</Tab.Panels>
 			</Tab.Group>
