@@ -10,7 +10,7 @@ const CountOfSubstanceUse = () => {
 	}
 	const colors1 = ['#EE4B2B', '#3e60d5','#FFC300']
 
- const residencePie: ApexOptions = {
+ const SubstanceUse: ApexOptions = {
 	chart: {
 		height: 320,
 		type: 'pie',
@@ -55,9 +55,9 @@ return(
 						<h4 className="card-title mb-4">Count Of Substance Use
 						</h4>
 						<div dir="ltr">
-							<ReactApexChart className="apex-charts" options={residencePie} height={320} series={residencePie.series} type="pie" />
+							<ReactApexChart className="apex-charts" options={SubstanceUse} height={320} series={SubstanceUse.series} type="pie" />
 						</div>
-						<br/>The pie chart illustrates the distribution of incidents categorized into two segments: "School Related" and "Community Incidents." The blue segment, representing "School Related" incidents, accounts for 44.4% of the total, while the gray segment, representing "Community Incidents," makes up 55.6%. This visual comparison underscores that a slightly higher proportion of incidents occur within the community compared to the school environment.
+						<br/>The data shows that 69.1% of juvenile contacts involved no indication of substance use, while 26.0% were marked as unknown, and only 4.9% confirmed substance use. This suggests that substance use was not a common factor in most incidents, though the high rate of unknown responses raises concerns about the consistency or thoroughness of reporting. The relatively small confirmed percentage may reflect either low prevalence or limitations in detection during initial contact.
 					</div>
 				</div>
 				</div>

@@ -10,7 +10,7 @@ const RevenueChart = () => {
 	}
 	const colors1 = ['#EE4B2B','#FFC300','#3e60d5','#4BC0C0','#9966FF','#FF9F40','#C9CBCF','#00A896','#F67280','#6A0572','#2C3E50','#E67E22','#1ABC9C','#9B59B6','#34495E','#95A5A6','#F1C40F']
 
- const contactOriginPie: ApexOptions = {
+ const CountFirstCharge: ApexOptions = {
 	chart: {
 		height: 320,
 		type: 'pie',
@@ -55,9 +55,9 @@ return(
 						<h4 className="card-title mb-4">Count of First Charge
 						</h4>
 						<div dir="ltr">
-							<ReactApexChart className="apex-charts" options={contactOriginPie} height={320} series={contactOriginPie.series} type="pie" />
+							<ReactApexChart className="apex-charts" options={CountFirstCharge} height={320} series={CountFirstCharge.series} type="pie" />
 						</div>
-						<br/>The pie chart illustrates the distribution of incidents categorized into two segments: "School Related" and "Community Incidents." The blue segment, representing "School Related" incidents, accounts for 44.4% of the total, while the gray segment, representing "Community Incidents," makes up 55.6%. This visual comparison underscores that a slightly higher proportion of incidents occur within the community compared to the school environment.
+						<br/>The data shows that the most common first charges among juveniles were Shoplifting (16.4%), Larceny From (10.2%), and Burglary (9.5%), followed by Simple Physical Assault (7.2%), Fighting (Affray) (7.2%), and Escape From Custody (7.9%). Other charges appeared at much lower rates, each below 5%. This distribution indicates that property-related offenses and low-level physical altercations are the leading entry points into the system. The concentration of certain charges suggests potential focus areas for early intervention or prevention efforts.
 					</div>
 				</div>
 				</div>

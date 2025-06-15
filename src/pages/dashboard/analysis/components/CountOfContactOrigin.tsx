@@ -57,7 +57,7 @@ return(
 						<div dir="ltr">
 							<ReactApexChart className="apex-charts" options={contactOriginPie} height={320} series={contactOriginPie.series} type="pie" />
 						</div>
-						<br/>The pie chart illustrates the distribution of incidents categorized into two segments: "School Related" and "Community Incidents." The blue segment, representing "School Related" incidents, accounts for 44.4% of the total, while the gray segment, representing "Community Incidents," makes up 55.6%. This visual comparison underscores that a slightly higher proportion of incidents occur within the community compared to the school environment.
+						<br/>The data indicates that 94.4% of juvenile contacts resulted in an on-view disposition, meaning immediate action was taken at the scene. In contrast, only 3.0% were given a temporary status and 2.6% were referred to juvenile court. This overwhelming reliance on on-view actions suggests that most cases are being addressed in real time rather than through formal court referrals or temporary holding, which may reflect departmental procedures, urgency of situations, or limited use of court-based interventions.
 					</div>
 				</div>
 				</div>

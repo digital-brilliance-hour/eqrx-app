@@ -10,7 +10,7 @@ const RevenueChart = () => {
 	}
 	const colors1 = ['#EE4B2B','#FFC300','#3e60d5','#4BC0C0','#9966FF','#FF9F40','#C9CBCF','#00A896','#F67280','#6A0572','#2C3E50','#E67E22','#1ABC9C','#9B59B6','#34495E','#95A5A6','#F1C40F']
 
- const contactOriginPie: ApexOptions = {
+ const ContactByOfficerNamePie: ApexOptions = {
 	chart: {
 		height: 320,
 		type: 'pie',
@@ -55,10 +55,10 @@ return(
 						<h4 className="card-title mb-4">Contact By Officer Name
 						</h4>
 						<div dir="ltr">
-							<ReactApexChart className="apex-charts" options={contactOriginPie} height={320} series={contactOriginPie.series} type="pie" />
+							<ReactApexChart className="apex-charts" options={ContactByOfficerNamePie} height={320} series={ContactByOfficerNamePie.series} type="pie" />
 						</div>
-						<br/>The pie chart illustrates the distribution of incidents categorized into two segments: "School Related" and "Community Incidents." The blue segment, representing "School Related" incidents, accounts for 44.4% of the total, while the gray segment, representing "Community Incidents," makes up 55.6%. This visual comparison underscores that a slightly higher proportion of incidents occur within the community compared to the school environment.
-					</div>
+						<br/>
+The data shows that officer contacts with juveniles were most frequently attributed to BROCK RC (6.6%), followed closely by CORBITT AF (6.2%) and UNKNOWN (5.9%). Other officers with notable contact percentages include MANNING JD (5.6%), WALKER J (4.3%), and WEAVER JM & SIMMONS LJ (3.9% each). The remaining officers each accounted for between 0.3% and 3.6% of contacts. This distribution suggests a concentration of juvenile encounters among a few officers, with the “UNKNOWN” category indicating possible gaps in reporting or data accuracy.					</div>
 				</div>
 				</div>
 				

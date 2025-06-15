@@ -71,15 +71,13 @@ const totaljuvcont: ApexOptions = {
 <div className="xl:col-span-3">
 			<div className="card">
 					<div className="p-6">
-						<h4 className="card-title mb-4">Officer Interactions by Officer Type and Referral</h4>
+						<h4 className="card-title mb-4">Total Juvenile Contacts</h4>
 						<div dir="ltr">
 							<ReactApexCharts className="apex-charts" options={totaljuvcont} height={350} series={totaljuvcont.series} type="bar" />
 						</div>
 						<div className="pt-6">
 						<h3>Implications:</h3>
-						The data suggests racial disparities in referral outcomes, with Black individuals more often referred to formal judicial authorities and handled by non-SROs. <br/>
-						In contrast, White individuals are more frequently directed to alternative resolutions like Teen Court or receive no formal referral, managed exclusively by SROs. <br/>
-						This may indicate systemic differences in how student behavior is addressed based on race and officer type.
+						 The data on Black juvenile contacts from 2014 to 2018 reveals a peak in 2016, with 89 reported contacts. There was a steady increase from 55 in 2014 to 61 in 2015, followed by the 2016 spike. However, the numbers declined to 60 in 2017 and dropped further to 37 in 2018. This pattern may indicate a shift in enforcement priorities, policy changes, or the impact of community intervention strategies during and after the 2016 peak in contacts.
 						</div>
 					</div>
 				</div>
