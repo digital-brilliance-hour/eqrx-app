@@ -32,6 +32,7 @@ import CountOfResidence1 from './components/CountOfResidence1'
 import CountOfSubstanceUse from './components/CountOfSubstanceUse'
 import CountOfReferralPrimary2 from './components/CountOfReferralPrimary2'
 import CountOfAddresses from './components/CountOfAddresses'
+import CountOfResidence2 from './components/CountOfResidence2'
 
 const colors1 = ['#3e60d5', '#6c757d', '#47ad77', '#fa5c7c', '#e3eaef']
 
@@ -1595,6 +1596,7 @@ const Analysis = () => {
 				<ContactOfficerType/>
 				<CountOfContactOrigin/>
 				<CountOfResidence1/>
+				<CountOfResidence2/>
 				<CountOfSubstanceUse/>
 				<CountOfAddresses/>
 				<CountOfReferralPrimary2/>
