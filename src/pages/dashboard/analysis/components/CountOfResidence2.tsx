@@ -77,7 +77,7 @@ const CountOfResidence2: React.FC = () => {
 	<div className="lg:col-span-3">
 	<div className="card">
 			<div className="p-6">
-						<h4 className="card-title mb-4">Count Of Residence(data)
+						<h4 className="card-title mb-4">Count Of Residence2(data)
 						</h4>
 						<div dir="ltr">
               <ReactApexChart className="apex-charts" options={InforResPie} height={320} series={series} type="pie" />
