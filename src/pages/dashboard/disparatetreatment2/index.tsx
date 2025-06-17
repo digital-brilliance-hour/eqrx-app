@@ -33,9 +33,9 @@ const Disparatetreatment2 = () => {
 				<FirstChargeGroupe4/>
 				<FirstChargeGroupe5/>
 				<FirstChargeGroupe6/>
-				<CountOfFirstCharge/>
-				<ContactByOfficerName/>
+				{/* <ContactByOfficerName/> */}
 				<CompConByYearGenRace/>
+				<CountOfFirstCharge/>
 				<TotalInterByRaceAndGen/>
 
 			</div>
