@@ -63,7 +63,7 @@ const FirstChargeGroupe1Chart = () => {
 		<div className="xl:col-span-6">
                         <div className="card">
                                 <div className="p-6">
-                                    <h4 className="card-title mb-4">1st Charge Groupe 1</h4>
+                                    <h4 className="card-title mb-4">1st Charge Group 1</h4>
                                     <div dir="ltr">
                                         <ReactApexCharts className="apex-charts" options={uniqueContact} height={350} series={uniqueContact.series} type="bar" />
                                     </div>

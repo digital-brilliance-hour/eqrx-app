@@ -76,7 +76,7 @@ const simple: ApexOptions = {
 }
 
 	return (
-<div className="xl:col-span-3">
+<div className="xl:col-span-6">
                 <div className="card">
                     <div className="p-6">
                         <h4 className="card-title mb-4">Simple Charges Recieved Black vs White</h4>
