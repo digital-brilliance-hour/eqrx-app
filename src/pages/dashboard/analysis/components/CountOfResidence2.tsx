@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import * as XLSX from "xlsx";
-import Chart from "react-apexcharts";
+//import Chart from "react-apexcharts";
 import type { ApexOptions } from "apexcharts";
 import ReactApexChart from "react-apexcharts";
+const data = 'src/helpers/info/data.xlsx';
 
 interface ResidenceCounts {
   resident: number;
@@ -13,10 +14,10 @@ const CountOfResidence2: React.FC = () => {
   const [counts, setCounts] = useState<ResidenceCounts>({ resident: 0, nonResident: 0 });
 
   useEffect(() => {
-	// yarn yarn add xlsx
+	//  yarn add xlsx
 	// place the sheet in the public folder for now
     // fetches the sheeet file from the public folder it didnt like were we currently have it
-    fetch("/data.xlsx")
+    fetch(data)
       .then((res) => res.arrayBuffer())
       .then((buffer) => {
         // read and parse the sheet from the array buffer
