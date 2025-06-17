@@ -2,16 +2,16 @@
 import Select from 'react-select'
 //import { MaskedInput } from 'rsuite'
 
-// components
-import Statistics from './components/Statistics'
-import RevenueChart from './components/RevenueChart'
-import TotalSalesChart from './components/TotalSalesChart'
-import TopSellingProducts from './components/TopSellingProducts'
-import RevenueByLocation from './components/RevenueByLocation'
-import OffenseTypesByAge from './components/OffenseTypesByAge'
-import OffenseTypesByCulture from './components/OffenseTypesByCulture'
-import OffenseTypesByGender from './components/OffenseTypesByGender'
-import { PageBreadcrumb } from '../../../components'
+// // components
+// import Statistics from './components/Statistics'
+// import RevenueChart from './components/RevenueChart'
+// import TotalSalesChart from './components/TotalSalesChart'
+// import TopSellingProducts from './components/TopSellingProducts'
+// import RevenueByLocation from './components/RevenueByLocation'
+// import OffenseTypesByAge from './components/OffenseTypesByAge'
+// import OffenseTypesByCulture from './components/OffenseTypesByCulture'
+// import OffenseTypesByGender from './components/OffenseTypesByGender'
+// import { PageBreadcrumb } from '../../../components'
 
 // dummy data
 import { products } from './data'
@@ -273,35 +273,35 @@ const Checkboxes = () => {
 	)
 }
 
-const Report = () => {
-	return (
-		<>
-			<PageBreadcrumb title="Dashboard" subName="Menu" />
-			<FormSelect />
-			<Checkboxes />
-			<div className="grid lg:grid-cols-5 gap-6 mb-6">
-				<ResponsiveTable />
-				<ResponsiveTable2 />
-			</div>
-			<Statistics />
+// const Report = () => {
+// 	return (
+// 		<>
+// 			<PageBreadcrumb title="Dashboard" subName="Menu" />
+// 			<FormSelect />
+// 			<Checkboxes />
+// 			<div className="grid lg:grid-cols-5 gap-6 mb-6">
+// 				<ResponsiveTable />
+// 				<ResponsiveTable2 />
+// 			</div>
+// 			<Statistics />
 
-			<div className="grid lg:grid-cols-4 gap-6 mb-6">
-				<RevenueChart />
-				<OffenseTypesByAge />
-				<OffenseTypesByGender />
-				<OffenseTypesByCulture />
-			</div>
-			<div className="grid grid-cols-12 gap-6">
-				<div className="xl:col-span-5 col-span-12">
-					<TopSellingProducts products={products} />
-				</div>
-				<div className="xl:col-span-7 col-span-12">
-					<RevenueByLocation />
-				</div>
-				<TotalSalesChart />
-			</div>
-		</>
-	)
-}
+// 			<div className="grid lg:grid-cols-4 gap-6 mb-6">
+// 				<RevenueChart />
+// 				<OffenseTypesByAge />
+// 				<OffenseTypesByGender />
+// 				<OffenseTypesByCulture />
+// 			</div>
+// 			<div className="grid grid-cols-12 gap-6">
+// 				<div className="xl:col-span-5 col-span-12">
+// 					<TopSellingProducts products={products} />
+// 				</div>
+// 				<div className="xl:col-span-7 col-span-12">
+// 					<RevenueByLocation />
+// 				</div>
+// 				<TotalSalesChart />
+// 			</div>
+// 		</>
+// 	)
+// }
 
 export default Report

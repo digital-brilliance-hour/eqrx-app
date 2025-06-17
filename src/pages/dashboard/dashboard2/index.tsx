@@ -1024,7 +1024,6 @@ const series = {
 	},
 }
 
-
 const series2 = [
 	{
 		name: 'Black Offenses',
