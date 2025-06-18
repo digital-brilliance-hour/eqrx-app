@@ -2119,7 +2119,7 @@ const SystemPerformanceMetrics = () => {
 	return (
 		<>
 		{/* Phase 2 */}
-		 <div className="xl:col-span-6 hidden">
+		<div className="xl:col-span-6 hidden">
 			<div className="card">
 				<div className="p-6">
 					<h4 className="card-title"> referral program success rate</h4>
@@ -2271,7 +2271,7 @@ const SystemPerformanceMetrics = () => {
 
 				<Tab.Panels className="mt-3">
 					<Tab.Panel id="fill-and-justify-1" aria-labelledby="fill-and-justify-item-1">
-						 <DMC />
+						<DMC />
 					</Tab.Panel>
 
 					<Tab.Panel id="fill-and-justify-1" aria-labelledby="fill-and-justify-item-1">
@@ -2296,7 +2296,7 @@ const SystemPerformanceMetrics = () => {
 const Main = () => {
 	return (
 		<>
-			<PageBreadcrumb title="Command Center" subName="Menu" />
+			<PageBreadcrumb title="DMC Analysis" subName="Menu" />
 			<TotalContactsDisplay />
 			<div className="grid lg:grid-cols-6 gap-6 mb-6">
 				<SystemPerformanceMetrics />
