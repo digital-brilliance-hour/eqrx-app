@@ -79,8 +79,8 @@ const MENU_ITEMS: MenuItemTypes[] = [
 			},
 			{
 				key: 'dashboard-2',
-				label: 'dashboard2',
-				url: '/dashboard2',
+				label: 'DMC Analysis',
+				url: '/DMCAnalysis',
 				parentKey: 'dashboard',
 			},
 		],

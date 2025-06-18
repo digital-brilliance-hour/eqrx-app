@@ -208,8 +208,8 @@ const dashboardRoutes: RoutesProps = {
 			route: PrivateRoute,
 		},
 		{
-			path: '/dashboard2',
-			name: 'dashboard2',
+			path: '/DMCAnalysis',
+			name: 'DMCAnalysis',
 			element: <Main2 />,
 			route: PrivateRoute,
 		},
