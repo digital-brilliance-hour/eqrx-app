@@ -73,7 +73,7 @@ return(
 						/>					</div>
 						<div className="pt-6">
 						<h3>Implications:</h3>
-						 The data shows that the majority of juvenile referrals, totaling 180, were made to juvenile authorities, while 118 cases were handled within the department and the individuals were released. All other referral categories had very low counts: Social Services (1), Teen Court (0), None (3), and Referred to another Police Department (2). This distribution highlights a strong reliance on formal juvenile justice channels and departmental handling, with minimal use of alternative or community-based referral options.
+						The data shows that the majority of juvenile referrals, totaling 180, were made to juvenile authorities, while 118 cases were handled within the department and the individuals were released. All other referral categories had very low counts: Social Services (1), Teen Court (0), None (3), and Referred to another Police Department (2). This distribution highlights a strong reliance on formal juvenile justice channels and departmental handling, with minimal use of alternative or community-based referral options.
 						</div>
 				</div>
 			</div>
